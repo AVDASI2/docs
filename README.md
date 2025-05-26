@@ -1,1 +1,1 @@
-MkDocs for Bristol Flight Lab.
+MkDocs for the AVDASI 2 course.
