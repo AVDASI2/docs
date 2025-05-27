@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Example-code/">
+      
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Pressure Sensor PDF - AVDASI 2 docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="flightlab" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#page-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AVDASI 2 docs" class="md-header__button md-logo" aria-label="AVDASI 2 docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AVDASI 2 docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pressure Sensor PDF
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="flightlab" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="flightlab_dark" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AVDASI 2 docs" class="md-nav__button md-logo" aria-label="AVDASI 2 docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    AVDASI 2 docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AVDASI 2 docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Avionics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Avionics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AVDASI 2 Avionics Guidelines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cube-Information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cube Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mission-Planner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mission Planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PyMavlink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PyMAVLink
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wifi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wifi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../I2C%26LUA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    I2C & LUA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pressure Sensor PDF
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="page-1">Page 1<a class="headerlink" href="#page-1" title="Permanent link">&para;</a></h1>
+<p>School of Civil, Aerospace, and Design Engineering
+AENG20007 AVDASI 2
+2023-2024
+PRESSURE ACQUISITION SYSTEM: GUIDANCE FOR STUDENTS
+Version Number:
+1.0
+Author:
+S. Reid
+Version Date:
+16/01/2024
+Version
+Date
+Modifications
+Modified By
+1.0
+16/01/2024
+Initial Document Release
+Sid Reid
+1
+General Overview
+The wind tunnel testing component of the AVDASI 2 module allows you to collect experimental
+data from your UAV. Pressure data from around the surface of a wing can be useful for validating
+predicted aerodynamic performance data. The AVDASI 2 module requires you to implement a pressure
+acquisition system, conisting of 12 individual sensors, to record the dynamic pressure on the surfaces
+of your UAV. This document will provide guidance for setting the pressure system up, and should be
+used as a supplement to the content provided in lectures.
+The pressure acquisition system requires each team to:
+• Decide the ideal/best location for each sensor - Where does it make sense to put them? Where
+could you benefit from more sensors? What considerations should be made to allow accurate
+readings?
+• Design new components and methods for mounting the pressure acquisition system securely
+- How do you ensure the system is secure in advance of wind tunnel testing? Are there any
+space constraints which limit where pressure sensors can be located? Have you considered how
+cables/tubing will be routed within the UAV?
+• Expand on the baseline data collection software as desired - What additional features are re-
+quired? How can you log the data in a way which matches the order/methodology of the test?
+• Ensure all components are in a condition to be returned following wind tunnel testing - What non-
+permanent methods for labelling sensors and boards can you come up with? Is your mounting
+solution for the system likely to cause damage to the boards?
+2
+Kit List
+Component
+Quantity
+Comments
+Pressure Reading Board
+4
+Provided
+Microcontroller Acquisition Shield
+1
+Provided
+Arduino Micro
+1
+Provided
+Micro USB Cable
+1</p>
+<blockquote>
+<p>3m - Provided
+Connection Wires
+4 x 5
+Custom Lengths
+Tubes - Sensor Dynamic Port
+12
+Custom Lengths
+Tubes - Sensor Reference Port
+12
+Custom Lengths
+Tubes - Manifold
+1
+3m - Provided
+Brass Tube Reinforcement
+12
+1 per Tube
+Manifold - Reference Pressure
+1
+Provided
+Page 1 of 7
+and test plan
+v2 hacked about by Steve
+maybe reissued when I can get his LaTeX!</p>
+</blockquote>
+<p><a class="glightbox" href="../images/page_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_1.png" /></a></p>
+<h1 id="page-2">Page 2<a class="headerlink" href="#page-2" title="Permanent link">&para;</a></h1>
+<p>Aeng20007
+AVDASI2 - Group Design, Build, and Test
+3
+System Overview
+The AVDASI 2 pressure acquisition system is a bespoke system consisting of 4 sensor boards, each
+board has 3 pressure differential readings (total of 12 pressure differential readings), 1 microcontroller
+shield board, and an Arduino Micro microcontroller.
+This system uses the Arduino Micro to log the analogue readings from each pressure sensor and
+interfaces with a MATLAB-based UI for data collection and processing. The data is logged at 50Hz
+and is processed from raw analogue voltage readings to pressure readings (in Pascals) within the
+MATLAB script.
+Pressure Acquisition Board
+Pressure 
+Sensor
+Pressure 
+Sensor
+Pressure 
+Sensor
+Screw Terminal Block
+To:
+Reference
+Manifold
+From:
+Surface
+Points
+Main Shield
+Screw Terminal Block
+Screw Terminal Block
+Screw Terminal Block
+Screw Terminal Block
+POWER &amp; DATA Connection
+USB to PC
+X 4
+Figure 3.1: Diagram showing an overview of the AVDASI 2 pressure system
+Figure 3.1 shows an overview of the entire pressure acquisition system. The 12 Pressure sensors have
+a total of 24 input ports for silicone tubing. 12 should be connected to their respective sensing points
+on the surface and 12 are attached to the pressure manifold. This manifold has a single output which
+must be connected to a long ”exit tube”.
+4
+Connections Required
+4.1
+Electrical Connections
+Each of the pressure reading boards has a screw terminal block capable of connecting 5 wires. The
+configuration of these blocks is the same for every one of the boards. When looking at the in-port side
+of the block, the pinout is: [P1] [P2] [P3] [5V] [GND]. The MPXV7002DP Pressure Sensors are labelled
+similarly. Each of these ports must be connected to the corresponding port on the Microcontroller
+shield, as shown in Table 4.1. Only one connection in each port is required for each board.
+Table 4.1: Showing connections between pressure reading board and microcontroller shield.
+Pressure Reading Board
+Microcontroller Shield
+P1
+P1, P4, P7, P10
+P2
+P2, P5, P8, P11
+P3
+P3, P6, P9, P12
+5V
+5V
+GND
+GND
+The microcontroller shield then connects to the Arduino Micro, using pins A0 to A11 to read all 12
+analogue inputs. There is a green LED next to each pressure sensor indicating that the sensor is
+Page 2 of 7</p>
+<p><a class="glightbox" href="../images/page_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_2.png" /></a></p>
+<h1 id="page-3">Page 3<a class="headerlink" href="#page-3" title="Permanent link">&para;</a></h1>
+<p>Aeng20007
+AVDASI2 - Group Design, Build, and Test
+powered correctly. The Arduino micro should be connected to the shield such that the usb port aligns
+with the box at the top of the rectangular footprint on the PCB.
+4.1.1
+Troubleshooting
+When troubleshooting the connections to the board it is recommended to first use a multi-meter to
+perform a ”continuity check” between each of the boards. To do this use the probes of the multi-meter
+on the screw heads in the terminal blocks. This check will allow the simplest issues to be ruled out
+before seeking help from a Postgraduate or Staff member. There are some spare boards available but
+these will be used on a first-come-first-served basis.
+4.2
+Pressure Connections
+The pressure connections in the AVDASI pressure acquisition system are all designed for use with 2mm
+Inner Diameter silicone tubing. The MPXV7002DP sensor has two ports, the upper port measures
+the dynamic pressure and the lower port should be connected to the reference pressure. The sensor
+records the difference in pressure between the dynamic and reference pressure and outputs this as an
+analogue voltage.
+4.2.1
+Manifold
+The 12-to-1 pressure manifold is the first pressure connection to consider within the wing and fuselage.
+Setup of this manifold involves connecting the 12 reference pressure ports on each pressure sensor to
+an input of the manifold. The pressure manifold must be airtight to avoid fluctuations in the reference
+pressure reading caused by the wind tunnel. Figure 4.1 shows the 12 input ports and the single output
+port of the manifold.
+12 x Ø 4mm
+19
+Ø6
+4
+33
+76
+2.5
+30
+Figure 4.1: Figure showing a dimensioned drawing of the reference pressure manifold
+The single output port must be connected to a silicone tube with an overall length greater than 3m.
+This output tube must then be routed through the tip of the wing, or the back of the fuselage pod.
+To ensure that the pressure manifold remains airtight it has been covered with epoxy resin. The
+tubes you add to the inputs should therefore also be epoxied in place. To test whether the pressure
+Page 3 of 7</p>
+<p><a class="glightbox" href="../images/page_3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_3.png" /></a></p>
+<h1 id="page-4">Page 4<a class="headerlink" href="#page-4" title="Permanent link">&para;</a></h1>
+<p>Aeng20007
+AVDASI2 - Group Design, Build, and Test
+manifold is airtight, it is advised to submerged the manifold in water (with all of the tube ends above
+the surface) and check for bubbles. The presence of bubbles indicates that the manifold is not airtight
+- and thus needs to have more epoxy resin applied.
+4.2.2
+Wing Surface
+As explained in the Week 14 wind tunnel lecture (2 of 2), any bumps or excessive surface roughness
+will have a significant impact on the boundary layer development on both the wings and fuselage,
+which will ultimately influence the surface pressure data and your pressure distribution. Thus, it is
+critical that the pressure sensor inlet is flush with the surface. To help you achieve this, we will provide
+brass tube inserts (see Figs. 4.2 and 4.3) that are to be slotted within the tubes.
+Figure 4.2: Figure showing an example of how the surface should be finished using the brass tube inserts
+Ø4
+Ø2
+14
+0.2
+0.2
+R0.8
+Figure 4.3: Figure showing the dimesnions of the brass tube inserts
+Precise positioning of the sensor locations on the surface of the wing and fuselage is essential for
+producing a complete profile of the pressures over the entire surface. For this reason, determining the
+best/most interesting flow locations is necessary. This section will primarily repeat the information
+given in the lecture slides.
+For measuring the pressure distribution over an aerofoil equispaced and symmetrical configurations of
+pressure sensors will not give the best coverage or description of the flow field. To achieve the best
+coverage using the pressure sensors, the rate of change of surface gradient should be considered. So
+that sufaces with the highest rate of change have the largest number of sensors.
+XFLR5 and XFOIL can also be used to help determine the best pressure sensor locations. Figure 4.4
+shows a plot of the coefficient of pressure across the surface of an aerofoil. It is important when
+considering the optimum locations to consider this distribution. A higher number of sensors should
+be placed around areas of the polar with the greatest change observable.
+You may find that you want to put at least one sensor in flap of your wing. In this case you must
+consider how to prevent the tube connecting to the surface from stretching or being pinch during the
+Page 4 of 7</p>
+<p><a class="glightbox" href="../images/page_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_4.png" /></a></p>
+<h1 id="page-5">Page 5<a class="headerlink" href="#page-5" title="Permanent link">&para;</a></h1>
+<p>Aeng20007
+AVDASI2 - Group Design, Build, and Test
+Figure 4.4: Graph of the Coefficient of Pressure Polar across the aerofoil
+flap’s motion. Any stretching or pinching will restrict the tube’s flow and will result in poor accuracy
+from the pressure readings.
+Once you have decided on the 12 best locations for the pressure sensors these must be stored in an
+excel document in the format shown in Table 4.2. This file must be brought with you on the day of
+wind tunnel testing.
+Table 4.2: Table showing the format for the excel file containing the pressure sensor locations
+Sensor Number
+x
+y
+x/C
+P1
+xx.xx
+yy.yy</p>
+<h2 id="_1">.<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>P2
+:
+:
+:
+P3
+:
+:
+:
+P4
+:
+:
+:
+P5
+:
+:
+:
+P6
+:
+:
+:
+P7
+:
+:
+:
+P8
+:
+:
+:
+P9
+:
+:
+:
+P10
+:
+:
+:
+P11
+:
+:
+:
+P12
+:
+:
+:
+4.2.3
+Sensor
+Each of the sensors on the pressure acquisition boards has 2 ports. The upper port should be connected
+to the surface at the point at which you want to record pressure readings. The lower port should first
+be connected to the pressure manifold, and then out through the tip of the wing (as described in
+Section 4.2.1. Figure 4.5 shows a diagram of the port configuration of the MPXV7002DP Sensor.
+The pressure sensor operates by reading the differential pressure between the two ports. This differen-
+tial pressure is then output as a voltage between 0.5V and 4.5V, The analogue voltage is read by the
+Arduino Micro and is passed through a transfer function to convert from voltage to pressure. More
+information on the pressure sensor and its operation can be found at: Datasheet.
+5
+Software
+The Arduino Micro has a simple code running on it which takes 10 readings from the pressure sensors
+on boot and calculates the average for each sensor. This allows each sensor to have a custom zero
+Page 5 of 7</p>
+<p><a class="glightbox" href="../images/page_5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_5.png" /></a></p>
+<h1 id="page-6">Page 6<a class="headerlink" href="#page-6" title="Permanent link">&para;</a></h1>
+<p>Aeng20007
+AVDASI2 - Group Design, Build, and Test
+Dynamic Pressure
+Input
+Reference Pressure
+Input
+Figure 4.5: Illustration of the port configuration of the MPXV7002DP sensor (looking directly at the
+side with ports)
+offset. The code then takes a reading from each sensor in turn at a rate of 50Hz. These are output to
+the MATLAB app. The app is shown in Figure 5.1.
+Figure 5.1: Screenshot of Version 1 of the MATLAB App
+The MATLAB app then takes these readings and applies a transfer function to them, This converts
+the analogue signal into a pressure reading in Pascals. The data is saved in a .CSV file and can be
+processed to give the coefficient of pressure at each point on the surface of the wing. Any modifications
+to the MATLAB app are welcome - however, these modifications must be tested fully prior to wind
+tunnel testing, to ensure that there is no loss of experimental data.
+6
+Gate submission
+The requirements for the gate submission document are as follows:
+1. Complete Table 4.2.
+2. Why did you chose these locations? Wing Teams: Did you focus on the wing pressure or suction
+surface or both? POD/fuselage teams: Did you focus on the port or starboard surface or
+both? Include in your explanations references to XFOIL-obtained or relevant published data
+and material covered in the lecture slides. You may wish to include a diagram to support your
+answers. (short paragraph)
+3. Will any of the sensors be placed at different spanwise locations (for wing teams) or waterlines
+(for fuselage/pod teams)? In any case, explain why, and refer back to the relevant lecture slides.
+(maximum of two sentences).
+4. What are any possible foreseeable issues with your sensor arrangement?
+(maximum of two
+sentences).
+Page 6 of 7
+Test Plan</p>
+<p><a class="glightbox" href="../images/page_6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_6.png" /></a></p>
+<h1 id="page-7">Page 7<a class="headerlink" href="#page-7" title="Permanent link">&para;</a></h1>
+<p>Aeng20007
+AVDASI2 - Group Design, Build, and Test
+5. POD/fuselage teams: your experiments will be conducted at a single flow speed, U0, which
+will be determined on the day of testing based on the structural resilience of the design with
+increasing flow speed. During static tests, three yaw angles will be tested, being 0◦, 1◦and 2◦
+and seven pitch angles (−10◦to +20◦in 5◦increments). Create a Test Matrix (as introduced
+in Week 14 Lecture 2 of 2) to summarise this experimental regime. Note that the dynamic tests
+will be dependent on the outcome of the static tests and you are not expected to develop a test
+matrix for these cases.
+6. Wing Teams: your experiments will be conducted at two flow speeds, U0,1 and U0,2; the
+maximum value will be determined on the day of testing based on the structural resilience of
+the design with increasing flow speed. Up to ten angles of attack will be tested, from 0◦to
+approaching stall in no less than 1◦increments, at positive and negative angles of attack. In
+each case, the flap will be tested in up, down and in neutral positions. The aileron will be tested
+for maximum and minimum deflection for each case. Create a Test Matrix (as introduced in
+Week 14 Lecture 2 of 2) to summarise this experimental regime.
+7. Provide an estimate of the number of total experimental stages outlined. Discuss the overall
+balance of total number of experimental stages, including whether each stage is necessary to
+develop the experimentally required outputs (such as drag coefficient, etc). (maximum of three
+sentences)
+Page 7 of 7</p>
+<p><a class="glightbox" href="../images/page_7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Page Image" src="../images/page_7.png" /></a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 12:08:16 UTC">May 27, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Example-code/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Example Code">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Example Code
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/UoBFlightLab" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.search", "navigation.search.highlight", "navigation.search.suggestions", "navigation.search.suggestions.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.code.expand", "content.code.highlight", "content.code.tabs", "content.code.toggle", "content.code.wrap", "content.code.include", "content.code.include.highlight", "content.code.include.tabs", "content.code.include.toggle", "content.code.include.wrap", "content.code.include.tabs", "navigation.instant.progress", "navigation.instant.preview", "navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
