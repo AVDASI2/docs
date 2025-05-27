@@ -9,7 +9,7 @@ Each script should be able to be executed individually but Main.py allows you to
 Links all the scripts together. Call each script as a function after defining them up top.
 
 ```python title="main.py"
---8<-- "docs/code/main_example.py"
+--8<-- "docs/code/Example Code/main_example.py"
 ```
 
 ## GS.py {#gs-py}
