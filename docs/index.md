@@ -2,7 +2,7 @@
 
 This site contains general documentation for the [AVDASI 2](https://github.com/AVDASI2) course.
 
-It's hosted on the [AVDASI 2 GitHub org](https://github.com/AVDASI2), and uses [MkDocs](https://www.mkdocs.org) auto-compiled via a GitHub Action. AVDASI 2 members can push changes to the docs which will be approved by an owner and published. If you want to trial stuff locally first just clone the repo and do:
+It's hosted on the [AVDASI 2 GitHub org](https://github.com/AVDASI2), and uses [MkDocs](https://www.mkdocs.org) auto-compiled via a GitHub Action. Code from the [AVDASI 2 Example_Code repo](https://github.com/AVDASI2/Example_Code) is also auto-synced to the docs using GitHub Action so code snippets can be displayed and will update after every new push. AVDASI 2 members can push changes to the docs which will be approved by an owner and published. If you want to trial stuff locally first just clone the repo and do:
 
 ```bash
 pip install mkdocs-material mkdocs-implicit-index
