@@ -10,3 +10,4 @@ The goal of this section is to lay out a minimum viable product for the avionics
 - [I2C & LUA](I2C&LUA.md)
 - [Data Logging](Data-Logging.md)
 - [Example Code](Example-code.md)
+- [Pressure Sensor PDF](pressure.md)
