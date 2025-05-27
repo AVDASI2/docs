@@ -20,9 +20,9 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - name: Clone Example_Code repo and copy all contents to docs/code
+      - name: Clone avdasi2-avionics-demo repo and copy all contents to docs/code
         run: |
-          git clone --depth=1 https://github.com/AVDASI2/Example_Code.git temp_code
+          git clone --depth=1 https://github.com/AVDASI2/avdasi2-avionics-demo temp_code
           mkdir -p docs/code
           cp -r temp_code/* docs/code/
           echo "Contents copied to docs/code:"
