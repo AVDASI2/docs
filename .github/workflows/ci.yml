@@ -20,14 +20,14 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - name: Clone Example_Code repo and copy .py files with folder structure
+      - name: Clone Example_Code repo and copy .py files with folder structure using rsync
         run: |
           git clone --depth=1 https://github.com/AVDASI2/Example_Code.git temp_code
           mkdir -p docs/code
           echo "Listing all .py files found:"
           find temp_code -name "*.py"
-          echo "Copying .py files with directory structure..."
-          find temp_code -name "*.py" -exec cp --parents {} docs/code/ \;
+          echo "Copying .py files with rsync..."
+          rsync -av --include='*/' --include='*.py' --exclude='*' temp_code/ docs/code/
           echo "Copy done. Directory listing of docs/code:"
           ls -R docs/code
           rm -rf temp_code
