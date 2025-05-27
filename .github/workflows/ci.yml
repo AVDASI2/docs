@@ -20,12 +20,15 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - name: Clone Example_Code repo
+      - name: Clone Example_Code repo and copy .py files
         run: |
           git clone --depth=1 https://github.com/AVDASI2/Example_Code.git temp_code
           mkdir -p docs/code
-          cp temp_code/*.py docs/code/ || true  # Adjust this path to match what files you want
+          find temp_code -name "*.py" -exec cp {} docs/code/ \;
           rm -rf temp_code
+
+      - name: Debug copied files
+        run: ls -R docs/code || echo "No files copied"
 
       - uses: actions/setup-python@v5
         with:
