@@ -9,7 +9,7 @@ Mission planner is the software used to communicate and control the cube. Your c
 ## Connecting
 Mission Planner can be connected to the Cube over Wifi and USB. If connecting through USB, <u>**make sure to use the buzzer**</u>; do not plug the cable directly into the Cube. In mission planner, on the top right of the window, you will see two selection boxes and a `Connect` button. If you know which `COM` terminal you plugged the USB into, select it, but there is an `AUTO` function too. 
 
-!!! tip Wait until the cube buzzes before clicking connect.
+!!! tip "Wait until the cube buzzes before clicking connect."
 
 ![Connecting MP](assets/connect-MP.png)
 
@@ -25,7 +25,7 @@ When first connecting to the cube, there are a few parameters that need changing
 
 To access parameters, go to config and then full parameter list. This opens up every single parameters available for you to change. Scroll or search for `NFT_BUZZ_VOLUME` and turn it down so the cube doesn’t scream at you every time you turn it on. Then click `write params` and congratulations you’ve changed the cube settings. 
 
-!!! info Don’t forget to save your parameters every so often so you don’t lose them.
+!!! info "Don’t forget to save your parameters every so often so you don’t lose them."
 
 Uselful Parameters:
 
