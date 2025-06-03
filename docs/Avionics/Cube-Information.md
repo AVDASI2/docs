@@ -4,13 +4,14 @@ The Cube Orange+ is a high-performance open-source flight controller designed fo
 It simplifies integration with ArduPilot, featuring built-in telemetry ports and onboard SD card logging for mission data.
 
 ![Cube Diagram](assets/cube-diagram.png)
+
 Image Credit: Ardupilot
 
 !!! warning "The cube is a very expensive research grade flight computer so please don’t blow it up"
- Always use the buzzer adapter when connecting over USB and the stop button when using the power source. 
- Never plug directly into USB
- Unplug if you see voltage/current spikes of the buzzer starts making noise. 
- If you see blue smoke, its too late
+    Always use the buzzer adapter when connecting over USB and the stop button when using the power source. 
+    Never plug directly into USB
+    Unplug if you see voltage/current spikes of the buzzer starts making noise. 
+     If you see blue smoke, its too late
 
 [Cube User Manual (cubepilot.org)](https://docs.cubepilot.org/user-guides/autopilot/the-cube-user-manual)
 
@@ -43,3 +44,5 @@ The student-built avionics should be able to:
 | AUX OUT 1    | Power pin       |
 | MAIN OUT 1-8 | Servo pins      |
 | I2C 2        | I2C sensor      |
+
+Add image of full system.
