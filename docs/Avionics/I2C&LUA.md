@@ -1,23 +1,27 @@
 # I2C & LUA
 
-Ardupilot specific LUA documentation: [LUA docs](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua)
+The Cube supports I2C communication, allowing you to connect a wide range of external sensors like airspeed sensors, magnetometers, and rangefinders using a shared two-wire interface. I²2 devices must be correctly addressed and powered, with care taken to avoid address conflicts. 
 
-Ardupilot scripting support page: [Common LUA scripts](https://ardupilot.org/copter/docs/common-lua-scripts.html)
+The Cube also supports Lua scripting (via ArduPilot), enabling onboard automation such as custom failsafes, LED behavior, telemetry filtering, or mission logic without requiring firmware modification. Lua is a lightweight, high-level scripting language designed for embedded systems, making it ideal for writing custom logic directly on the Cube.
 
-I2C documentation: [I2C-bus specification and user manual](https://www.nxp.com/docs/en/user-guide/UM10204.pdf)
+Ardupilot specific LUA documentation: [LUA docs (github.com/ArduPilot)](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua)
 
-This part of the document will provide basic information on how to set up I2C from both the hardware (wiring) and software side (through LUA scripts; see example code for further help).
+Ardupilot scripting support page: [Common LUA scripts (ardupilot.com)](https://ardupilot.org/copter/docs/common-lua-scripts.html)
+
+I2C documentation: [I2C-bus specification and user manual (nxp.com)](https://www.nxp.com/docs/en/user-guide/UM10204.pdf)
+
+This part of the document will provide basic information on how to set up I2C from both the hardware (wiring) and software side (through LUA scripts; see [I2C.py](Example-code.md#I2C-py) for further help).
 
 ## Wiring of the I2C bus
 
 An I2C serial bus uses two wires (not counting VCC and neutral): SCL – clock & SDA – data. Being a multi-master/multi-slave, half-duplex protocol, multiple controllers and devices can be connected to the same bus, but only one can transmit at a time.
 
-The wiring of the serial bus itself is straightforward: connect the SCL line to the SCL pins and the SDA line to the SDA pins of all devices on the bus, as seen in Figure 1. **It is very important, however, that both the SDA and SCL lines require pull-up resistors**S connected to the logical high voltage of the selected microcontroller that will pull the line high when needed. There is a complex way of sizing the resistance of these resistors with high and low resistances both having pros and cons, but generally 4.7 kΩ is perfectly suitable for this kind of application. 
+The wiring of the serial bus itself is straightforward: connect the SCL line to the SCL pins and the SDA line to the SDA pins of all devices on the bus, as seen in Figure 1. **It is very important, however, that both the SDA and SCL lines require pull-up resistors** connected to the logical high voltage of the selected microcontroller that will pull the line high when needed. There is a complex way of sizing the resistance of these resistors with high and low resistances both having pros and cons, but generally 4.7 kΩ is perfectly suitable for this kind of application. 
 
 If the Cube is directly used as the master, then there is no need for dedicated external pull-up resistors as there are built-in ones in the flight controller.
 
 ![Mock-up of an I2C serial bus](assets/I2C-bus.png)
-Mock-up of an I2C serial bus
+Mock-up of an I2C serial bus. Image credit: https://learn.sparkfun.com/tutorials/i2c/all 
 
 ## Enabling scirpting on the CubePilot
 
@@ -45,6 +49,6 @@ The data read from the registers will come in the shape of an array of bites and
 
 ![Endianness in a two-byte system](assets/endiannes.png)
 
-Endianness in a two-byte system
+Endianness in a two-byte system. Image credit: https://www.allaboutcircuits.com/technical-articles/big-endian-little-endian-endianness-byte-arrangement-digital-systems/ 
 
-The example code will showcase the basic bit operations that will help extract the data from the bit array the data was transmitted in in both big- and little-endian systems. 
+The example code [I2C.py](Example-code.md#I2C-py) will showcase the basic bit operations that will help extract the data from the bit array the data was transmitted in in both big- and little-endian systems. 

@@ -12,3 +12,10 @@ This command takes 7 parameters:
 ```
 (target_system, target_component, command, confirmation, param1 - 7)
 ```
+
+!!! tip Make sure to disconnect from Mission Planner before connecting throug PyMAVLink, otherwise it won't work.
+
+!!! info pyMAVLINK “module not found” error
+    Run `pip --upgrade --force-reinstall pymavlink` in an administrator command prompt
+
+    
