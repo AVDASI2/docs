@@ -4,7 +4,7 @@
 
 The flight controller automatically creates a log of all its sensors (IMUs, temp. sensors, etc.) and its attitude changes during operation into a .bin file. These are necessary to analyse the behaviour of the drone in the wind tunnel and should be downloaded after each test so that the appropriate Teams of the Company can use their data.
 
-!!! warning The cube must be armed in order to log data
+!!! warning "The cube must be armed in order to log data"
 
 ## Optional: Logging through LUA scripts
 

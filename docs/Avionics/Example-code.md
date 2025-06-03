@@ -9,21 +9,55 @@ Each script should be able to be executed individually but Main.py allows you to
 Links all the scripts together. Call each script as a function after defining them up top.
 
 ```python title="main.py"
---8<-- "docs/code/Example Code/main_example.py"
+--8<-- "docs/code/GCS/main_example.py"
 ```
 
 ## GS.py {#gs-py}
 
 This script is what connects the cube to your ground station. It creates the connection, waits for a heartbeat, and after heartbeat is received it listens and prints messages. There’s a wide range of messages and statuses you can listen for from the cube, some more useful than others, so up to you to figure out which ones you want. It also notifies you if the heartbeat is interrupted.
 
+```python title="GS.py"
+--8<-- "docs/code/GCS/GS_example.py"
+```
+
 ## Arm.py {#arm-py}
 
 This script allows you to arm/disarm the cube and toggle its safety switch. Arming allows logging and the safety switch locks all servo movement. 
+
+```python title="Arm.py"
+--8<-- "docs/code/GCS/Arm_example.py"
+```
 
 ## Servo.py
 
 This script actuates the movement of a servo. You’ll have to edit it to allow multiple servos moving simultaneously. 
 
+```python title="Servo.py"
+--8<-- "docs/code/GCS/Servo_example.py"
+```
+
 ## UI.py
 
 This script is a barebones user interface for a GCS. It uses tkinter python module. This was used for its simplicity but you can use whatever module or language you want (there’s some that can make really nice looking UIs). The UI calls functions from the previous arming and servo controller scripts and maps them to buttons. It also allows you to input a specific servo angle and move the servo accordingly.
+
+```python title="UI.py"
+--8<-- "docs/code/GCS/UI_example.py"
+```
+
+## I2C.lua {#I2C-lua}
+
+```lua title="I2C.lua"
+--8<-- "docs/code/Onboard/I2C_LUA_example.lua"
+```
+
+## Mode-Switch.lua
+
+```lua title="Mode-Switch.lua"
+--8<-- "docs/code/Onboard/Mode_switch_example.lua"
+```
+
+## Onboard-Sensor.lua
+
+```lua title="Onboard-Sensor.lua"
+--8<-- "docs/code/Onboard/onboard_sensor_example.lua"
+```

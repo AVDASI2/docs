@@ -10,7 +10,7 @@ Ardupilot scripting support page: [Common LUA scripts (ardupilot.com)](https://a
 
 I2C documentation: [I2C-bus specification and user manual (nxp.com)](https://www.nxp.com/docs/en/user-guide/UM10204.pdf)
 
-This part of the document will provide basic information on how to set up I2C from both the hardware (wiring) and software side (through LUA scripts; see [I2C.py](Example-code.md#I2C-py) for further help).
+This part of the document will provide basic information on how to set up I2C from both the hardware (wiring) and software side (through LUA scripts; see [I2C.lua](Example-code.md#I2C-lua) for further help).
 
 ## Wiring of the I2C bus
 
@@ -51,4 +51,4 @@ The data read from the registers will come in the shape of an array of bites and
 
 Endianness in a two-byte system. Image credit: https://www.allaboutcircuits.com/technical-articles/big-endian-little-endian-endianness-byte-arrangement-digital-systems/ 
 
-The example code [I2C.py](Example-code.md#I2C-py) will showcase the basic bit operations that will help extract the data from the bit array the data was transmitted in in both big- and little-endian systems. 
+The example code [I2C.lua](Example-code.md#I2C-lua) will showcase the basic bit operations that will help extract the data from the bit array the data was transmitted in in both big- and little-endian systems. 
