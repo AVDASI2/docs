@@ -8,10 +8,11 @@ It simplifies integration with ArduPilot, featuring built-in telemetry ports and
 Image Credit: Ardupilot
 
 !!! warning "The cube is a very expensive research grade flight computer so please don’t blow it up"
-    Always use the buzzer adapter when connecting over USB and the stop button when using the power source. 
-    Never plug directly into USB
-    Unplug if you see voltage/current spikes of the buzzer starts making noise. 
-     If you see blue smoke, its too late
+    
+    Always use the buzzer adapter when connecting over USB and the stop button when using the power source.  
+    Never plug directly into USB.  
+    Unplug if you see voltage/current spikes or if the buzzer starts making noise.  
+    If you see blue smoke, it's too late.
 
 [Cube User Manual (cubepilot.org)](https://docs.cubepilot.org/user-guides/autopilot/the-cube-user-manual)
 
