@@ -1,17 +1,22 @@
 # Cube Information
 
-Basic information about the cube. Say what each in/out does and how to do the initial plug in setup.
+The Cube Orange+ is a high-performance open-source flight controller designed for professional UAVs and robotics.
+It simplifies integration with ArduPilot, featuring built-in telemetry ports and onboard SD card logging for mission data.
 
 ![Cube Diagram](assets/cube-diagram.png)
+Image Credit: Ardupilot
 
+!!! warning "The cube is a very expensive research grade flight computer so please don’t blow it up"
+ Always use the buzzer adapter when connecting over USB and the stop button when using the power source. 
+ Never plug directly into USB
+ Unplug if you see voltage/current spikes of the buzzer starts making noise. 
+ If you see blue smoke, its too late
 
-The cube is a very expensive research grade flight computer so please don’t blow it up. 
+[Cube User Manual (cubepilot.org)](https://docs.cubepilot.org/user-guides/autopilot/the-cube-user-manual)
 
-[Cube User Manual](https://docs.cubepilot.org/user-guides/autopilot/the-cube-user-manual)
+[Servo Movement documentation (ardupilot.org)](https://ardupilot.org/dev/docs/mavlink-move-servo.html)
 
-[Servo Movement documentation](https://ardupilot.org/dev/docs/mavlink-move-servo.html)
-
-[MAVLink common messages](https://mavlink.io/en/messages/common.html)
+[MAVLink common messages (mavlink.io)](https://mavlink.io/en/messages/common.html)
 
 ## Requirements
 
@@ -29,4 +34,12 @@ The student-built avionics should be able to:
 
 ## Cube Setup
 
-Plug this here and this there
+|   Port       | What to plug in |
+|--------------|-----------------|
+| Power 1      | Power plug      |
+| USB          | USB dongle      |
+| Telem 1      | Wifi chip       |
+| RC in        | RC transmitter  |
+| AUX OUT 1    | Power pin       |
+| MAIN OUT 1-8 | Servo pins      |
+| I2C 2        | I2C sensor      |

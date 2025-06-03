@@ -1,4 +1,4 @@
-# AVDASI 2 Avionics Guidelines
+# Avionics Guidelines
 
 The goal of this section is to lay out a minimum viable product for the avionics portion of the AVDASI 2 course.
 

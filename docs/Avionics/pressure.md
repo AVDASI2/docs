@@ -80,7 +80,7 @@ v2 hacked about by Steve
 maybe reissued when I can get his LaTeX!
 
 
-![Page Image](images/page_1.png)
+![Page Image](images-pdf/page_1.png)
 
 # Page 2
 
@@ -149,7 +149,7 @@ analogue inputs. There is a green LED next to each pressure sensor indicating th
 Page 2 of 7
 
 
-![Page Image](images/page_2.png)
+![Page Image](images-pdf/page_2.png)
 
 # Page 3
 
@@ -194,7 +194,7 @@ tubes you add to the inputs should therefore also be epoxied in place. To test w
 Page 3 of 7
 
 
-![Page Image](images/page_3.png)
+![Page Image](images-pdf/page_3.png)
 
 # Page 4
 
@@ -317,7 +317,7 @@ on boot and calculates the average for each sensor. This allows each sensor to h
 Page 5 of 7
 
 
-![Page Image](images/page_5.png)
+![Page Image](images-pdf/page_5.png)
 
 # Page 6
 
@@ -356,7 +356,7 @@ Page 6 of 7
 Test Plan
 
 
-![Page Image](images/page_6.png)
+![Page Image](images-pdf/page_6.png)
 
 # Page 7
 
@@ -383,5 +383,5 @@ sentences)
 Page 7 of 7
 
 
-![Page Image](images/page_7.png)
+![Page Image](images-pdf/page_7.png)
 

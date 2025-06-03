@@ -1,3 +1,6 @@
+#Vibe coded a pdf scrapper for fun
+
+
 import fitz  # PyMuPDF
 from pdf2image import convert_from_path
 import os
