@@ -17,7 +17,7 @@ Image credit: Mission Planner
 
 Using the Wifi module is a bit different but simple. After setting up the Wifi chip (for more information see [Wifi](Wifi.md)), connect the chip to the Cube’s `Telem1/Telem2` port and your computer to the Wifi network. Select the `UDP` setting and hit connect.
 
-!!! tip If not working, make sure you're still connected to the chip (and not Eduroam) and your GCS isn't connected to the cube
+!!! tip "If not working, make sure you're still connected to the chip (and not Eduroam) and your GCS isn't connected to the cube"
 
 ## Parameters
 
