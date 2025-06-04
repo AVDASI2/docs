@@ -1,3 +1,3 @@
 # Structures
 
-Example homeage
+Example homepage
