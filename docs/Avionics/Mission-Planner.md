@@ -107,3 +107,4 @@ The `Servo/Relay` panel allows you to manually move servos in Mission Planner.
 ![servo MP](assets/servo-MP.png)
 
 !!! tip "Make sure safety toggle is off or you won't be able to move anything"
+    You'll also need to have set up the parameters for the servo you want to move
