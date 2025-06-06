@@ -10,7 +10,7 @@ The data in stored in .bin files. The easiest way to access these files is pulli
 
 These logs can also be accessed through Mission Planner by clicking the `Download DataFlash Log Via Mavlink` button in the `DataFlash Logs` panel.
 
-![log MP](assets/log-MP.png)
+![log MP](assets/logs-MP.png)
 
 This open up the `Log Downloader` menu, showing all avaible log files which you can download from here.
 
