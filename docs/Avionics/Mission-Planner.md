@@ -92,6 +92,18 @@ Rudder Control:
 | `SERVO4_TRIM`    | CALC   | Neutral PWM value.              |
 
 
-## Servo/Actions
+## Servo Actions
 
-`Ctrl F` opens up some sort of settings thing. Click `toggle servo safety` to turn off safety. In `Actions` there’s the arm button.
+`Ctrl F` opens up some a settings menu. Click `toggle servo safety` as seen below to turn off the safety. 
+
+![Toggle safety MP](assets/toggle_safety-MP.png)
+
+In `Actions` there’s the arm button as seen below. This panel also allows you to manually set the flight mode.
+
+![Arm MP](assets/arm-MP.png)
+
+The `Servo/Relay` panel allows you to manually move servos in Mission Planner.
+
+![servo MP](assets/servo-MP.png)
+
+!!! tip "Make sure safety toggle is off or you won't be able to move anything"
