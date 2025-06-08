@@ -32,11 +32,11 @@ To access the app you first need to download MatLab's `UAV Toolbox` extension fr
 
 ![UAV Toolbox](assets/UAV_Toolbox.png)
 
-After opening the `Flight Lob Analyser` app. Click import to import your .bin file downloaded using a method from [Downloading Cube logs](Data-Logging.md#downloading-cube-logs).
+After opening the `Flight Lob Analyser` app. Click import to import your .bin file previosuly downloaded using a method from [Downloading Cube logs](Data-Logging.md#downloading-cube-logs).
 
 ![import MatLab](assets/import-MatLab.png)
 
-!!! note It may take a while for large .bin files to load
+!!! note "It may take a while for large .bin files to load"
 
 The next step is is adding the desired signals you want to analyse. This is done by clicking the `Add Custom Signal` button. This will open the `Add Custom Signal` menu with a list of all the signals that the cube logged. 
 

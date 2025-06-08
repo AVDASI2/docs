@@ -46,6 +46,8 @@ This script is a barebones user interface for a GCS. It uses tkinter python modu
 
 ## I2C.lua {#I2C-lua}
 
+This script gives an overview on how to write onboard code in LUA for the Cube and how to communicate using the I2C protocol.
+
 ```lua title="I2C.lua"
 --8<-- "docs/code/Onboard/I2C_LUA_example.lua"
 ```
@@ -56,8 +58,3 @@ This script is a barebones user interface for a GCS. It uses tkinter python modu
 --8<-- "docs/code/Onboard/Mode_switch_example.lua"
 ```
 
-## Onboard-Sensor.lua
-
-```lua title="Onboard-Sensor.lua"
---8<-- "docs/code/Onboard/onboard_sensor_example.lua"
-```

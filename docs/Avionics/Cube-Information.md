@@ -4,6 +4,7 @@ The Cube Orange+ is a high-performance open-source flight controller designed fo
 It simplifies integration with ArduPilot, featuring built-in telemetry ports and onboard SD card logging for mission data.
 
 ![Cube Diagram](assets/cube-diagram.png)
+![Cube](assets/cube.png)
 
 Image Credit: Ardupilot
 

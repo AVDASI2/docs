@@ -25,6 +25,8 @@ When first connecting to the cube, there are a few parameters that need changing
 
 To access parameters, go to config and then full parameter list. This opens up every single parameters available for you to change. Scroll or search for `NFT_BUZZ_VOLUME` and turn it down so the cube doesn’t scream at you every time you turn it on. Then click `write params` and congratulations you’ve changed the cube settings. 
 
+![Param MP](assets/Param-MP.png)
+
 !!! info "Don’t forget to save your parameters every so often so you don’t lose them."
 
 Uselful Parameters:
