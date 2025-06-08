@@ -20,4 +20,4 @@ This MkDocs is configured to use [mkdocs-literate-nav](https://oprypin.github.io
 
 - [Avionics](Avionics/)
 - [Aerodynamics](Aerodynamics/)
-- [Structues](Structues/)
+- [Structures](Structures/)
