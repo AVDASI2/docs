@@ -4,7 +4,8 @@ A series of scripts were written to show a minimum viable ground station. Keep i
 
 Each script should be able to be executed individually but Main.py allows you to execute them all simultaneously. You don’t need to take your approach in your own GS but this is good since you can debug each function independently.
 
-All these scripts are stored in the [avdasi2-avionics-demo](https://github.com/AVDASI2/avdasi2-avionics-demo) GitHub repository and can be accessed there. You can clone that repository to start your own code.
+!!! info "All these scripts are stored in the [avdasi2-avionics-demo](https://github.com/AVDASI2/avdasi2-avionics-demo) GitHub repository and can be accessed there."
+    You can clone that repository to start your own code.
 
 ## Main.py
 
