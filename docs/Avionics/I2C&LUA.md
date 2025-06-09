@@ -2,7 +2,15 @@
 
 The Cube supports I2C communication, allowing you to connect a wide range of external sensors like airspeed sensors, magnetometers, and rangefinders using a shared two-wire interface. I²2 devices must be correctly addressed and powered, with care taken to avoid address conflicts. 
 
+!!! info "I2C (Inter-Integrated Circuit) is a two-wire communication protocol that allows multiple digital devices to communicate over a shared bus."
+    It’s useful because it reduces wiring complexity and enables efficient communication between sensors, microcontrollers, and other peripherals.
+
 The Cube also supports Lua scripting (via ArduPilot), enabling onboard automation such as custom failsafes, LED behavior, telemetry filtering, or mission logic without requiring firmware modification. Lua is a lightweight, high-level scripting language designed for embedded systems, making it ideal for writing custom logic directly on the Cube.
+
+!!! tip "Don't be scared of LUA!"
+    Its a strange programming language but needs to be used as its the only way to write onboard code for the Cube.
+
+    You'll get used to it don't worry.
 
 Ardupilot specific LUA documentation: [LUA docs (github.com/ArduPilot)](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua)
 
