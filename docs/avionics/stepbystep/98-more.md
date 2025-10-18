@@ -4,7 +4,7 @@ Sorry, docs are quite incomplete at present! Here are links for next steps.
 
 ## Servos
 
-* [Ardupilot Servos](https://ardupilot.org/copter/docs/common-servo.html)
+* [Ardupilot Servos](https://ardupilot.org/plane/docs/common-servo.html)
 
 You can test these via Mission Planner's 'servos' tab.
 

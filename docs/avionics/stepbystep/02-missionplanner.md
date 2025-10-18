@@ -5,23 +5,25 @@ Mission Planner is a full-featured ground station application for the ArduPilot 
 !!! info
     Mission Planner requires Windows - I've had some success running it via [Whisky](https://getwhisky.app) on my Mac (update: Whisky is being discontinued, try [WINE](https://www.winehq.org) either directly or via [CrossOver](https://www.codeweavers.com/crossover), or use [Parallels](https://www.parallels.com), [VirtualBox](https://www.virtualbox.org) or [VMWare](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)), but the uni cannot offer support for this approach. **Never** use virtualisation for flight (and wind tunnel) operations.
 
+    Update: there is a [macOS dev build](https://github.com/ArduPilot/MissionPlanner/releases/tag/osxlatest), but it's not an official release yet, and can't flash firmware at the moment. [QGroundControl](https://qgroundcontrol.com) is a cross-platform alternative but the Flight Lab focuses on Mission Planner on Windows.
+
 Take a look at Ardupilot's overview page, then install Mission Planner.
 
 * [:material-step-forward:Ardupilot - Mission Planner Overview](https://ardupilot.org/planner/docs/mission-planner-overview.html)
 * [:material-step-forward:Ardupilot - Installing Mission Planner](https://ardupilot.org/planner/docs/mission-planner-installation.html)
 
 !!! info "Mission Planner/Altitude Angel"
-    Updated Sept 2025. Mission Planner now prompts you to log in to Altitude Angel - you don't need to do this. Altitude Angel is a flight-restriction update service, which is handy for outdoor flying but their scope does not cover our wind tunnels.
+    Updated Sept 2025. Mission Planner now prompts you to log in to Altitude Angel - you don't need to do this. Altitude Angel is a flight-restriction update service, which is handy for outdoor flying but their scope does not cover our wind tunnels. Update: Altitude Angel went bankrupt in Oct 2025.
 
 ## Connecting
 
 For this first stage we'll power the Cube from your computer's USB port.
 
 !!! warning "A really important note on power"
-    **Do not plug anything else into the Cube if you're just powering from USB**. Your laptop's USB port is limited in the current it can supply, and servos can draw significant current when stalled (more on this in later steps). In short, if you plug stuff in and do the wrong thing you can at best **fry the Cube** (putting your Team, Division, and Company's success at risk), and at worst **fry your laptop** (possibly putting your degree and life at risk - back things up, kids!).
+    **Be careful what you plug into the Cube if you're just powering from USB**. Your laptop's USB port is limited in the current it can supply, and servos can draw significant current when stalled (more on this in later steps). The Cube shouldn't try to pull too much from the USB port, and you should power servos from a separate supply connected to the servo rail (see later section). In short, if you plug stuff in and do the wrong thing you can at best **fry the Cube** (putting your Team, Division, and Company's success at risk), and at worst **fry your laptop** (possibly putting your degree and life at risk - back things up, kids!).
 
 !!! warning "Another important note on connectors"
-    The micro-USB connector on the side of the Cube is notoriously fragile. To prevent *expensive* damage, please use the USB socket/buzzer assembly supplied to connect (these are much cheaper to replace).
+    The micro-USB connector on the side of the Cube is notoriously fragile. To prevent *expensive* damage, please use the USB port on the socket/buzzer assembly supplied (these are much cheaper to replace).
 
 Connect the USB/buzzer assembly to the carrier board's `USB` port. Follow the Ardupilot instructions, making sure you use that USB socket. When you are asked to select firmware, choose ArduPlane. Connect Mission Planner to the Autopilot and check things work as expected (ignore the parts about telemetry and multiple vehicles).
 
