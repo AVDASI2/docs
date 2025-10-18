@@ -103,5 +103,6 @@ nav:
       #- 10. Luascript:        avionics/stepbystep/10-lua.md
       - More:          avionics/stepbystep/98-more.md
       #- 99. Summary:          avionics/stepbystep/99-summary.md
+    - Sensors: avionics/sensors.md
     - Example Code: avionics/examplecode.md
     - Expert links: avionics/links.md
