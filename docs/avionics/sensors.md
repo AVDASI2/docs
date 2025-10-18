@@ -6,7 +6,7 @@ The Cube can interface with sensors via a range of protocols. The most relevant 
 
 The Cube only has one available ADC, which is fine for a single input e.g. a flap angle sensor. If you want to sense more channels (e.g. a fully-integrated UAV with two flaps - which **isn't** a core requirement for the unit) then you'll need some external ADCs, which are provided in your kit on a breakout board. It is strongly suggested that you begin with the internal ADC, as I2C compatibility can be tricky.
 
-## Sensors
+## Sensor types
 
 There are a vast range of sensors available, but for the purposes of this unit we're interested in _angle_ and/or _position_. Sensors can be _discrete_ e.g. limit switches or light gates, or _continuous_ e.g. a potentiometer outputting a voltage corresponding to its angle of rotation.
 
@@ -60,7 +60,9 @@ You could test sensors initially using your Picos that you're familiar with, or 
 * Use the Ardupilot [ADC input instructions](https://ardupilot.org/plane/docs/common-analog-pins.html) and the Ardupilot's [Cube overview page](https://ardupilot.org/plane/docs/common-thecubeorange-overview.html) to log data from your analog sensor (hint: Cube overview page notes it's ADC is Ardupilot pin 8).
 * [Possibly useful example Luascript](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/analog_input_and_GPIO.lua).
 * Ah yes, [Luascripts](https://ardupilot.org/copter/docs/common-lua-scripts.html) - more later...
+* And [logs](https://ardupilot.org/copter/docs/common-logs.html#logs).
 * More help to follow here...
+
 
 
 ## I2C
