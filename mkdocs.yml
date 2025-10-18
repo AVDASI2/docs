@@ -93,9 +93,9 @@ nav:
       - 00. Kit:              avionics/stepbystep/00-kit.md
       - 01. Cube:             avionics/stepbystep/01-cube.md
       - 02. Mission Planner:  avionics/stepbystep/02-missionplanner.md
-      #- 03. Power:            avionics/stepbystep/03-power.md
-      #- 04. Servos:           avionics/stepbystep/04-servos.md
-      #- 05. Telemetry:        avionics/stepbystep/05-telemetry.md
+      - 03. Telemetry:        avionics/stepbystep/03-telemetry.md
+      - 04. Power:            avionics/stepbystep/04-power.md
+      - 05. Servos:           avionics/stepbystep/05-servos.md
       #- 06. Radio control:    avionics/stepbystep/06-rc.md
       #- 07. Data logging:     avionics/stepbystep/07-datalog.md
       #- 08. PyMAVLink:        avionics/stepbystep/08-pymavlink.md
