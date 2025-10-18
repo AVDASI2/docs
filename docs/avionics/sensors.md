@@ -59,6 +59,7 @@ You could test sensors initially using your Picos that you're familiar with, or 
 * Make a cable to connect to the ADC port as described in the Cube [interface specification](https://docs.cubepilot.org/user-guides/autopilot/the-cube/introduction/interface-specifications#analog-or-port-adc) - see the Avionics support team for a crimping induction. Note that the ADC port has +5V out, ADC in, and Ground, and the full ADC range is 6.6V (things run internally at 3.3V and there will be an internal potential divider circuit).
 * Use the Ardupilot [ADC input instructions](https://ardupilot.org/plane/docs/common-analog-pins.html) and the Ardupilot's [Cube overview page](https://ardupilot.org/plane/docs/common-thecubeorange-overview.html) to log data from your analog sensor (hint: Cube overview page notes it's ADC is Ardupilot pin 8).
 * [Possibly useful example Luascript](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/analog_input_and_GPIO.lua).
+* Ah yes, [Luascripts](https://ardupilot.org/copter/docs/common-lua-scripts.html) - more later...
 * More help to follow here...
 
 
