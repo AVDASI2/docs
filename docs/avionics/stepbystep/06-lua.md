@@ -12,6 +12,7 @@ Ardupilot scripting support pages:
 
 * [:material-information: Lua scripts](https://ardupilot.org/plane/docs/common-lua-scripts.html)
 * [:material-information: Script setup and use examples](https://ardupilot.org/plane/docs/common-scripting-step-by-step.html)
+* [:material-information: Script examples](https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples) - really wide range
 
 ## Enabling scripting on the CubePilot
 
