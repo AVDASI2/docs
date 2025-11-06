@@ -96,7 +96,7 @@ nav:
       - 03. Telemetry:        avionics/stepbystep/03-telemetry.md
       - 04. Power:            avionics/stepbystep/04-power.md
       - 05. Servos:           avionics/stepbystep/05-servos.md
-      - 06. Luascript:        avionics/stepbystep/10-lua.md
+      - 06. Luascript:        avionics/stepbystep/06-lua.md
       #- 07. Radio control:    avionics/stepbystep/06-rc.md
       #- 08. Data logging:     avionics/stepbystep/07-datalog.md
       #- 09. PyMAVLink:        avionics/stepbystep/08-pymavlink.md
@@ -107,4 +107,5 @@ nav:
     - Sensors: avionics/sensors.md
     - Example Code: avionics/examplecode.md
     - Expert links: avionics/links.md
+
 
