@@ -57,11 +57,8 @@ There are two main areas of integration considerations when selecting a sensor -
 You could test sensors initially using your Picos that you're familiar with, or just with a multimeter! When you're ready to integrate with the Cube:
 
 * Make a cable to connect to the ADC port as described in the Cube [interface specification](https://docs.cubepilot.org/user-guides/autopilot/the-cube/introduction/interface-specifications#analog-or-port-adc) - see the Avionics support team for a crimping induction. Note that the ADC port has +5V out, ADC in, and Ground, and the full ADC range is 6.6V (things run internally at 3.3V and there will be an internal potential divider circuit).
-* Use the Ardupilot [ADC input instructions](https://ardupilot.org/plane/docs/common-analog-pins.html) and the Ardupilot's [Cube overview page](https://ardupilot.org/plane/docs/common-thecubeorange-overview.html) to log data from your analog sensor (hint: Cube overview page notes it's ADC is Ardupilot pin 8).
-* [Possibly useful example Luascript](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/analog_input_and_GPIO.lua).
-* Ah yes, [Luascripts](https://ardupilot.org/copter/docs/common-lua-scripts.html) - more later...
-* And [logs](https://ardupilot.org/copter/docs/common-logs.html#logs).
-* More help to follow here...
+* Use the Ardupilot [ADC input instructions](https://ardupilot.org/plane/docs/common-analog-pins.html) and the Ardupilot's [Cube overview page](https://ardupilot.org/plane/docs/common-thecubeorange-overview.html) to view data from your analog sensor (hint: Cube overview page notes it's ADC is Ardupilot pin 8).
+* To save the data from your analog sensor, it is simplest to log it to a file in the Cube's SD card. To do this, you must use a lua script, uploaded to the Cube. A basic working example script, which will log data from the analog sensor once per second for a minute, then save it to a .csv in the Cube's SD card, is available in the "06. Lua Scripts" page of these docs.
 
 
 
@@ -70,5 +67,6 @@ You could test sensors initially using your Picos that you're familiar with, or 
 https://en.wikipedia.org/wiki/I²C
 
 Your I2C ADC board: https://uk.rs-online.com/web/p/analogue-development-tools/2163761?gb=s 
+
 
 More to follow here too...
