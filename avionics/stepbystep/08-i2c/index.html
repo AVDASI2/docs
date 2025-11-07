@@ -1,0 +1,1295 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avdai2.github.io/docs/avionics/stepbystep/08-i2c/">
+      
+      
+        <link rel="prev" href="../07-adc/">
+      
+      
+        <link rel="next" href="../98-more/">
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>08. I2C - AVDASI 2 docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="flightlab" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i2c-inter-integrated-circuit-communication" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="AVDASI 2 docs" class="md-header__button md-logo" aria-label="AVDASI 2 docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AVDASI 2 docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              08. I2C
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="flightlab" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="flightlab_dark" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AVDASI 2 docs" class="md-nav__button md-logo" aria-label="AVDASI 2 docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    AVDASI 2 docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Avionics
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Avionics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10 8 3.57l-1.91.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.42 5.31-1.43 4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86"></path></svg>
+  
+  <span class="md-ellipsis">
+    Step-by-step guide
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Step-by-step guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    00. Kit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-cube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Cube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-missionplanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Mission Planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-telemetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Telemetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Power
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-servos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Servos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-lua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Lua Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-adc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. ADC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    08. I2C
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. I2C
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i2c-bus-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      I²C Bus Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiring-into-the-cubes-i2c-bus-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wiring into the Cube's I²C Bus Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-i2c-lua-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using I²C: Lua Scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dfrobot-ads1115-adc-example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      DFRobot ADS1115 ADC Example Script
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98-more/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    More
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensors/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"></path></svg>
+  
+  <span class="md-ellipsis">
+    Sensors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examplecode/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41zm11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41z"></path></svg>
+  
+  <span class="md-ellipsis">
+    Example Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../links/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 17H4C2.38 17 .96 15.74.76 14.14l-.5-2.99C.15 10.3.39 9.5.91 8.92S2.19 8 3 8h6c.83 0 1.58.35 2.06.96.11.15.21.31.29.49.43-.09.87-.09 1.29 0 .08-.18.18-.34.3-.49C13.41 8.35 14.16 8 15 8h6c.81 0 1.57.34 2.09.92.51.58.75 1.38.65 2.19l-.51 3.07C23.04 15.74 21.61 17 20 17h-3c-1.56 0-3.08-1.19-3.46-2.7l-.9-2.71c-.38-.28-.91-.28-1.29 0l-.92 2.78C10.07 15.82 8.56 17 7 17"></path></svg>
+  
+  <span class="md-ellipsis">
+    Expert links
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i2c-bus-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      I²C Bus Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiring-into-the-cubes-i2c-bus-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wiring into the Cube's I²C Bus Ports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-i2c-lua-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using I²C: Lua Scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dfrobot-ads1115-adc-example-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      DFRobot ADS1115 ADC Example Script
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="i2c-inter-integrated-circuit-communication">I²C: Inter-Integrated Circuit Communication<a class="headerlink" href="#i2c-inter-integrated-circuit-communication" title="Permanent link">¶</a></h1>
+<p>The Cube supports I²C communication, allowing you to connect a wide range of external sensors like airspeed sensors, magnetometers, and rangefinders using a shared two-wire interface.</p>
+<div class="admonition info">
+<p class="admonition-title">I²C ("Inter-Integrated Circuit") is a two-wire communication protocol that allows multiple digital devices to communicate over a shared bus.</p>
+<p>It’s useful because it reduces wiring complexity and enables efficient communication between sensors, microcontrollers, and other peripherals.</p>
+</div>
+<p>If you're REALLY keen, the I²C specification can be found below, though it's not for the faint of heart (and entirely unnecessary for your work).</p>
+<p>I2C documentation: <a href="https://www.nxp.com/docs/en/user-guide/UM10204.pdf">I2C-bus specification and user manual (nxp.com)</a></p>
+<h2 id="i2c-bus-details">I²C Bus Details<a class="headerlink" href="#i2c-bus-details" title="Permanent link">¶</a></h2>
+<p>An I²C bus uses two data wires: SCL &amp; SDA, which are a clock line and a data line respectively. The fact that I²C is a BUS means that many devices can be connected using the same SCL &amp; SDA wires - each device only pays attention to transmissions that start with its unique address, and ignores everything else. Care must be taken to avoid address conflicts - every device on the I²C bus must have a different address, or the devices sharing an address will try to talk over each other, and everything will break.</p>
+<p>The wiring of the bus itself is straightforward: connect the SCL line to the SCL pins and the SDA line to the SDA pins of all devices on the bus, as seen in Figure 1. If you're interfacing with the Cube's I²C bus, then that is it, other than connecting power to each device.</p>
+<p>Warning if you venture beyond the Cube: if you try to use I²C with other devices such as a microcontroller, both the SDA and SCL lines will require a "pull-up resistor", placed between the lines and the power (+5V or +3.3V) line. This is because I²C is an "open-drain" protocol - to communicate over the data lines, devices actively drive the line low (for a binary 0), and then release the line, whereby the pull-up resistors return the bus to a high state (for a binary 1). Again, if using the Cube, you can ignore this section - there is no need for dedicated external pull-up resistors as there are built-in ones in the flight controller.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/I2C-bus.png" data-desc-position="bottom"><img alt="Mock-up of an I²C serial bus" src="../assets/I2C-bus.png"></a></p>
+<p>Mock-up of an I2C serial bus. Image credit (and a generally good resource for further learning): <a href="https://learn.sparkfun.com/tutorials/i2c/all">SparkFun I²C Tutorials</a></p>
+<h2 id="wiring-into-the-cubes-i2c-bus-ports">Wiring into the Cube's I²C Bus Ports<a class="headerlink" href="#wiring-into-the-cubes-i2c-bus-ports" title="Permanent link">¶</a></h2>
+<p>To interface with the Cube's I²C buses, you will need to use a 4-pin JST-GH connector, plugged into "I2C 2" on the Cube carrier board. Please see "Expert Links -&gt; CubePilot pinout" for details of which pin is which. The I2C 2 port, confusingly, interfaces with the Cube's I²C bus 0. The Cube also has an I²C bus 1 and I²C bus 2. This is relevant when you come to Lua scripting.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The GPS 1 port has additional I²C lines (for the I²C bus 1) if you need more than one I²C bus.
+You only need to connect PWR, GND, SCL, and SDA from within the GPS port.</p>
+</div>
+<h2 id="using-i2c-lua-scripts">Using I²C: Lua Scripts<a class="headerlink" href="#using-i2c-lua-scripts" title="Permanent link">¶</a></h2>
+<p>You will have to code a lua script file to talk to your external I²C devices. Most devices you will use, such as the DFRobot ADS1115 ADCs that you have been issued, come with a library/driver, which handles all of the low-level register reading and writing. This allows the user to more simply interface with the device. <strong>Unfortunately for you, these are almost always only available in C/C++, mostly within the Arduino framework - NOT in lua script</strong>. </p>
+<p>It is possible to port a library/driver across to lua script by reading the driver and understanding which registers need to be read in what order to communicate with the device. This is not a trivial task; we have created a lua script port of the DFRobot ADS1115 ADC that you have been issued to speed you on your way. You can use this to log data from the ADC, but it may also be helpful if you try to port your own I²C device library. The code is well commented, so you can understand how bytes are read and written to and from the I²C bus. Here are the two main commands, extracted from the ADC library port, required to communicate over I²C:</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">ads1115</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">i2c</span><span class="p">:</span><span class="nf">get_device</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">ADS1115_I2C_ADDRESS</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
+<p>This tells the Cube to connect to a device on I²C bus 0 with the address ADS1115_I2C_ADDRESS (which is a hexadecimal value assigned earlier in the code - N.B. the ADC has two values, which you can swap between with the switch on the device). The variable ads1115 is then used for future communications.</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ads1115</span><span class="p">:</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">string.char</span><span class="p">(</span><span class="nv">reg</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
+<p>This tells the Cube to read 2 bytes from the ADS1115, from the register with the address in "reg". A write command works the same way, except that the first argument in the ads1115:transfer() function gives the register address, followed by the data bytes being written. The second argument is 0, as no bytes are being read:</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">write_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string.char</span><span class="p">(</span><span class="nv">reg</span><span class="p">,</span><span class="w"> </span><span class="nv">high_byte</span><span class="p">,</span><span class="w"> </span><span class="nv">low_byte</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Write command: register address + 2 data bytes</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">ads1115</span><span class="p">:</span><span class="nf">transfer</span><span class="p">(</span><span class="nv">write_data</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
+<p>There is much more information available in the links provided, and elsewhere, on the I²C bus. Please ask questions in the sessions if you are having trouble.</p>
+<h2 id="dfrobot-ads1115-adc-example-script">DFRobot ADS1115 ADC Example Script<a class="headerlink" href="#dfrobot-ads1115-adc-example-script" title="Permanent link">¶</a></h2>
+<p>The following code can be uploaded to your Cube, following the steps in "06. Lua Scripts". It will, by default, record the voltages of all 4 ADC channels, once per second for a minute. It will output them in the "Messages" tab of Mission Planner and also save them to a .csv file in the Cube's root directory, which can be downloaded after data logging is completed. This is only a minimal working example - please feel free to edit it. You might want to change the data logging rate, which channels you care about, or perhaps you want to implement a way to extract the information from Mission Planner directly over Python, forgoing the need for .csv? Or perhaps you might want to implement an input that allows you to start and stop logging when you want to?</p>
+<p>Please ask if the code is not working for you. The code follows:</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- ADS1115 4-Channel ADC Logger for CubeOrange+</span>
+<span class="c1">-- Reads voltage from all 4 channels of DFRobot ADS1115 over I2C and logs to CSV</span>
+
+<span class="c1">-- ADS1115 Constants - Leave unchanged!</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">ADS1115_REG_POINTER_CONVERT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">ADS1115_REG_POINTER_CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x01</span><span class="w"> </span><span class="c1">-- ADS1115 Register Addresses</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MUX_AIN0_GND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0004</span><span class="w">  </span><span class="c1">-- Channel 0</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MUX_AIN1_GND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0005</span><span class="w">  </span><span class="c1">-- Channel 1</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MUX_AIN2_GND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0006</span><span class="w">  </span><span class="c1">-- Channel 2</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MUX_AIN3_GND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0007</span><span class="w">  </span><span class="c1">-- Channel 3</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">COMP_QUE_DISABLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0003</span><span class="w"> </span><span class="c1">-- Comparator configuration</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">GAIN_TWOTHIRDS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0000</span><span class="w"> </span><span class="c1">-- Gain configuration (eGAIN_TWOTHIRDS = 0, gives ±6.144V range, 1 bit = 0.1875mV)</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">GAIN_COEFFICIENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1875</span><span class="w">  </span><span class="c1">-- mV per bit for GAIN_TWOTHIRDS (for 0-6V signals)</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MODE_SINGLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0001</span><span class="w">  </span><span class="c1">-- Single-shot mode configuration</span>
+
+<span class="c1">-- Logging Code Configuration - Change with care!</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">ADS1115_I2C_ADDRESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x48</span><span class="w">  </span><span class="c1">-- Default address (can be 0x49 dependent on ADC switch position)</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">RATE_128</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0004</span><span class="w"> </span><span class="c1">-- Rate configuration (128 SPS)</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">ADS1115_CONVERSION_DELAY_MS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="c1">-- Conversion time at 128 SPS is ~8ms, using 10ms for safety</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">READINGS_COUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="w">  </span><span class="c1">-- Number of readings to log</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">LOOP_DELAY_MS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w">  </span><span class="c1">-- Delay between readings in milliseconds</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ads1115_voltage_log.csv"</span><span class="w"> </span><span class="c1">-- Logging file name</span>
+
+<span class="c1">-- Code variable initialisations - Leave unchanged!</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">file</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">voltage_readings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">current_channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">channel_configured</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">conversion_start_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">ads1115</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">i2c</span><span class="p">:</span><span class="nf">get_device</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">ADS1115_I2C_ADDRESS</span><span class="p">)</span><span class="w"> </span><span class="c1">-- I2C bus initialization</span>
+<span class="nv">ads1115</span><span class="p">:</span><span class="nf">set_retries</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1">-- Code function definitions - leave unchanged!</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">write_ads_register</span><span class="p">(</span><span class="nv">reg</span><span class="p">,</span><span class="w"> </span><span class="nv">value</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">high_byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">value</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">low_byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">write_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string.char</span><span class="p">(</span><span class="nv">reg</span><span class="p">,</span><span class="w"> </span><span class="nv">high_byte</span><span class="p">,</span><span class="w"> </span><span class="nv">low_byte</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Write command: register address + 2 data bytes</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">ads1115</span><span class="p">:</span><span class="nf">transfer</span><span class="p">(</span><span class="nv">write_data</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Writes 16-bit value to ADS1115 register</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">read_ads_register</span><span class="p">(</span><span class="nv">reg</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ads1115</span><span class="p">:</span><span class="nf">transfer</span><span class="p">(</span><span class="nb">string.char</span><span class="p">(</span><span class="nv">reg</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">nil</span>
+<span class="w">    </span><span class="kr">end</span><span class="w"> </span><span class="c1">-- Writes register address and read 2 bytes in one transaction</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">result</span><span class="p">:</span><span class="nf">byte</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">result</span><span class="p">:</span><span class="nf">byte</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Converts two bytes to 16-bit signed integer</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">32767</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">65536</span>
+<span class="w">    </span><span class="kr">end</span><span class="w"> </span><span class="c1">-- Converts to signed int16</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">value</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Reads 16-bit value from ADS1115 register</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">configure_channel</span><span class="p">(</span><span class="nv">channel</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">mux_config</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">channel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">mux_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MUX_AIN0_GND</span>
+<span class="w">    </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">channel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">mux_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MUX_AIN1_GND</span>
+<span class="w">    </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">channel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">mux_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MUX_AIN2_GND</span>
+<span class="w">    </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">channel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nv">mux_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MUX_AIN3_GND</span>
+<span class="w">    </span><span class="kr">else</span>
+<span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x8000</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">-- Start single conversion (OS bit)</span>
+<span class="w">                   </span><span class="p">(</span><span class="nv">mux_config</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">-- Multiplexer</span>
+<span class="w">                   </span><span class="p">(</span><span class="nv">GAIN_TWOTHIRDS</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">-- Gain: ±6.144V range (for 0-5V+ signals)</span>
+<span class="w">                   </span><span class="p">(</span><span class="nv">MODE_SINGLE</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">-- Single-shot mode</span>
+<span class="w">                   </span><span class="p">(</span><span class="nv">RATE_128</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">-- 128 SPS</span>
+<span class="w">                   </span><span class="nv">COMP_QUE_DISABLE</span><span class="w">  </span><span class="c1">-- Disable comparator</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nf">write_ads_register</span><span class="p">(</span><span class="nv">ADS1115_REG_POINTER_CONFIG</span><span class="p">,</span><span class="w"> </span><span class="nv">config</span><span class="p">)</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Configures ADS1115 for specific channel</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">check_ads1115</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">read_ads_register</span><span class="p">(</span><span class="nv">ADS1115_REG_POINTER_CONFIG</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Attempts to read the config register</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">nil</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Checks if ADS1115 is connected</span>
+<span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">write_to_file</span><span class="p">()</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="nb">error</span><span class="p">(</span><span class="s2">"Could not open file"</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="nv">file</span><span class="p">:</span><span class="nf">write</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"%u, %.2f, %.2f, %.2f, %.2f</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">               </span><span class="nf">millis</span><span class="p">():</span><span class="nf">toint</span><span class="p">(),</span><span class="w"> </span>
+<span class="w">               </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">               </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">               </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">               </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">    </span><span class="nv">file</span><span class="p">:</span><span class="nf">flush</span><span class="p">()</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Writes data to file</span>
+
+<span class="c1">-- Main Code Execution - Leave unchanged!</span>
+<span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">check_ads1115</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"ADS1115 not detected on I2C bus!"</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">error</span><span class="p">(</span><span class="s2">"ADS1115 not detected"</span><span class="p">)</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Initialises ADS1115</span>
+<span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"ADS1115 detected successfully"</span><span class="p">)</span>
+
+<span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.open</span><span class="p">(</span><span class="nv">file_name</span><span class="p">,</span><span class="w"> </span><span class="s2">"a"</span><span class="p">)</span>
+<span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">    </span><span class="nb">error</span><span class="p">(</span><span class="s2">"Could not create file"</span><span class="p">)</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Opens file for logging</span>
+
+<span class="nv">file</span><span class="p">:</span><span class="nf">write</span><span class="p">(</span><span class="s1">'Time [ms], CH0 [mV], CH1 [mV], CH2 [mV], CH3 [mV]</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nv">file</span><span class="p">:</span><span class="nf">flush</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Writes CSV header</span>
+<span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"CSV file created: "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">file_name</span><span class="p">)</span>
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">update</span><span class="p">()</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">channel_configured</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">configure_channel</span><span class="p">(</span><span class="nv">current_channel</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">            </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"Failed to configure channel %d"</span><span class="p">,</span><span class="w"> </span><span class="nv">current_channel</span><span class="p">))</span>
+<span class="w">            </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="nv">current_channel</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="kr">else</span><span class="w"> </span><span class="c1">-- Configures the current channel</span>
+<span class="w">            </span><span class="nv">channel_configured</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">            </span><span class="nv">conversion_start_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">millis</span><span class="p">()</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- Reschedules quickly to read the result</span>
+<span class="w">    </span><span class="kr">else</span>
+<span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nf">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">conversion_start_time</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">ADS1115_CONVERSION_DELAY_MS</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- Do this if enough time has passed for conversion</span>
+<span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">raw_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">read_ads_register</span><span class="p">(</span><span class="nv">ADS1115_REG_POINTER_CONVERT</span><span class="p">)</span>
+<span class="w">            </span><span class="kr">if</span><span class="w"> </span><span class="nv">raw_value</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">                </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="nv">current_channel</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raw_value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">GAIN_COEFFICIENT</span>
+<span class="w">            </span><span class="kr">else</span>
+<span class="w">                </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="nv">current_channel</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">            </span><span class="kr">end</span><span class="w"> </span><span class="c1">-- Reads voltage or sets to 0 on error</span>
+<span class="w">            </span><span class="nv">channel_configured</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="nv">current_channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">current_channel</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="kr">if</span><span class="w"> </span><span class="nv">current_channel</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- Do this if all 4 channels have been read</span>
+<span class="w">                </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"ADC: %.0f, %.0f, %.0f, %.0f mV"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                              </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                              </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                              </span><span class="nv">voltage_readings</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="c1">-- Outputs to GCS</span>
+<span class="w">                </span><span class="nf">write_to_file</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Writes to file</span>
+<span class="w">                </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">-- Increments counter</span>
+<span class="w">                </span><span class="kr">if</span><span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">READINGS_COUNT</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">                    </span><span class="nv">file</span><span class="p">:</span><span class="nf">close</span><span class="p">()</span>
+<span class="w">                    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"Logging complete. File closed."</span><span class="p">)</span>
+<span class="w">                    </span><span class="kr">return</span>
+<span class="w">                </span><span class="kr">end</span><span class="w"> </span><span class="c1">-- Stops logging after set number of readings</span>
+<span class="w">                </span><span class="nv">current_channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">-- Resets for next cycle</span>
+<span class="w">                </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="nv">LOOP_DELAY_MS</span><span class="w"> </span><span class="c1">-- Reschedules with full loop delay</span>
+<span class="w">            </span><span class="kr">else</span>
+<span class="w">                </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- Continues reading next channel</span>
+<span class="w">            </span><span class="kr">end</span>
+<span class="w">        </span><span class="kr">else</span>
+<span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">-- Waits a bit more for conversion</span>
+<span class="w">        </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span><span class="w"> </span><span class="c1">-- Main update loop</span>
+
+<span class="kr">return</span><span class="w"> </span><span class="nf">update</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Starts the update loop</span>
+</code></pre></div></td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../07-adc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 07. ADC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                07. ADC
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../98-more/" class="md-footer__link md-footer__link--next" aria-label="Next: More">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                More
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/UoBFlightLab" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.instant", "navigation.search", "navigation.search.highlight", "navigation.search.suggestions", "navigation.search.suggestions.highlight", "navigation.sections", "navigation.indexes", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.code.expand", "content.code.highlight", "content.code.tabs", "content.code.toggle", "content.code.wrap", "content.code.include", "content.code.include.highlight", "content.code.include.tabs", "content.code.include.toggle", "content.code.include.wrap", "content.code.include.tabs", "navigation.instant.progress", "navigation.instant.preview", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

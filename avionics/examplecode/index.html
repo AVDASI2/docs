@@ -1,0 +1,2396 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avdai2.github.io/docs/avionics/examplecode/">
+      
+      
+        <link rel="prev" href="../sensors/">
+      
+      
+        <link rel="next" href="../links/">
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Example Code - AVDASI 2 docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="flightlab" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example-code" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AVDASI 2 docs" class="md-header__button md-logo" aria-label="AVDASI 2 docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AVDASI 2 docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example Code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="flightlab" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="flightlab_dark" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AVDASI 2 docs" class="md-nav__button md-logo" aria-label="AVDASI 2 docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    AVDASI 2 docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Avionics
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Avionics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../stepbystep/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10 8 3.57l-1.91.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.42 5.31-1.43 4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86"></path></svg>
+  
+  <span class="md-ellipsis">
+    Step-by-step guide
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Step-by-step guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/00-kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    00. Kit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/01-cube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Cube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/02-missionplanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Mission Planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/03-telemetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Telemetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/04-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Power
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/05-servos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Servos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/06-lua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Lua Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/07-adc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. ADC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/08-i2c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. I2C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stepbystep/98-more/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    More
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensors/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"></path></svg>
+  
+  <span class="md-ellipsis">
+    Sensors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41zm11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41z"></path></svg>
+  
+  <span class="md-ellipsis">
+    Example Code
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41zm11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41z"></path></svg>
+  
+  <span class="md-ellipsis">
+    Example Code
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gs-py" class="md-nav__link">
+    <span class="md-ellipsis">
+      GS.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm-py" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arm.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#I2C-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      I2C.lua
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mode-switchlua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode-Switch.lua
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 17H4C2.38 17 .96 15.74.76 14.14l-.5-2.99C.15 10.3.39 9.5.91 8.92S2.19 8 3 8h6c.83 0 1.58.35 2.06.96.11.15.21.31.29.49.43-.09.87-.09 1.29 0 .08-.18.18-.34.3-.49C13.41 8.35 14.16 8 15 8h6c.81 0 1.57.34 2.09.92.51.58.75 1.38.65 2.19l-.51 3.07C23.04 15.74 21.61 17 20 17h-3c-1.56 0-3.08-1.19-3.46-2.7l-.9-2.71c-.38-.28-.91-.28-1.29 0l-.92 2.78C10.07 15.82 8.56 17 7 17"></path></svg>
+  
+  <span class="md-ellipsis">
+    Expert links
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gs-py" class="md-nav__link">
+    <span class="md-ellipsis">
+      GS.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm-py" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arm.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI.py
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#I2C-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      I2C.lua
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mode-switchlua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode-Switch.lua
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">¶</a></h1>
+<p>A series of scripts were written to show a minimum viable ground station. Keep in mind your code will need to be better than this, you can’t just copy it and hope for the best. It does provide a baseline to build off of and an example of how to meet the basic functionality needed.</p>
+<p>Each script should be able to be executed individually but Main.py allows you to execute them all simultaneously. You don’t need to take your approach in your own GS but this is good since you can debug each function independently.</p>
+<div class="admonition info">
+<p class="admonition-title">All these scripts are stored in the <a href="https://github.com/AVDASI2/avdasi2-avionics-demo">avdasi2-avionics-demo</a> GitHub repository and can be accessed there.</p>
+<p>You can clone that repository to start your own code.</p>
+</div>
+<h2 id="mainpy">Main.py<a class="headerlink" href="#mainpy" title="Permanent link">¶</a></h2>
+<p>Links all the scripts together. Call each script as a function after defining them up top.</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">main.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">##########################################</span>
+<span class="c1">#Main example python script for AVDASI 2 AVIONICS</span>
+<span class="c1">#Executes all other example scripts and runs fully functional GCS</span>
+<span class="c1">#Author: Ethan Sheehan</span>
+
+<span class="c1">#To run this file you need the other example scripts in the same folder and have cube properly set up</span>
+<span class="c1">#Potential upgrades:</span>
+    <span class="c1">#As you add your own scripts or additionally functions you'll have to ammend them in here</span>
+
+<span class="c1">##########################################</span>
+
+<span class="c1">#import needed python modules</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span> <span class="c1">#UI module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span> <span class="c1"># The threading module allows parts of the program to run concurrently</span>
+
+<span class="c1">#Call other example codes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">GS_example</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">Servo_example</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">UI_example</span>
+
+<span class="c1">#Setup function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">setup_mav</span><span class="p">():</span>
+    <span class="n">mav</span> <span class="o">=</span> <span class="n">GS_example</span><span class="o">.</span><span class="n">connect_to_cube</span><span class="p">()</span> <span class="c1">#call connection function from GS example</span>
+    <span class="k">if</span> <span class="n">mav</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="c1">#No connection, return None</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="n">GS_example</span><span class="o">.</span><span class="n">wait_heartbeat</span><span class="p">(</span><span class="n">mav</span><span class="p">)</span> <span class="c1">#call the heartbeat function from GS example</span>
+    <span class="n">servo_config</span> <span class="o">=</span> <span class="n">Servo_example</span><span class="o">.</span><span class="n">ServoController</span><span class="p">(</span><span class="n">mav</span><span class="p">)</span> <span class="c1">#call the servo configuration from Servo example</span>
+    <span class="n">servo_config</span><span class="o">.</span><span class="n">write_servo_params</span><span class="p">()</span> <span class="c1">#write the new servo parameters</span>
+    <span class="k">return</span> <span class="n">servo_config</span><span class="p">,</span> <span class="n">mav</span>
+
+<span class="c1">#Main function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span> <span class="c1">#Creates the main application window for the UI using Tkinter</span>
+
+    <span class="c1">#Set up MAVLINK connection and assign servo config (may be None)</span>
+    <span class="n">servo_config</span><span class="p">,</span> <span class="n">mav</span> <span class="o">=</span> <span class="n">setup_mav</span><span class="p">()</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">UI_example</span><span class="o">.</span><span class="n">ServoUI</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">servo_config</span><span class="p">)</span>  <span class="c1">#Pass servo_config to UI (can be None)</span>
+
+    <span class="c1">#Start background listener if connected</span>
+    <span class="k">if</span> <span class="n">mav</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">GS_example</span><span class="o">.</span><span class="n">listen_messages</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">mav</span><span class="p">,),</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#listens for defined message from cube</span>
+
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span> <span class="c1">#Starts the Tkinter event loop, keeping the window open and responsive</span>
+
+<span class="c1">#Independence call</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> <span class="c1">#Ensures this script runs only when executed directly, not when imported</span>
+    <span class="n">main</span><span class="p">()</span> <span class="c1">#Calls the main function to start the ground station application</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="gs-py">GS.py<a class="headerlink" href="#gs-py" title="Permanent link">¶</a></h2>
+<p>This script is what connects the cube to your ground station. It creates the connection, waits for a heartbeat, and after heartbeat is received it listens and prints messages. There’s a wide range of messages and statuses you can listen for from the cube, some more useful than others, so up to you to figure out which ones you want. It also notifies you if the heartbeat is interrupted.</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">GS.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">##########################################</span>
+<span class="c1">#Ground Station example python script for AVDASI 2 AVIONICS</span>
+<span class="c1">#Connects to cube</span>
+<span class="c1">#Finds heartbeat</span>
+<span class="c1">#Listens for wanted cube messages</span>
+<span class="c1">#flags heartbeat disconnection</span>
+<span class="c1">#Author: Ethan Sheehan</span>
+
+<span class="c1">#This file should be able to run independently</span>
+<span class="c1">#Potential upgrades:</span>
+    <span class="c1">#Choose which messages you want to listen for</span>
+    <span class="c1">#Speed up/opptimize process</span>
+    <span class="c1">#integrate messages into UI</span>
+
+<span class="c1">##########################################</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymavlink</span><span class="w"> </span><span class="kn">import</span> <span class="n">mavutil</span> <span class="c1">#make sure pymavlink module is installed</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1">#global variable to store connection status</span>
+<span class="k">global</span> <span class="n">connection_status</span>
+<span class="n">connection_status</span> <span class="o">=</span> <span class="s2">"disconnected"</span>
+
+<span class="c1">#Cube connection function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">connect_to_cube</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Connecting to CubePilot..."</span><span class="p">)</span>
+    <span class="n">mav</span> <span class="o">=</span> <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink_connection</span><span class="p">(</span><span class="s1">'udp:0.0.0.0:14550'</span><span class="p">)</span> <span class="c1">#connects via wifi, should always be the same udp:0.0.0.0:14550</span>
+    <span class="k">return</span> <span class="n">mav</span>
+
+<span class="c1">#Heartbeat function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">wait_heartbeat</span><span class="p">(</span><span class="n">mav</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Waiting for heartbeat..."</span><span class="p">)</span>
+    <span class="n">mav</span><span class="o">.</span><span class="n">wait_heartbeat</span><span class="p">()</span> <span class="c1">#searches for heartbeat from cube</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Heartbeat received from system </span><span class="si">{</span><span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="si">}</span><span class="s2">, component </span><span class="si">{</span><span class="n">mav</span><span class="o">.</span><span class="n">target_component</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">global</span> <span class="n">connection_status</span>
+    <span class="n">connection_status</span> <span class="o">=</span> <span class="s2">"connected"</span> <span class="c1">#update connection status</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Status: connected"</span><span class="p">)</span>
+
+<span class="c1">#Message listener function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">listen_messages</span><span class="p">(</span><span class="n">mav</span><span class="p">):</span> 
+    <span class="k">global</span> <span class="n">connection_status</span>
+    <span class="n">last_msg_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="c1">#time between last message</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1">#seconds to consider connection lost</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">mav</span><span class="o">.</span><span class="n">recv_match</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="p">[</span><span class="s1">'SYS_STATUS'</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#can change SYS_STATUS to whatever message you desire</span>
+        <span class="k">if</span> <span class="n">msg</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Received: </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">get_type</span><span class="p">()</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="c1">#prints message in terminal</span>
+            <span class="n">last_msg_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">connection_status</span> <span class="o">!=</span> <span class="s2">"connected"</span><span class="p">:</span> <span class="c1">#shows connected if message received</span>
+                <span class="n">connection_status</span> <span class="o">=</span> <span class="s2">"connected"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># No message received in this interval</span>
+            <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_msg_time</span> <span class="o">&gt;</span> <span class="n">timeout</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">connection_status</span> <span class="o">!=</span> <span class="s2">"disconnected"</span><span class="p">:</span> <span class="c1">#shows disconnected if no message received</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection lost. Status: disconnected"</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">"Heartbeat lost!"</span><span class="p">)</span>
+                <span class="n">connection_status</span> <span class="o">=</span> <span class="s2">"disconnected"</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#waits 5 seconds before calling message again</span>
+
+<span class="c1">#independence call</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> <span class="c1">#allows this script to be ran independently</span>
+    <span class="c1">#can be used to test if it works before integrating into wider system</span>
+    <span class="c1">#useful for debugging</span>
+    <span class="n">mav</span> <span class="o">=</span> <span class="n">connect_to_cube</span><span class="p">()</span>
+    <span class="n">wait_heartbeat</span><span class="p">(</span><span class="n">mav</span><span class="p">)</span>
+    <span class="n">listen_messages</span><span class="p">(</span><span class="n">mav</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="arm-py">Arm.py<a class="headerlink" href="#arm-py" title="Permanent link">¶</a></h2>
+<p>This script allows you to arm/disarm the cube and toggle its safety switch. Arming allows logging and the safety switch locks all servo movement. </p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Arm.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">##########################################</span>
+<span class="c1">#Arming example python script for AVDASI 2 AVIONICS</span>
+<span class="c1">#Arms/Disarms cube (which also allows logging)</span>
+<span class="c1">#Toggles Safety Switch (locks servo movement)</span>
+<span class="c1">#Author: Ethan Sheehan</span>
+
+<span class="c1">#This file should be able to run independently</span>
+<span class="c1">#Potential upgrades:</span>
+    <span class="c1">#You can add more streamline ways to execute these functions </span>
+    <span class="c1">#Add your own checks and safeties</span>
+    <span class="c1">#Automate when disarm/safety on need to happen</span>
+
+<span class="c1">##########################################</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymavlink</span><span class="w"> </span><span class="kn">import</span> <span class="n">mavutil</span> <span class="c1">#make sure pymavlink module is installed</span>
+
+<span class="c1">#Global variable to store the safety state</span>
+<span class="n">safety_state</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1">#Safety Switch function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">toggle_safety_switch</span><span class="p">(</span><span class="n">mav</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
+
+    <span class="c1">#Toggle the safety switch using set_mode_send and MAV_MODE_FLAG_DECODE_POSITION_SAFETY.</span>
+        <span class="c1">#enable=True: safety ON (SAFE)</span>
+        <span class="c1">#enable=False: safety OFF (UNSAFE)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">mav</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">set_mode_send</span><span class="p">(</span>
+            <span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="p">,</span>
+            <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink</span><span class="o">.</span><span class="n">MAV_MODE_FLAG_DECODE_POSITION_SAFETY</span><span class="p">,</span>
+            <span class="mi">1</span> <span class="k">if</span> <span class="n">enable</span> <span class="k">else</span> <span class="mi">0</span> <span class="c1"># 1 = safety on, 0 = safety off</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Safety </span><span class="si">{</span><span class="s1">'Enabled'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'Disabled'</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> <span class="c1">#error handling</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error toggling safety switch: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="c1">#Arming function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">toggle_arming_switch</span><span class="p">(</span><span class="n">mav</span><span class="p">,</span> <span class="n">arm</span><span class="p">):</span>
+
+    <span class="c1">#Arm/Disarm using MAV_CMD_COMPONENT_ARM_DISARM</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">mav</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">command_long_send</span><span class="p">(</span>
+            <span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="p">,</span>
+            <span class="n">mav</span><span class="o">.</span><span class="n">target_component</span><span class="p">,</span>
+            <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink</span><span class="o">.</span><span class="n">MAV_CMD_COMPONENT_ARM_DISARM</span><span class="p">,</span>
+            <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Confirmation</span>
+            <span class="mi">1</span> <span class="k">if</span> <span class="n">arm</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># 1 = arm, 0 = disarm</span>
+            <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Arming </span><span class="si">{</span><span class="s1">'Enabled'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">arm</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'Disabled'</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> <span class="c1">#error handling</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error toggling arming switch: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="c1">#Independence call</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> <span class="c1">#allows this script to be ran independently</span>
+    <span class="c1">#can be used to test if it works before integrating into wider system</span>
+    <span class="c1">#useful for debugging</span>
+
+    <span class="c1">#connect to cute and await heartbeat</span>
+    <span class="n">mav</span> <span class="o">=</span> <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink_connection</span><span class="p">(</span><span class="s1">'udp:0.0.0.0:14550'</span><span class="p">)</span>
+    <span class="n">mav</span><span class="o">.</span><span class="n">wait_heartbeat</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Heartbeat from system (system </span><span class="si">%u</span><span class="s2"> component </span><span class="si">%u</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="p">,</span> <span class="n">mav</span><span class="o">.</span><span class="n">target_component</span><span class="p">))</span>
+
+    <span class="c1"># Toggle safety switch ON</span>
+    <span class="n">toggle_safety_switch</span><span class="p">(</span><span class="n">mav</span><span class="p">,</span> <span class="n">enable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Arm the vehicle</span>
+    <span class="n">toggle_arming_switch</span><span class="p">(</span><span class="n">mav</span><span class="p">,</span> <span class="n">arm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="servopy">Servo.py<a class="headerlink" href="#servopy" title="Permanent link">¶</a></h2>
+<p>This script actuates the movement of a servo. You’ll have to edit it to allow multiple servos moving simultaneously. </p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Servo.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">##########################################</span>
+<span class="c1">#Servo control example python script for AVDASI 2 AVIONICS</span>
+<span class="c1">#Defines which servo you want to move</span>
+<span class="c1">#converts given angle to PWM output servo needs that translates to that angle</span>
+<span class="c1">#Sets maximum and mimimum pwms as well as the trim (0 angle pwm)</span>
+<span class="c1">#writes the new servo parameters</span>
+<span class="c1">#sends the wanted angle to the cube</span>
+<span class="c1">#Author: Ethan Sheehan &amp; Lucas Dick</span>
+
+<span class="c1">#This file should be able to run independently</span>
+<span class="c1">#Potential upgrades:</span>
+    <span class="c1">#Allow multiple servo movement simultaneously</span>
+    <span class="c1">#Calibrate to your own servos and mechanisms</span>
+    <span class="c1">#Checks/confirmation that servos did indeed move</span>
+
+<span class="c1">##########################################</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymavlink</span><span class="w"> </span><span class="kn">import</span> <span class="n">mavutil</span> <span class="c1">#make sure pymavlink module is installed</span>
+
+
+<span class="n">PIN</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1">#defines which servo you want to move</span>
+
+<span class="c1">#angle to pwm converter function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">angle_to_pwm</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">19</span> <span class="o">*</span> <span class="n">angle</span> <span class="o">+</span> <span class="mi">1550</span> <span class="c1">#equation found by experimentation with mechanism</span>
+
+<span class="c1">#string to bytes converter function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mav_bytes</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="c1">#Converts a string to bytes in UTF-8 format, required for MAVLink param names</span>
+
+<span class="c1">#Servo class for storing configuration and converting angles to PWM</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Servo</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">,</span> <span class="n">min_pwm</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">max_pwm</span><span class="o">=</span><span class="mi">2150</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="mi">1550</span><span class="p">,</span> <span class="nb">reversed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1">#define PWM range and trim</span>
+        <span class="c1">#Initialize servo configuration with pin and PWM range</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pin</span> <span class="o">=</span> <span class="n">pin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="n">min_pwm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">max_pwm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trim</span> <span class="o">=</span> <span class="n">trim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reversed</span> <span class="o">=</span> <span class="nb">reversed</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">angle_to_pwm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span> <span class="c1">#call function and converts a given angle to its corresponding PWM signal</span>
+        <span class="k">return</span> <span class="n">angle_to_pwm</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+<span class="c1">#ServoController class to configure servo parameters and send angle commands via MAVLink</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ServoController</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mav</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mav</span> <span class="o">=</span> <span class="n">mav</span> <span class="c1">#MAVLink connection instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">servo</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="n">pin</span><span class="o">=</span><span class="n">PIN</span><span class="p">)</span> <span class="c1">#Initialize Servo with predefined pin</span>
+
+    <span class="c1">#Write servo parameters function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_servo_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Setting servo params..."</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">{</span> <span class="c1">#call values defined above</span>
+            <span class="s2">"MAX"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">max</span><span class="p">,</span>
+            <span class="s2">"MIN"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">min</span><span class="p">,</span>
+            <span class="s2">"TRIM"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">trim</span><span class="p">,</span>
+            <span class="s2">"REVERSED"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">reversed</span><span class="p">)</span>
+        <span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">param_set_send</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">target_component</span><span class="p">,</span>
+                <span class="n">mav_bytes</span><span class="p">(</span><span class="sa">f</span><span class="s2">"SERVO</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">pin</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span> <span class="c1">#Parameter name in byte format</span>
+                <span class="n">val</span><span class="p">,</span>
+                <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink</span><span class="o">.</span><span class="n">MAV_PARAM_TYPE_REAL32</span> <span class="c1">#Parameter type</span>
+            <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Done."</span><span class="p">)</span>
+
+    <span class="c1">#Send angle command to the servo function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">send_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+        <span class="n">pwm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">angle_to_pwm</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="c1">#Convert angle to PWM</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Angle </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">° → PWM </span><span class="si">{</span><span class="n">pwm</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">command_long_send</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mav</span><span class="o">.</span><span class="n">target_component</span><span class="p">,</span>
+            <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink</span><span class="o">.</span><span class="n">MAV_CMD_DO_SET_SERVO</span><span class="p">,</span> <span class="c1">#Command to set servo position</span>
+            <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo</span><span class="o">.</span><span class="n">pin</span><span class="p">,</span> <span class="n">pwm</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="p">)</span>
+
+<span class="c1">#Independence call</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span><span class="c1">#allows this script to be ran independently</span>
+    <span class="c1">#can be used to test if it works before integrating into wider system</span>
+    <span class="c1">#useful for debugging</span>
+
+    <span class="c1">#connect to cute and await heartbeat</span>
+    <span class="n">mav</span> <span class="o">=</span> <span class="n">mavutil</span><span class="o">.</span><span class="n">mavlink_connection</span><span class="p">(</span><span class="s1">'udp:0.0.0.0:14550'</span><span class="p">)</span>  
+    <span class="n">mav</span><span class="o">.</span><span class="n">wait_heartbeat</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Heartbeat received from system (system </span><span class="si">%u</span><span class="s2"> component </span><span class="si">%u</span><span class="s2">)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">mav</span><span class="o">.</span><span class="n">target_system</span><span class="p">,</span> <span class="n">mav</span><span class="o">.</span><span class="n">target_component</span><span class="p">))</span>
+
+    <span class="n">controller</span> <span class="o">=</span> <span class="n">ServoController</span><span class="p">(</span><span class="n">mav</span><span class="p">)</span>
+    <span class="n">controller</span><span class="o">.</span><span class="n">write_servo_params</span><span class="p">()</span>
+
+    <span class="c1">#Example: Move servo to 30 degrees</span>
+    <span class="n">controller</span><span class="o">.</span><span class="n">send_angle</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="uipy">UI.py<a class="headerlink" href="#uipy" title="Permanent link">¶</a></h2>
+<p>This script is a barebones user interface for a GCS. It uses tkinter python module. This was used for its simplicity but you can use whatever module or language you want (there’s some that can make really nice looking UIs). The UI calls functions from the previous arming and servo controller scripts and maps them to buttons. It also allows you to input a specific servo angle and move the servo accordingly.</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">UI.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">##########################################</span>
+<span class="c1">#UI example python script for AVDASI 2 AVIONICS</span>
+<span class="c1">#Creates a barebones UI for your GS</span>
+<span class="c1">#shows connections status</span>
+<span class="c1">#Arming button</span>
+<span class="c1">#Safety switch toggle button</span>
+<span class="c1">#Set servo angle</span>
+<span class="c1">#Author: Ethan Sheehan</span>
+
+<span class="c1">#This file should be able to run independently</span>
+<span class="c1">#Potential upgrades:</span>
+    <span class="c1">#Make it actually look good</span>
+    <span class="c1">#Allow multiple servos simulatneously</span>
+    <span class="c1">#Mode switching</span>
+    <span class="c1">#Flap position</span>
+    <span class="c1">#Flap angle graph</span>
+    <span class="c1">#Live data graphing</span>
+    <span class="c1">#Use another module/code to make it look better (tkinter has its limits)</span>
+    <span class="c1">#Make it run faster/smoother/better response time</span>
+
+<span class="c1">##########################################</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="n">ttk</span><span class="p">,</span> <span class="n">messagebox</span>
+
+<span class="c1">#Call other example codes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">Servo_example</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">GS_example</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">Arm_example</span>
+
+<span class="c1">#Class for Servo UI functions</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ServoUI</span><span class="p">:</span>
+    <span class="c1">#How the UI looks function</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">servo_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1">#Initialize the main window and store the servo configuration</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Servo Control"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span> <span class="o">=</span> <span class="n">servo_config</span>
+
+        <span class="c1">#Connection status display</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status_var</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">StringVar</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">GS_example</span><span class="o">.</span><span class="n">connection_status</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+        <span class="n">ttk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Status:"</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ttk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">status_var</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">#Entry field for angle input</span>
+        <span class="n">ttk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Angle (°):"</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">angle_entry</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">angle_entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">#Button to send the angle to the servo</span>
+        <span class="n">ttk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Send"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">send_angle</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+        <span class="c1">#Safety switch button</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">safety_enabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">safety_button</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">root</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">"Safety Enabled (Click to toggle)"</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">safety_enabled</span> <span class="k">else</span> <span class="s2">"Safety Disabled (Click to toggle)"</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">toggle_safety</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">safety_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+        <span class="c1">#Arming button</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">armed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arming_button</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">root</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">"Arming Disabled (Click to toggle)"</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">toggle_arming</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arming_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+        <span class="c1">#Arming status label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arming_status_label</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+            <span class="n">root</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">"DISARMED - NO LOGGING"</span><span class="p">,</span>
+            <span class="n">background</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span>
+            <span class="n">foreground</span><span class="o">=</span><span class="s2">"white"</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arming_status_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+        <span class="c1">#Start status updater loop</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">()</span>
+
+    <span class="c1">#safety switch action function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">toggle_safety</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Toggles the safety switch state on the flight controller</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span><span class="p">:</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s2">"Not connected"</span><span class="p">,</span> <span class="s2">"Connect first."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">mav</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span><span class="o">.</span><span class="n">mav</span>
+        <span class="c1">#Toggle the state</span>
+        <span class="n">new_state</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">safety_enabled</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">Arm_example</span><span class="o">.</span><span class="n">toggle_safety_switch</span><span class="p">(</span><span class="n">mav</span><span class="p">,</span> <span class="n">new_state</span><span class="p">)</span> <span class="c1">#calls arming example code</span>
+        <span class="c1">#Update button text based on new state</span>
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">safety_enabled</span> <span class="o">=</span> <span class="n">new_state</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">safety_enabled</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">safety_button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Safety Enabled (Click to toggle)"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">safety_button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Safety Disabled (Click to toggle)"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="s2">"Safety Switch"</span><span class="p">,</span> <span class="s2">"Failed to toggle safety switch."</span><span class="p">)</span>
+
+    <span class="c1">#arming action function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">toggle_arming</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Toggles the arming state of the vehicle</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span><span class="p">:</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s2">"Not connected"</span><span class="p">,</span> <span class="s2">"Connect first."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">mav</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span><span class="o">.</span><span class="n">mav</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">armed</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">armed</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">Arm_example</span><span class="o">.</span><span class="n">toggle_arming_switch</span><span class="p">(</span><span class="n">mav</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">armed</span><span class="p">)</span> <span class="c1">#calls arming example code</span>
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">armed</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arming_button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Arming Enabled (Click to toggle)"</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arming_status_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"ARMED AND LOGGING"</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arming_button</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Arming Disabled (Click to toggle)"</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arming_status_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"DISARMED - NO LOGGING"</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
+
+    <span class="c1">#connection status action function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Updates the connection status label every 1000 miliseconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status_var</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">GS_example</span><span class="o">.</span><span class="n">connection_status</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span> <span class="c1">#call GS example code</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">)</span>
+
+    <span class="c1">#servo configuration function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_servo_controller</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">servo_config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span> <span class="o">=</span> <span class="n">servo_config</span> <span class="c1">#writes servo configuration</span>
+
+    <span class="c1">#servo angle action function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">send_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Sends angle value entered by the user to the servo</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span><span class="p">:</span> <span class="c1">#check if connected</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s2">"Not connected"</span><span class="p">,</span> <span class="s2">"Connect first."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">angle</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angle_entry</span><span class="o">.</span><span class="n">get</span><span class="p">())</span> <span class="c1">#Get angle from input</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">servo_config</span><span class="o">.</span><span class="n">send_angle</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="c1">#Send angle via MAVLink</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> <span class="c1">#error handling</span>
+            <span class="n">messagebox</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="s2">"Send Error"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1">#Independence call</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span><span class="c1">#allows this script to be ran independently</span>
+    <span class="c1">#can be used to test if it works before integrating into wider system</span>
+    <span class="c1">#useful for debugging</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span> <span class="c1">#Creates the main application window for the UI using Tkinter</span>
+    <span class="n">servo_config</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1">#Attempt to connect to the servo controller</span>
+        <span class="n">servo_config</span> <span class="o">=</span> <span class="n">Servo_example</span><span class="o">.</span><span class="n">ServoController</span><span class="p">()</span>  <span class="c1">#Adjust class name</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> <span class="c1">#error handling</span>
+        <span class="n">messagebox</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="s2">"Connection Error"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Could not connect to servo: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">servo_config</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#Launch the Servo UI</span>
+    <span class="n">servo_ui</span> <span class="o">=</span> <span class="n">ServoUI</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">servo_config</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="I2C-lua">I2C.lua<a class="headerlink" href="#I2C-lua" title="Permanent link">¶</a></h2>
+<p>This script gives an overview on how to write onboard code in LUA for the Cube and how to communicate using the I2C protocol.</p>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">I2C.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">-- LUA I2C example script for AVDASI 2</span>
+<span class="c1">-- Reads data from a sensor over I2C, translates it into legible data and sends it to the Ground Control Station using MAVLink</span>
+<span class="c1">-- Author: Mate Kadas</span>
+
+<span class="c1">-- This code is written to work with an A1335LLETR-T Magnetic Hall Effect Sensor</span>
+<span class="c1">-- You are NOT SUPPOSED TO COPY AND PASTE this, but are encouraged to use it as help in writing your own code</span>
+<span class="c1">--------------------------------------------------</span>
+<span class="c1">--------------------------------------------------</span>
+
+
+<span class="c1">-- Declaring variables----------------------------</span>
+
+<span class="kd">local</span><span class="w"> </span><span class="nv">ADDR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0C</span><span class="w"> </span><span class="c1">-- I2C address of the sensor</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">REG_ADDR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x20</span><span class="w"> </span><span class="c1">-- Registry of the raw angle data</span>
+
+<span class="kd">local</span><span class="w"> </span><span class="nv">filepath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/APM/LOGS/A1335_log.csv"</span><span class="w"> </span><span class="c1">-- The Cube has a logs folder by default, this code will save a custom csv of the results there</span>
+<span class="c1">--------------------------------------------------</span>
+<span class="c1">--------------------------------------------------</span>
+
+
+<span class="c1">-- Setting up I2C bus-----------------------------</span>
+
+<span class="kd">local</span><span class="w"> </span><span class="nv">sensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">i2c</span><span class="p">:</span><span class="nf">get_device</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">ADDR</span><span class="p">)</span>
+<span class="c1">--------------------------------------------------</span>
+<span class="c1">--------------------------------------------------</span>
+
+<span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.open</span><span class="p">(</span><span class="nv">file_path</span><span class="p">,</span><span class="w"> </span><span class="s2">"a"</span><span class="p">)</span><span class="w">  </span><span class="c1">-- Opening the file in write mode and closing it immediately just to erase previous measurements. WILL OVERWRITE PREVIOUS FILE</span>
+<span class="nv">file</span><span class="p">:</span><span class="nf">close</span><span class="p">()</span>
+
+<span class="kr">if</span><span class="w"> </span><span class="nv">sensor</span><span class="w"> </span><span class="kr">then</span><span class="w">  </span><span class="c1">-- Checks I2C setup status and sends a status message (can be seen in Mission Planner, or captured as a MAVLink STATUSTEXT message)</span>
+<span class="w">    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"I2C bus setup complete"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- The number is the msg severity from 0 to 6 with zero being critical</span>
+<span class="kr">else</span>
+<span class="w">    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"I2C bus setup failed"</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">get_clock</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Just a function to get the clock (lot of core functionality unaccessible in this LUA environment, wacky solutions like this must be used)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">millis</span><span class="p">()</span>
+<span class="w">    </span><span class="nv">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">tonumber</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="nv">time</span><span class="p">))</span><span class="w"> </span><span class="c1">-- millis() returns a very weird date type that can't be directly turned into a float, first it needs to be turned into a string</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">time</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">read_angle</span><span class="p">()</span><span class="w">   </span><span class="c1">-- This function reads the angle registry of the sensor, parses the bits and reads an angle from it (Big Endian version)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">raw_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sensor</span><span class="p">:</span><span class="nf">read_registers</span><span class="p">(</span><span class="nv">REG_ADDR</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">    </span><span class="c1">-- :read_registers() is the standard way you read from the I2C. The second input is the number of bytes we need to read; it is in the documentation (but usually 2)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">raw_angle</span><span class="w"> </span><span class="kr">then</span><span class="w">   </span><span class="c1">-- This is a way to catch errors so that they don't crash the script, since it cannot be restarted without a hard reset of the Cube</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raw_angle</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">   </span><span class="c1">-- sensor:read_registers() returns a bitarray, meaning the data is split into 8 bit values. Like this: raw_angle: {(first 8 bits), (second 8 bits)}. Keep in mind that some sensors will have the last 8 bits (least significant bits or small bits) first and the first 8 bits (most significant bits or high bits) last (this system is called small endian). The A1335 is big endian, meaning the first 8 bits (MSB) is read into the first element of the array. (This should be in the documentation, but can be determined it empirically)</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raw_angle</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w">    </span><span class="c1">-- The low and high bits are separately extracted from the bitarray</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">high</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">low</span><span class="w">    </span><span class="c1">-- To recreate the true value of the registry, we must shift the high bits left by 8 places (since they represent larger unit values). Since there is no specific bitwise shift operator in LUA we simply multiply by 2^8 or 256.</span>
+<span class="w">        </span><span class="nv">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">angle</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0FFF</span><span class="w">  </span><span class="c1">-- (THIS IS SPECIFIC TO THIS SENSOR COMPONENT!!) The first four bits do not contain data about the angle, but rather are used to find the registry, these are not needed. This line is a bitwise AND operation. Result will be 1 if both angle and 0x0FFF(= 0000111111111111) has 1 at the given position. What this does is sets the first four bits to zero, and keeps the rest as they were (since 0x0FFF has 1 at every other place, the final value depends on the bit in angle)</span>
+<span class="w">        </span><span class="nv">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">angle</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4096</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">360</span><span class="w"> </span><span class="c1">-- Conversion from bit value to degree, 4096 depends on the system (12bit in our case). You get this by 2^(bit size of the system); Can be found in the documentation of the sensor</span>
+<span class="w">        </span><span class="nf">log</span><span class="p">(</span><span class="nv">angle</span><span class="p">)</span><span class="w">  </span><span class="c1">-- Sends angle data to get logged</span>
+<span class="w">        </span><span class="nf">send_data</span><span class="p">(</span><span class="nv">angle</span><span class="p">)</span><span class="w">    </span><span class="c1">-- Sends angle data to be transmitted to the GCS</span>
+<span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="nv">angle</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">read_angle_small</span><span class="p">()</span><span class="w">   </span><span class="c1">-- This is the same function as the one above, but the Small Endian version</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">raw_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sensor</span><span class="p">:</span><span class="nf">read_registers</span><span class="p">(</span><span class="nv">REG_ADDR</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">    </span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">raw_angle</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raw_angle</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w">  </span><span class="c1">-- Just changed the index</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raw_angle</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">high</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">low</span>
+<span class="w">        </span><span class="nv">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">angle</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0FFF</span>
+<span class="w">        </span><span class="nv">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">angle</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4096</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">360</span>
+<span class="w">        </span><span class="nf">log</span><span class="p">(</span><span class="nv">angle</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">send_data</span><span class="p">(</span><span class="nv">angle</span><span class="p">)</span>
+<span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="nv">angle</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">send_data</span><span class="p">(</span><span class="nv">data</span><span class="p">)</span><span class="w">  </span><span class="c1">-- This function sends the angle as a NAMED_VALUE_FLOAT MAVLink message (only this and gcs:send_text can be used by LUA scripts)</span>
+<span class="w">    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_named_float</span><span class="p">(</span><span class="s2">"Sensor"</span><span class="p">,</span><span class="w"> </span><span class="nv">data</span><span class="p">)</span><span class="w">    </span><span class="c1">-- The message has two parts, a string (usually a designator) and a float (the data)</span>
+<span class="kr">end</span>
+
+
+<span class="kr">function</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="nv">angle</span><span class="p">)</span>
+<span class="w">    </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.open</span><span class="p">(</span><span class="nv">file_path</span><span class="p">,</span><span class="w"> </span><span class="s2">"a"</span><span class="p">)</span><span class="w">  </span><span class="c1">-- It is better to open and close the log file every time something is to be logged</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_clock</span><span class="p">()</span>
+<span class="w">        </span><span class="nv">file</span><span class="p">:</span><span class="nf">write</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"%s, %s </span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w"> </span><span class="nv">timestamp</span><span class="p">,</span><span class="w"> </span><span class="nv">angle</span><span class="p">))</span><span class="w">    </span><span class="c1">-- The OS clock (time since power on) and the angle data is logged into separate columns</span>
+<span class="w">        </span><span class="nv">file</span><span class="p">:</span><span class="nf">close</span><span class="p">()</span><span class="w">    </span><span class="c1">-- It is good practice to close the file after each write</span>
+<span class="w">        </span><span class="kr">return</span>
+<span class="w">    </span><span class="kr">else</span>
+<span class="w">        </span><span class="kr">return</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="kr">end</span>
+
+<span class="c1">-- LUA scripts on the Cube work by continuously calling an update function with a set delay (this way the script runs as long as the Cube operates)</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">update</span><span class="p">()</span><span class="w">   </span><span class="c1">-- This is the function that calls everything else, and this is the function that gets called repeatedly by the cube</span>
+<span class="w">    </span><span class="nf">read_angle</span><span class="p">()</span><span class="w">    </span><span class="c1">-- read_angle will call everything else that it needs</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w">  </span><span class="c1">-- This is where the delay before recursion is specified</span>
+<span class="kr">end</span>
+
+<span class="kr">return</span><span class="w"> </span><span class="nf">update</span><span class="p">()</span><span class="w"> </span><span class="c1">-- The first time the update function is called when the cube is powered up</span>
+</code></pre></div></td></tr></tbody></table></div>
+<h2 id="mode-switchlua">Mode-Switch.lua<a class="headerlink" href="#mode-switchlua" title="Permanent link">¶</a></h2>
+<div class="highlight"><table class="highlighttable"><tbody><tr><th colspan="2" class="filename"><span class="filename">Mode-Switch.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">--#################### comments in luascript start with '--', the '#'s are just for visibility of this header</span>
+<span class="c1">--#</span>
+<span class="c1">--# Example script for AVDASI2 UAV build unit</span>
+<span class="c1">--# Enables switching of specified servo outputs between RC and ground station control</span>
+<span class="c1">--# Author: Sid Reid</span>
+<span class="c1">--# Adapted from https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/winch-control.lua</span>
+<span class="c1">--# Useful background - FOLLOW THIS TO ENABLE SCRIPTING: https://ardupilot.org/dev/docs/common-lua-scripts.html</span>
+<span class="c1">--#</span>
+<span class="c1">--# TODO: looks like this could be done from Mission Planner's Aux Function screen too - check this https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/winch-control.md </span>
+<span class="c1">--# TODO: is this also a good example of how to do things more elegantly? Not sure https://github.com/ArduPilot/ardupilot/blob/ArduPlane-stable/libraries/AP_Scripting/examples/servo_set_get.lua</span>
+<span class="c1">--# </span>
+<span class="c1">--# You need to:</span>
+<span class="c1">--#   1. Map a switch on your controller to an output channel (see the Taranis manual) - use a channel that isn't mapped to a flight control!</span>
+<span class="c1">--#   2. Set the 'RCnn_OPTION' (for channel 'nn') in Mission Planner to '300' (which makes it run 'Scripting1' on change)</span>
+<span class="c1">--#   </span>
+<span class="c1">--# This script does the following:</span>
+<span class="c1">--#   Creates a parameter called 'AVDASI2_RC_FUNC' </span>
+<span class="c1">--#   Which looks for changes in the RC input mapped to 'Scripting1'</span>
+<span class="c1">--#   And runs the update() function below repeatedly, but with a delay of UPDATE_INTERVAL_MS so it doesn't time out or overwhelm the controller</span>
+<span class="c1">--#   update() (as currently coded) changes SERVO2 (which is usually the elevator) from 'elevator' to 'disabled', so the autopilot will ignore it and you can move it manually</span>
+<span class="c1">--#</span>
+<span class="c1">--# To actually run this, your flight controller needs to be armed - you may need to disable some of the prearming checks as you're not actually flying</span>
+<span class="c1">--# Edit ARMING_CHECK parameter, hit 'set bitmask' for the options here.</span>
+<span class="c1">--# </span>
+<span class="c1">--####################</span>
+
+<span class="c1">---@diagnostic disable: param-type-mismatch</span>
+<span class="c1">-- disable an error message - kept this from the example that this was built on, not sure if it's needed.</span>
+
+
+<span class="kd">local</span><span class="w"> </span><span class="nv">servoFunctions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">}</span><span class="c1">-- servo{n}'s function.  </span>
+
+<span class="c1">-- global definitions</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">MAV_SEVERITY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">EMERGENCY</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">ALERT</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">CRITICAL</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nv">ERROR</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nv">WARNING</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nv">NOTICE</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nv">INFO</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="mi">7</span><span class="p">}</span><span class="w"> </span><span class="c1">-- you can redefine MAVLINK error codes, these are defaults</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">PARAM_TABLE_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">54</span><span class="w"> </span><span class="c1">-- things are stored in tables, you can have up to 200 - make sure they don't clash</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">PARAM_TABLE_PREFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"AVDASI2_"</span><span class="w"> </span><span class="c1">-- arbitrary prefix, good for readability and sorting</span>
+
+<span class="c1">-- bind a parameter to a variable, so you can address them using easy names rather than numbers</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">bind_param</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+<span class="w">   </span><span class="kd">local</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">Parameter</span><span class="p">()</span>
+<span class="w">   </span><span class="nb">assert</span><span class="p">(</span><span class="nv">p</span><span class="p">:</span><span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">),</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"AVDASI2: could not find %s parameter"</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span>
+<span class="w">   </span><span class="kr">return</span><span class="w"> </span><span class="nv">p</span>
+<span class="kr">end</span>
+
+<span class="c1">-- add a parameter and bind it to a variable</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">bind_add_param</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">idx</span><span class="p">,</span><span class="w"> </span><span class="nv">default_value</span><span class="p">)</span>
+<span class="w">   </span><span class="nb">assert</span><span class="p">(</span><span class="nv">param</span><span class="p">:</span><span class="nf">add_param</span><span class="p">(</span><span class="nv">PARAM_TABLE_KEY</span><span class="p">,</span><span class="w"> </span><span class="nv">idx</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">default_value</span><span class="p">),</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"AVDASI2: could not add param %s"</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span>
+<span class="w">   </span><span class="kr">return</span><span class="w"> </span><span class="nf">bind_param</span><span class="p">(</span><span class="nv">PARAM_TABLE_PREFIX</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span>
+<span class="kr">end</span>
+
+
+<span class="c1">-- set up our table of parameters</span>
+<span class="nb">assert</span><span class="p">(</span><span class="nv">param</span><span class="p">:</span><span class="nf">add_table</span><span class="p">(</span><span class="nv">PARAM_TABLE_KEY</span><span class="p">,</span><span class="w"> </span><span class="nv">PARAM_TABLE_PREFIX</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="s2">"AVDASI2: could not add param table"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- assign 3 rows to table, in case we want to add anything else later</span>
+
+<span class="cm">--[[ -- this is all documentation left over from the template function this script is developed from</span>
+<span class="cm">  // @Param: RC_FUNC</span>
+<span class="cm">  // @DisplayName: Mode Switch RC Function</span>
+<span class="cm">  // @Description: RCn_OPTION number to use to control the mode switch</span>
+<span class="cm">  // @Values: 300:Scripting1, 301:Scripting2, 302:Scripting3, 303:Scripting4, 304:Scripting5, 305:Scripting6, 306:Scripting7, 307:Scripting8</span>
+<span class="cm">  // @User: Standard</span>
+<span class="cm">--]]</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">RC_SCRIPTING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">bind_add_param</span><span class="p">(</span><span class="s1">'RC_FUNC'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w">  </span><span class="c1">-- SCcreates a parameter called 'AVDASI2_RC_FUNC' (prefix is from the global definitions section above), in position 1 in the table, and look for changes in the RC input mapped to 'Scripting1' (which is what the '300' means) in Mission Planner</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">SAS_SCRIPTING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">bind_add_param</span><span class="p">(</span><span class="s1">'SAS_FUNC'</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">301</span><span class="p">)</span><span class="w"> </span><span class="c1">--- creates parameter 'SAS_SCRIPTING' at position 1, bound to SCRIPTING_5</span>
+
+<span class="c1">-- local variables and definitions</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">UPDATE_INTERVAL_MS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="c1">-- check for changes 10x/second</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">last_rc_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w">   </span><span class="c1">-- last known rc switch position.  Used to detect change in RC switch position. Initially set to an impossible value.</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">last_sas_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+
+<span class="c1">-- initialisation</span>
+<span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="nv">MAV_SEVERITY</span><span class="p">.</span><span class="py">INFO</span><span class="p">,</span><span class="w"> </span><span class="s2">"AVDASI2: started"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- just log an info message</span>
+
+<span class="c1">-- the main update function</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">update</span><span class="p">()</span><span class="w"> </span><span class="c1">-- we run this whole function every UPDATE_INTERVAL_MS by calling itself again on each 'return'</span>
+
+
+<span class="w">  </span><span class="c1">-- get RC switch position</span>
+<span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">rc</span><span class="p">:</span><span class="nf">get_aux_cached</span><span class="p">(</span><span class="nv">RC_SCRIPTING</span><span class="p">:</span><span class="nf">get</span><span class="p">())</span>
+<span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">sas_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">rc</span><span class="p">:</span><span class="nf">get_aux_cached</span><span class="p">(</span><span class="nv">SAS_SCRIPTING</span><span class="p">:</span><span class="nf">get</span><span class="p">())</span>
+
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">    </span><span class="c1">-- if rc switch has never been set then return immediately</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="nv">UPDATE_INTERVAL_MS</span><span class="w"> </span><span class="c1">-- run the 'update' function again after UPDATE_INTERVAL_MS, don't do anything below here until things are initialised properly</span>
+<span class="w">  </span><span class="kr">end</span>
+
+<span class="w">  </span><span class="c1">-- initialise RC switch at startup</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">last_rc_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">    </span><span class="nv">last_rc_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">rc_switch_pos</span>
+<span class="w">  </span><span class="kr">end</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">last_sas_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">    </span><span class="nv">last_sas_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sas_switch_pos</span>
+<span class="w">  </span><span class="kr">end</span>
+<span class="w">  </span><span class="c1">--gcs:send_text(MAV_SEVERITY.INFO, "AVDASI2: test1")</span>
+<span class="w">  </span><span class="c1">-- check if user has moved RC switch</span>
+
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">last_rc_switch_pos</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">sas_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">last_sas_switch_pos</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- if nothing has changed...</span>
+
+<span class="w">    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"AVDASI2: rc_switch_pos is %d"</span><span class="p">,</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="p">))</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="nv">UPDATE_INTERVAL_MS</span><span class="w"> </span><span class="c1">-- ...jump out and end here, setting things up to run again in UPDATE_INTERVAL_MS</span>
+<span class="w">  </span><span class="kr">end</span>
+
+
+<span class="w">  </span><span class="nv">last_rc_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="c1">-- if things have changed then update last position</span>
+<span class="w">  </span><span class="nv">last_sas_switch_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">sas_switch_pos</span>
+
+<span class="c1">--####################</span>
+<span class="c1">--#</span>
+<span class="c1">--# THIS IS WHERE YOU SET YOUR SERVOS ETC UP</span>
+<span class="c1">--# Check out the list of servo function settings in Mission Planner/Config/Full parameter list/SERVOn_FUNCTION (n=1,2,3,...)</span>
+<span class="c1">--# You'll also need to set up your RC and </span>
+<span class="c1">--# </span>
+<span class="c1">--####################</span>
+
+<span class="w">  </span><span class="c1">-- set servo function based on switch position </span>
+<span class="w">  </span><span class="c1">-- IF ANY SWITCH HAS CHANGED</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- LOW, Manual RC Control</span>
+<span class="w">  </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="nv">MAV_SEVERITY</span><span class="p">.</span><span class="py">INFO</span><span class="p">,</span><span class="w"> </span><span class="s2">"MANUAL RC CONTROL"</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">servoNumber</span><span class="p">,</span><span class="w"> </span><span class="nv">servo_function</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">servoFunctions</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">      </span><span class="nv">param</span><span class="p">:</span><span class="nf">set</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"SERVO%d_FUNCTION"</span><span class="p">,</span><span class="w"> </span><span class="nv">servoNumber</span><span class="p">),</span><span class="w"> </span><span class="nv">servo_function</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="c1">-- if MANUAL RC CONTROL, we can change the the mode to STABILISE</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">sas_switch_pos</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nv">last_sas_switch_pos</span><span class="w"> </span><span class="kr">then</span>
+<span class="w">      </span><span class="kr">if</span><span class="w"> </span><span class="nv">sas_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- LOW, SAS off, MANUAL flight mode</span>
+<span class="w">      </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="nv">MAV_SEVERITY</span><span class="p">.</span><span class="py">INFO</span><span class="p">,</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"sas switch pos %d"</span><span class="p">,</span><span class="w"> </span><span class="nv">sas_switch_pos</span><span class="p">))</span>
+<span class="w">        </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="nv">MAV_SEVERITY</span><span class="p">.</span><span class="py">INFO</span><span class="p">,</span><span class="w"> </span><span class="s2">"turning to manual mode"</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">vehicle</span><span class="p">:</span><span class="nf">set_mode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- HIGH, </span>
+<span class="w">        </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="nv">MAV_SEVERITY</span><span class="p">.</span><span class="py">INFO</span><span class="p">,</span><span class="w"> </span><span class="s2">"turning to stabilise moemode"</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">vehicle</span><span class="p">:</span><span class="nf">set_mode</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="kr">end</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">  </span><span class="kr">end</span>
+
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">rc_switch_pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="c1">-- HIGH, TELEM Servo Control</span>
+<span class="w">    </span><span class="nv">gcs</span><span class="p">:</span><span class="nf">send_text</span><span class="p">(</span><span class="nv">MAV_SEVERITY</span><span class="p">.</span><span class="py">INFO</span><span class="p">,</span><span class="w"> </span><span class="s2">"TELEM Servo Control"</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">servoNumber</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">servoFunctions</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">      </span><span class="c1">--gcs:send_text(6, string.format("SERVO%d_FUNCTION", servoNumber))</span>
+<span class="w">      </span><span class="nv">param</span><span class="p">:</span><span class="nf">set</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">"SERVO%d_FUNCTION"</span><span class="p">,</span><span class="w"> </span><span class="nv">servoNumber</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span>
+<span class="w">    </span><span class="c1">--param:set("SERVO2_FUNCTION",0) -- SERVO2_FUNCTION is set to '0' which tells it that it's disabled, so we can control it from GCS</span>
+<span class="w">    </span><span class="c1">--gcs:send_text(6, string.format("AVDASI2: Servo %d function set to %d", 1, 0))</span>
+<span class="w">  </span><span class="kr">end</span>
+
+
+
+
+
+<span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="nv">update</span><span class="p">,</span><span class="w"> </span><span class="nv">UPDATE_INTERVAL_MS</span><span class="w">  </span><span class="c1">-- run the 'update' function again after UPDATE_INTERVAL_MS</span>
+<span class="kr">end</span>
+
+<span class="kr">return</span><span class="w"> </span><span class="nf">update</span><span class="p">()</span>
+</code></pre></div></td></tr></tbody></table></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../sensors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sensors">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Sensors
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../links/" class="md-footer__link md-footer__link--next" aria-label="Next: Expert links">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Expert links
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/UoBFlightLab" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.search", "navigation.search.highlight", "navigation.search.suggestions", "navigation.search.suggestions.highlight", "navigation.sections", "navigation.indexes", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.code.expand", "content.code.highlight", "content.code.tabs", "content.code.toggle", "content.code.wrap", "content.code.include", "content.code.include.highlight", "content.code.include.tabs", "content.code.include.toggle", "content.code.include.wrap", "content.code.include.tabs", "navigation.instant.progress", "navigation.instant.preview", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
