@@ -70,5 +70,9 @@ target/
 venv/
 ENV/
 
-# MkDocs documentation
-site*/
+# Site build
+site/
+.venv/
+
+# Example code, fetched from AVDASI2/avdasi2-avionics-demo at build time
+docs/code/

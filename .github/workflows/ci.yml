@@ -1,48 +1,36 @@
+# Build the site with Zensical and publish it to the gh-pages branch, which
+# GitHub Pages serves at https://avdasi2.github.io/docs/. This is the same
+# branch `mkdocs gh-deploy` used, so the Pages settings don't change.
+# The site as last built by MkDocs is tagged v2025-26-site.
 name: ci
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Configure Git Credentials
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      # avionics/examplecode.md includes these scripts from docs/code/.
+      - run: ./scripts/fetch-example-code.sh
+
+      - run: zensical build --clean
+
+      - if: github.ref == 'refs/heads/main'
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-
-      - name: Clone avdasi2-avionics-demo repo and copy all contents to docs/code
-        run: |
-          git clone --depth=1 https://github.com/AVDASI2/avdasi2-avionics-demo temp_code
-          mkdir -p docs/code
-          cp -r temp_code/* docs/code/
-          echo "Contents copied to docs/code:"
-          find docs/code
-          rm -rf temp_code
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-
-#      - run: pip install mkdocs-material mkdocs-literate-nav mkdocs-glightbox mkdocs-git-revision-date-localized-plugin
-      - run: pip install mkdocs-material mkdocs-glightbox mkdocs-git-revision-date-localized-plugin
-
-      - run: mkdocs gh-deploy --force
+          ghp-import --no-jekyll --push --force --message "Deploy ${GITHUB_SHA::7}" site

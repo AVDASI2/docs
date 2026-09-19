@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "avdasi2-docs",
+      "runtimeExecutable": ".venv/bin/zensical",
+      "runtimeArgs": ["serve", "--dev-addr", "localhost:8001"],
+      "port": 8001
+    }
+  ]
+}
