@@ -1,0 +1,17 @@
+{
+  "name": "avdasi2-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AVDASI 2 avionics docs and session slides",
+  "type": "module",
+  "scripts": {
+    "slides": "node scripts/build-slides.mjs",
+    "site": ".venv/bin/zensical build --clean",
+    "serve": ".venv/bin/zensical serve",
+    "build": "npm run slides && npm run site"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.1",
+    "marp-template": "file:../flightlab-marp-template"
+  }
+}
