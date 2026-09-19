@@ -19,23 +19,27 @@ Dr. Steve Bullock
 Tuesday 22 September 2026
 
 <!--
-Full cohort, 1.40 Pugsley, 12:00–13:00. Everyone is here, not just the avionics
-and mechanisms specialists: the first half is for everyone, the second half is
-mostly logistics for the specialists but everyone should hear it once.
+Full cohort, 1.40 Pugsley, 12:00–13:00. Two parts, Avionics then Mechanisms,
+with a shared opening and close. Everyone hears both: every division depends
+on both strands.
 
-Timing guide (60 min): who & where 5 · why it matters 10 · requirements 15 ·
-integration 15 · workshops & before Friday 10 · questions 5.
+Timing guide (60 min), to be planned in more depth: opening 8 · Part 1
+Avionics 28 · Part 2 Mechanisms 17 · close and questions 7.
 -->
 
 ---
 
 # Today
 
-1. Who we are, and where things happen
-2. What avionics and mechanisms do in *your* aircraft
-3. What the requirements specification asks for
-4. Integration: where avionics meets every other division
-5. The workshops, and what to do before Friday
+**Opening**: who we are, where things happen, and why this matters to every division
+
+**Part 1: Avionics**
+The requirements, integration, the workshops, and what to do before Friday
+
+**Part 2: Mechanisms**
+The requirements, integration, and the sessions
+
+**Close**: where to find things, and questions
 
 ---
 
@@ -114,6 +118,14 @@ happened.
 
 ---
 
+<!-- _class: section -->
+
+# Part 1: Avionics
+
+## Flight-grade kit, off-design
+
+---
+
 # Flight-grade kit, off-design
 
 - **Cube Orange+** autopilot running **ArduPilot**, the Flight Lab's standard research autopilot
@@ -121,14 +133,6 @@ happened.
 - In AVDASI 2 it's **bolted into a wind tunnel**, with no GPS and restricted movement, and you command surfaces directly
 
 That's deliberately off-design. Much of the avionics work is getting a flight controller to behave usefully on the ground.
-
----
-
-<!-- _class: section -->
-
-# The requirements specification
-
-## What it asks of avionics and mechanisms
 
 ---
 
@@ -151,46 +155,21 @@ group of related requirements; quote the IDs so students can trace them.
 
 ---
 
-# Mechanisms requirements
-
-<div class="callout">
-
-**Placeholder.** Fill in from the requirements specification: the mechanisms requirements, with their IDs.
-
-</div>
-
-- requirement: what it means in practice
-- requirement: what it means in practice
-
-<!--
-TODO(Steve): populate from the requirements spec. Who teaches the Mechanisms
-sessions (Thu 11:00–13:00, 1.59 Design Suite, weeks 3–5)?
--->
-
----
-
 # What "done" looks like
 
 <div class="callout">
 
-**Placeholder.** The minimum working example, stated against the requirements, plus how it's assessed.
+**Placeholder.** The avionics minimum working example (MWE), stated as the stream's own internal requirements, plus how it's assessed.
 
 </div>
 
 - The step-by-step guide gets every avionics team to a **minimum working example**
+- The MWE has its own short requirements: a deliverable for the avionics stream, separate from the unit specification
 - Your design builds on it; there are many routes to the requirements
 
 <!--
-TODO(Steve): the MWE's scope and how avionics feeds the assessment.
+TODO(Steve): the MWE's internal requirements (see PLAN.md) and how avionics feeds the assessment.
 -->
-
----
-
-<!-- _class: section -->
-
-# Integration
-
-## Where avionics meets every other division
 
 ---
 
@@ -259,14 +238,6 @@ wiring figure would serve both the guide and this slide).
 
 ---
 
-<!-- _class: section -->
-
-# The workshops
-
-## Avionics specialists: this part's for you
-
----
-
 # Avionics workshops
 
 | Week | Date | Where | Provisional focus |
@@ -277,7 +248,6 @@ wiring figure would serve both the guide and this slide).
 | 4 | Fri 16 Oct, 09:00–11:00 | Stacks Room | Sensors: ADC and I²C |
 | 5 | Fri 23 Oct, 09:00–11:00 | Stacks Room | To be confirmed: extra support |
 
-Mechanisms: Thursdays 11:00–13:00, 1.59 Design Suite, weeks 3–5.
 
 <!--
 Provisional focus follows the step-by-step guide (review E). Confirm before
@@ -313,6 +283,82 @@ avdasi2.github.io/docs → Avionics → Step-by-step guide
 <!--
 TODO(Steve): confirm the laptop policy (lab loan laptops? Mac users?) before
 saying this. See review B5.
+-->
+
+---
+
+<!-- _class: section -->
+
+# Part 2: Mechanisms
+
+## From servo to surface
+
+---
+
+# What mechanisms do
+
+<div class="callout">
+
+**Placeholder.** Plan in the mechanisms strand review.
+
+</div>
+
+- Turn a servo's rotation into the surface deflection that the test needs
+- Hold that deflection repeatably, under aerodynamic load
+- Survive installation, adjustment and a wind-tunnel campaign
+
+<!--
+TODO(Steve): content to come from the mechanisms strand review. Who leads
+Mechanisms?
+-->
+
+---
+
+# Mechanisms requirements
+
+<div class="callout">
+
+**Placeholder.** Fill in from the requirements specification: the mechanisms requirements, with their IDs.
+
+</div>
+
+- requirement: what it means in practice
+- requirement: what it means in practice
+
+<!--
+TODO(Steve): populate from the requirements spec. Who teaches the Mechanisms
+sessions (Thu 11:00–13:00, 1.59 Design Suite, weeks 3–5)?
+-->
+
+---
+
+# Mechanisms integration
+
+| With | You need to agree |
+|---|---|
+| **Avionics** | Servo choice, horn and mounting; travel, end stops, the neutral position |
+| **Aerodynamics** | Deflection range and accuracy; hinge moments |
+| **Structures** | Hinge lines, load paths, access for adjustment |
+| **Test** | How deflection is set and checked in the tunnel |
+
+<!--
+Draft. The avionics/mechanisms interface is the servo-to-surface chain:
+torque, travel, backlash, and who owns the calibration from PWM to angle.
+-->
+
+---
+
+# Mechanisms sessions
+
+| Week | When | Where | Focus |
+|---|---|---|---|
+| 3 | Thu 8 Oct, 11:00–13:00 | 1.59 Design Suite | To be confirmed |
+| 4 | Thu 15 Oct, 11:00–13:00 | 1.59 Design Suite | To be confirmed |
+| 5 | Thu 22 Oct, 11:00–13:00 | 1.59 Design Suite | To be confirmed |
+
+<!--
+TODO(Steve): Mechanisms 2–4 in the schedule. Session focus and who runs them,
+from the mechanisms strand review.
 -->
 
 ---
