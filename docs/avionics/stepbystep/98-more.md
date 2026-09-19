@@ -22,7 +22,7 @@ Radio comms for your 'safety pilot'.
 * [Ardupilot - RC](https://ardupilot.org/plane/docs/common-rc-systems.html)
 * [FrSky Twin X14](https://www.frsky-rc.com/twin-x14-x14s/)
 * [FrSky TW MX](https://www.frsky-rc.com/product/tw-mx/)
-* [FrSky ETHOS Suite](https://ethos.frsky-rc.com/#ethos-suite) (use 'Getting Started' link, not top-nav menu. Make sure you download the latest 'releaase' version, not a pre-release 'RC'). Use this for updating firmware on transmitter and receiver. You'll need a special cable to connect the receiver to the transmitter for firmware updates - see me.
+* [FrSky ETHOS Suite](https://ethos.frsky-rc.com/#ethos-suite) (use 'Getting Started' link, not top-nav menu. Make sure you download the latest 'release' version, not a pre-release 'RC'). Use this for updating firmware on transmitter and receiver. You'll need a special cable to connect the receiver to the transmitter for firmware updates - see me.
 
 ## Data logging
 
@@ -38,7 +38,7 @@ Radio comms for your 'safety pilot'.
 ## ADC
 
 * [Ardupilot analog inputs](https://ardupilot.org/plane/docs/common-analog-pins.html)
-* [Cubepilot ADC](https://docs.cubepilot.org/user-guides/cubenode/functional-overview#analog-to-digital-converter-adc)
+* [Cubepilot ADC](https://docs.cubepilot.org/cubenode/functional-overview#analog-to-digital-converter-adc)
 
 ## Custom control
 
@@ -47,28 +47,32 @@ More on this later
 * [Ardupilot - MAVLink](https://ardupilot.org/dev/docs/mavlink-commands.html)
 * [Pymavlink](https://mavlink.io/en/mavgen_python/)
 * [Ardupilot - Lua Scripts](https://ardupilot.org/plane/docs/common-lua-scripts.html) - used for some custom mode-switching that we need for tunnel testing. More to follow.
-* [Cubepilot I2C](https://docs.cubepilot.org/user-guides/cubenode/functional-overview#inter-integrated-circuit-interface-i2c)
+* [Cubepilot I2C](https://docs.cubepilot.org/cubenode/functional-overview#inter-integrated-circuit-interface-i2c)
 
 ## Initial Steps Cheat Sheet
+
 1. Flash sub firmware then plane firmware
-	a. Attach USB/buzzer cable to USB JST port on cube
-	b. Connect cube to laptop via USB
-	c. Select COM port
-	d. Upload sub firmware
-	e. Unplug and reconnect, wait for beep
-	f. Connect on mission planner (via MAVLINK+ com port, first one) to test it works
-	g. Disconnect on mission planner
-	h. Upload plane firmware
-	i. Unplug and reconnect on mission planner, wait for beep
+    - Attach USB/buzzer cable to USB JST port on cube
+    - Connect cube to laptop via USB
+    - Select COM port
+    - Upload sub firmware
+    - Unplug and reconnect, wait for beep
+    - Connect on mission planner (via MAVLINK+ com port, first one) to test it works
+    - Disconnect on mission planner
+    - Upload plane firmware
+    - Unplug and reconnect on mission planner, wait for beep
+
 2. Reset buzzer noise
-	a. Go to config -> parameters -> search buzzer. Set to 5%, click write params
-	b. To reboot (to apply buzzer), either reconnect USB or Ctrl+F then click "reboot Pixhawk"
+    - Go to config -> parameters -> search buzzer. Set to 5%, click write params
+    - To reboot (to apply buzzer), either reconnect USB or Ctrl+F then click "reboot Pixhawk"
+
 3. Configure WiFi telemetry
-	a. Connect GH TELEM Cable to purple wifi telemetry
-	b. Connect to BeyondRobotix (password: beyondrobotix) then go to 192.168.4.1
-	c. Change AP SSID to Kit[Num]
-	d. Click save
+    - Connect GH TELEM Cable to purple wifi telemetry
+    - Connect to BeyondRobotix (password: beyondrobotix) then go to 192.168.4.1
+    - Change AP SSID to Kit[Num]
+    - Click save
+
 4. RC radio binding
-	a. Create new model (plane, 1 channel aileron flap elevator and rudder) on transmitter
-	b. Go to register mode on transmitter, reboot cube while holding down button on rc radio
-    c. Click register then click bind
+    - Create new model (plane, 1 channel aileron flap elevator and rudder) on transmitter
+    - Go to register mode on transmitter, reboot cube while holding down button on rc radio
+    - Click register then click bind

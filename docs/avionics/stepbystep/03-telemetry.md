@@ -16,4 +16,4 @@ Now you're talking to the Cube wirelessly, all the USB cable is doing is providi
 !!! tip
     Mission Planner should connect automatically - if not, set the comms protocol to UDP, baud 57600.
     
-    If not working, make sure you're still connected to the chip (and not Eduroam) and your GCS isn't connected to the Cube over USB-Serial"
+    If not working, make sure you're still connected to the chip (and not Eduroam) and your GCS isn't connected to the Cube over USB-Serial.

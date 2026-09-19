@@ -4,7 +4,7 @@ We'll be using servo motors to move control surfaces. These can draw significant
 
 The servo pins on the CubePilot are along the bottom edge of the carrier board. All of the positive (+) pins and all of the negative (-) pins are connected to one another (hence 'rail'), and the signal (S) pins provide a [standard pulse-width modulated control signal](https://en.wikipedia.org/wiki/Servo_control). Each servo channel consists of three vertical pins, and the channels are labelled with their numbers.
 
-We'll use a Battery Elimination Circuit (BEC), so-called because it eliminates the need for separate motor/servo batteries, to provide voltage to the servo rails. Use the provided BEC, ensure it's set up to provide the correct voltage for your servos (start with 5V, some high-power servos take 7V or more), and connect its output to any of the servo channels. **taking care to ensure the correct polarity**:
+We'll use a Battery Elimination Circuit (BEC), so-called because it eliminates the need for separate motor/servo batteries, to provide voltage to the servo rails. Use the provided BEC, ensure it's set up to provide the correct voltage for your servos (start with 5V, some high-power servos take 7V or more), and connect its output to any of the servo channels, **taking care to ensure the correct polarity**:
 
 * negative (-): black (or sometimes brown) wire
 * positive (+): red wire
@@ -23,13 +23,14 @@ We'll configure flight control servos later. For now, connect a servo to AUX1 an
 
 ## Moving servos
 
-We need to: 
+We need to:
+
 1. virtually flip the 'safety switch' (this would be a switch on the UAV if you were flying a real vehicle)
 2. 'arm' the vehicle (this would be done via a switch on the safety pilot's radio transmitter)
 3. move the servo using the Mission Planner interface (this could be a pilot switch, or an automated command)
 
 
-`Ctrl F` opens up some a settings menu. Click `toggle servo safety` as seen below to turn off the safety. 
+`Ctrl F` opens up a settings menu. Click `toggle servo safety` as seen below to turn off the safety. 
 
 ![Toggle safety MP](assets/toggle_safety-MP.png)
 

@@ -43,7 +43,7 @@ In Mission Planner, a parameter is a configurable setting that tells the flight 
 
 Many parameters can be adjusted via the various Mission Planner graphical interface screens, but you can also edit them directly, and some are only available in the full parameter list. It's a little intimidating at first, and you need to be careful not to inadvertently break things!
 
-Let's turn down the very loud (by design - you want to be able to hear it outdoors) buzzer that beeps on startup. To access parameters, go to 'config' and then 'full parameter list'. Scroll or search for `NFT_BUZZ_VOLUME` and set it to a low number (1-5). Click `write params` and settings should take effect immediately. 
+Let's turn down the very loud (by design - you want to be able to hear it outdoors) buzzer that beeps on startup. To access parameters, go to 'config' and then 'full parameter list'. Scroll or search for `NTF_BUZZ_VOLUME` and set it to a low number (1-5). Click `write params` and settings should take effect immediately. 
 
 | Parameter           | Recommended value     | Description                                                      |
 |---------------------|-----------|--------------------------------------------------------------|

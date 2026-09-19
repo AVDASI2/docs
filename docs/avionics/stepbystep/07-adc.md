@@ -2,7 +2,7 @@
 
 The Cube contains an analog-to-digital converter (ADC) (actually, it contains three - but two are used for battery voltage monitoring). The externally-exposed ADC is by default used for airspeed sensing but we can use it to measure any analog signal. 
 
-Note the pinout for the ADC connector in the [Cube interface specifications](https://docs.cubepilot.org/user-guides/autopilot/the-cube/introduction/interface-specifications). The 1.25mm JST-GH connectors are fiddly to crimp, but pre-crimped wires are available.
+Note the pinout for the ADC connector in the [Cube interface specifications](https://docs.cubepilot.org/autopilot/the-cube/introduction/interface-specifications). The 1.25mm JST-GH connectors are fiddly to crimp, but pre-crimped wires are available.
 
 
 ## Example Lua Script - Outputting and Logging Analogue Sensor Data
@@ -11,7 +11,7 @@ The following script is an example code which logs data from an analogue sensor 
 
 The code is well commented - the idea is that you can adapt it to your needs and desires (e.g. transmitting to a ground station, deciding whether to preprocess onboard or on the GS, etc). Make sure to consult the scripting docs linked from the Luascript section, and see what you can create!
 
-```
+```lua
 -- Minimum working example: Logging analog readings from CubeOrange+ ADC port to a .csv file on the Cube's SD card.
 local file_name = "potentiometer_log.csv" -- Log file name
 local file -- File object initialisation

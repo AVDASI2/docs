@@ -5,7 +5,7 @@ Ardupilot/Mission Planner are pretty functional, but we're working a little 'off
 We can work around this using the built-in scripting functionality. The Cube supports Lua scripting (via ArduPilot), enabling onboard automation such as custom sensor logging, custom failsafes, LED behavior, telemetry filtering, or mission logic without requiring firmware modification (which is a good idea for verification/certification of core flight functionality). Lua is a lightweight, high-level scripting language designed for embedded systems, making it ideal for writing custom logic directly on the Cube.
 
 !!! tip "Don't be scared of Lua!"
-    Its a strange programming language but needs to be used as its the only way to write onboard code for the Cube.
+    It's a strange programming language, but it's the only way to write onboard code for the Cube.
     You'll get used to it don't worry.
 
 Ardupilot scripting support pages: 
