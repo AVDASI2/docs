@@ -22,7 +22,8 @@ The unit requirements spec review comes **before** the curriculum review, becaus
 
 ## To do
 
-- [ ] **Kit list on the site.** Fold the kit list into the Kit page (`00-kit.md`): contents, issue and return. Steve is uploading the list; Tim to confirm it. Assume it's correct until then. The kit is the same as 2025-26
+- [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add
+- [ ] **Questions for Tim** from the kit cross-check (review addendum K1–K9): how the servo rail is powered (there's no BEC), the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
 - [ ] **Intro deck** (`slides/w01-intro`), Tue 22 Sep: now split into Part 1 Avionics and Part 2 Mechanisms. Fill the requirements placeholders after the spec review, and resolve the TODOs in the speaker notes (names, fabrication lab room, laptop policy, Mechanisms lead)
 - [ ] **Bench test** of guide pages 00–05 on a freshly reset kit before Friday (review, section H)
