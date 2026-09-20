@@ -15,6 +15,8 @@ either way.
 
 The site is rebuilt and ready; the guide isn't, and Friday's workshop is what makes that urgent.
 
+**Paused, 20 Sep.** Steve is reviewing the unit requirements specification in a separate Claude project. The full curriculum review happens here afterwards, and the guide's outstanding fixes wait for it. Nothing here is blocked on anyone else.
+
 ## Hard dates
 
 | Date | What | Must be true beforehand | State |
