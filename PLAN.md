@@ -62,7 +62,10 @@ step-by-step guide as the primary learning mode and slides plus written
 instructions in parallel, as in CADE30008. Legacy slides reviewed in
 [reviews/2026-09-20-legacy-slides.md](reviews/2026-09-20-legacy-slides.md).
 
-Planned skills workshops, none of which has an ancestor in three years of slides:
+**The unit is being streamlined, not extended: it is already crowded.** Nothing
+below is settled, and no need is assumed until the requirements specification
+is in and Steve's unstated aims have been talked through. Workshops as
+currently sketched:
 
 1. **Crimping and harnessing**, plus wider integration. George has a draft
 2. **Servos**, including the shared boundary with Mechanisms: Mechanisms move
@@ -74,11 +77,15 @@ Planned skills workshops, none of which has an ancestor in three years of slides
 4. **Displaying and logging sensor data**, then MATLAB's Flight Log Analyzer.
    A ready-made ground station is an extension activity for the keen
 
+George's harnessing draft (23 slides, ~77 MB of video) is in the teaching share
+and covered in the review: it is soldering and harnessing, with crimping still
+to scope, and the video needs a home if it is to live on the site.
+
 ## To do
 
 - [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add
 - [ ] **Verify the kit assumptions with Tim** (review addendum K1–K9). Asked, no reply yet; we are proceeding on the assumption that the kits are ready and include BECs. Still to confirm: the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
-- [ ] **Switch the sensor scripts to ArduPilot's own logging.** `logger:write()` puts custom messages in the ordinary `.bin` log, and `gcs:send_named_float()` displays live, so the CSV-on-SD approach in `07-adc` and `08-i2c` can go. Confirm on the bench that Mission Planner's tuning graph lists named floats
+- [ ] **Review the data logging and display options together, after the spec.** Goal: simple and streamlined to start with, extensible for the keen. The options table is in the legacy-slides review; `logger:write()` and `gcs:send_named_float()` are the two ArduPilot routes the current CSV-on-SD and pymavlink approaches predate. Confirm on the bench that Mission Planner's tuning graph lists named floats
 - [ ] **Scope change to agree in the requirements spec**: the old electronics deck required students to build a Python GCS, with wireframes and flow diagrams in the report. The plan is now a ready-made ground station as an extension
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
 - [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, then 25 on Mechanisms. **Hard stop 12:50**: FDAC control lecture 1 follows at 13:00 in the same room, and the rig is set up during the hour. Fill the requirements placeholders after the spec review
