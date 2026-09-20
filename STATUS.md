@@ -1,6 +1,6 @@
 # Status — AVDASI 2 Avionics
 
-**Updated:** 20 Sep 2026 · **Repo:** `~/Documents/GitHub/docs` · **Branch:** `zensical-migration`, nothing pushed
+**Updated:** 20 Sep 2026 · **Repo:** `~/Documents/GitHub/avdasi2.github.io` (renamed from `docs`) · **Branch:** `zensical-migration`, nothing pushed
 
 A scheduling summary for `steve-todo`, in chunks rather than tasks. The detail
 lives in [PLAN.md](PLAN.md) and [reviews/](reviews/); this file says what state
@@ -68,4 +68,6 @@ Files that moved, so references elsewhere don't rot:
 | 20 Sep | `docs/avionics/sessions/index.md` | Deleted; the schedule is canonical on SharePoint |
 | 20 Sep | Kit list inside `stepbystep/00-kit.md` | `docs/avionics/kit-list.md` |
 | 20 Sep | `docs/slides/` committed | Built by CI, no longer committed |
+| 20 Sep | Local folder `~/Documents/GitHub/docs` | `~/Documents/GitHub/avdasi2.github.io`, matching the repo name |
+| 20 Sep | Vendored `docs/stylesheets/flightlab.css` and brand SVGs | The `theme/` submodule (upstream Flight Lab theme) |
 | 19 Sep | Site at `avdasi2.github.io/docs` | Root of `avdasi2.github.io` |
