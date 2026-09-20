@@ -4,6 +4,16 @@ icon: material/file-code
 
 # Example Code
 
+!!! warning "Being updated, September 2026"
+
+    The Cube configuration, the example scripts and this guidance are being
+    revised for 2026-27. A more robust version is coming shortly, including a
+    ready-to-load parameter file so you can set the Cube up in one step.
+
+    Everything here works, and is what we used last year. If something looks
+    wrong or contradicts what you're told in a workshop, ask — and check back
+    here before you build anything on top of the scripts.
+
 A series of scripts were written to show a minimum viable ground station. Keep in mind your code will need to be better than this, you can’t just copy it and hope for the best. It does provide a baseline to build off of and an example of how to meet the basic functionality needed.
 
 Each script should be able to be executed individually but Main.py allows you to execute them all simultaneously. You don’t need to take your approach in your own GS but this is good since you can debug each function independently.

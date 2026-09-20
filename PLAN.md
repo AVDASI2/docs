@@ -78,10 +78,13 @@ currently sketched:
    PWM** (settled 20 Sep). So avionics teaches the signal, the power path,
    stall current, and the servo tester as hand-over point — not servo sizing
 3. **Sensors**: mechanism sensors stay this year (spec now says "sensor/sensors").
-   Pitot **to be bought urgently**, plus the ADC. Note ArduPilot's own guidance:
-   analog airspeed sensors are "largely discontinued" and digital I2C ones are
-   "much more accurate and consistent over temperature", so using the built-in
-   ADC for the pitot is a deliberate trade, not the obvious choice
+   **Pitot dropped for 2026-27** — no avionics students are in P&P, so nothing
+   needs airspeed. Give teams *options* for sensing instead:
+   - the **internal ADC**, now free, with the kit's shaft-mount potentiometers;
+   - the **external ADS1115 over I2C**, already in the published example code.
+   Plus **advice for Mechanisms on integrating sensors robustly** — mounting,
+   backlash, cable routing and strain relief across the boundary. Mechanisms
+   slide 7 ("Avoid") already has the failure photographs for this
 4. **Displaying and logging sensor data**, then MATLAB's Flight Log Analyzer.
    A ready-made ground station is an extension activity for the keen
 
@@ -95,7 +98,10 @@ to scope, and the video needs a home if it is to live on the site.
 - [ ] **Verify the kit assumptions with Tim** (review addendum K1–K9). Asked, no reply yet; we are proceeding on the assumption that the kits are ready and include BECs. Still to confirm: the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
 - [ ] **Review the data logging and display options together, after the spec.** Goal: simple and streamlined to start with, extensible for the keen. The options table is in the legacy-slides review; `logger:write()` and `gcs:send_named_float()` are the two ArduPilot routes the current CSV-on-SD and pymavlink approaches predate. Confirm on the bench that Mission Planner's tuning graph lists named floats
 - [ ] **Scope change to agree in the requirements spec**: the old electronics deck required students to build a Python GCS, with wireframes and flow diagrams in the report. The plan is now a ready-made ground station as an extension
-- [ ] **Buy a pitot/airspeed sensor.** Urgent, with lead time. Decision needed between an analog sensor on the Cube's ADC port (`ARSPD_TYPE=2`, uses the ADC "as intended", but ArduPilot deprecates these) and a digital I2C one (MS4525DO, ASP5033 or DLVR; DLVR additionally allows `ARSPD_SKIP_CAL=1`, so no covering the pitot at startup — a real advantage in a teaching lab)
+- [x] ~~Buy a pitot~~ — **dropped for 2026-27** (21 Sep): no avionics students in P&P, so nothing needs airspeed. Revisit if that changes
+- [ ] **Write the sensing-options guidance**: internal ADC versus external ADS1115 over I2C, with the trade-offs teams need to choose between them, and how each is read and logged
+- [ ] **Write sensor-integration advice for Mechanisms**: how to mount a position sensor so the reading survives the build — backlash, alignment, cable routing, strain relief, and what the failure looks like
+- [x] **Student notice added** (21 Sep): the step-by-step index and Example Code pages now carry a note that the Cube configuration, scripts and guidance are being revised, with a more robust version and a parameter file coming. **This makes the work below time-limited: the notice promises something.**
 - [ ] **Replace or justify `Mode_switch_example.lua`.** Review what stock ArduPilot does instead (flight modes, `RCn_OPTION` aux functions, `ARMING_CHECK`, RC override), then ship a pre-baked `.param` file plus a documented table of changes from defaults. Known faults in the current script: runtime parameter writes, a dead STABILIZE branch testing the wrong variable, SAS toggling only in manual, and a debug message every 100 ms
 - [ ] **Review the provenance of `aircraft_pure_pitch_model.m`** before relying on it or teaching from it. Steve believes it came from another member of staff; it also models a 0.3 kg plate on a rod, not this year's fuselage test article. FDAC has been told to treat its numbers as an example of the right shape only
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
