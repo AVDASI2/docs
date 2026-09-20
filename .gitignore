@@ -79,3 +79,7 @@ docs/code/
 
 # Built decks (npm run slides)
 docs/slides/
+
+# Internal material: draft specs, assessment, student work
+private/*
+!private/README.md
