@@ -140,6 +140,9 @@ def write_config(pages: set[str], site_url: str) -> None:
     text = re.sub(r'^site_name = "(.*?)"', lambda m: f'site_name = "{m.group(1).replace(IN_PROGRESS, "")}"', text, count=1, flags=re.M)
     text = re.sub(r'^site_url = ".*?"', f'site_url = "{site_url}"', text, count=1, flags=re.M)
     text = text.replace("[project]\n", '[project]\ndocs_dir = "docs"\nsite_dir = "site"\n', 1)
+    # custom_dir resolves against this config's directory, which is .live/, so
+    # point it back at the theme submodule in the repository root.
+    text = text.replace('custom_dir = "theme/dist"', 'custom_dir = "../theme/dist"')
     tomllib.loads(text)                   # fail here, not in the build, if it's malformed
     (LIVE / "zensical.toml").write_text(text, encoding="utf-8")
 

@@ -33,6 +33,10 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The Flight Lab theme is a submodule; without this the build fails
+          # on a missing stylesheet rather than publishing an unbranded site.
+          submodules: true
 
       - uses: actions/setup-python@v5
         with:

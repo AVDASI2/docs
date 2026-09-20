@@ -42,6 +42,12 @@ social = [
 
 [project.theme]
 language = "en"
+# The Flight Lab theme, as a submodule pinned to a tag. custom_dir resolves
+# against this config file's own directory, and its contents are copied to the
+# site root, so it points at dist/ rather than the repository root. A file in
+# docs/ wins over the same path here, so one file can be overridden without
+# forking the theme.
+custom_dir = "theme/dist"
 # flightlab.css replaces the header logo with the University crest; the Flight
 # Lab mark stays as the browser tab icon.
 logo = "assets/logo.png"
