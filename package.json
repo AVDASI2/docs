@@ -7,8 +7,10 @@
   "scripts": {
     "slides": "node scripts/build-slides.mjs",
     "site": ".venv/bin/zensical build --clean",
-    "serve": ".venv/bin/zensical serve",
-    "build": "npm run slides && npm run site"
+    "serve": ".venv/bin/zensical serve --dev-addr localhost:8001",
+    "build": "npm run slides && npm run site && npm run live",
+    "live": ".venv/bin/python scripts/build_live.py",
+    "preview:live": ".venv/bin/python scripts/build_live.py && .venv/bin/python -m http.server 8011 --directory .live/site"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.5.1",

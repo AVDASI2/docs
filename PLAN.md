@@ -42,6 +42,13 @@ Steps, all of which need Steve's GitHub access:
    repository: it holds the snapshot tags
 6. Move any open issues to the new repository first, if there are any
 
+## Publishing model
+
+Two sites from one source, as in CADE30008: the in-progress site is everything
+in `docs/` and is local only; the live site is only what `publish.yaml` lists.
+See the README. `publish.yaml` currently lists everything that was already
+public on the old site, so the gate only holds back new or reworked pages.
+
 ## To do
 
 - [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add
@@ -50,7 +57,9 @@ Steps, all of which need Steve's GitHub access:
 - [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, with Steve and Vince taking the other 25 on Mechanisms separately. Fill the requirements placeholders after the spec review, and resolve the TODOs in the speaker notes (names, laptop policy)
 - [ ] **Bench test** of guide pages 00–05 on a freshly reset kit before Friday (review, section H)
 - [ ] **Marp theme.** `flightlab-marp-template` is committed and tagged `v1.0.0` (19 Sep) but has no remote. Once it's pushed: point `package.json` at `github:<org>/<repo>#v1.0.0`, add a slide build to CI, and stop committing `docs/slides/`
-- [ ] Before going live: the home page still says "Material for MkDocs"; decide the licence (CC BY 4.0, as in the control course?) and how to credit past contributors
+- [ ] Before going live: decide the licence (CC BY 4.0, as in the control course?) and how to credit past contributors
+- [ ] Consider an AGENTS.md, as CADE30008 has, once the conventions settle
+- [ ] Run the [annual update](teaching/annual-update.md) each year; it starts with notes written while teaching is fresh
 
 ## Future
 

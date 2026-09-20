@@ -18,9 +18,9 @@ Install it before the first workshop, and stop before the *Connecting* section: 
 
 Two pages of the step-by-step guide need no hardware, and you'll get through the first workshop faster if you've read them:
 
-* [00. Kit](stepbystep/00-kit.md): what you'll be issued, and what to check when you collect it
+* [00. Kit](stepbystep/00-kit.md): how kit issue works, and how to check and handle what you're given
 * [01. Cube](stepbystep/01-cube.md): the autopilot, its carrier board and its connectors
 
 ## At kit issue
 
-Kits are signed out to a named member of your group and returned at the end of the unit in reusable order. Check every item on the [kit list](stepbystep/00-kit.md) before you sign, and tell us straight away if anything is missing or damaged.
+Kits are signed out to a named member of your group and returned at the end of the unit in reusable order. Check every item on the [kit list](kit-list.md) before you sign, and tell us straight away if anything is missing or damaged.

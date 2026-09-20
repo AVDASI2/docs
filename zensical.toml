@@ -1,5 +1,5 @@
 [project]
-site_name = "AVDASI 2"
+site_name = "AVDASI 2 · in progress"
 site_description = "Avionics resources for AVDASI 2 (CADE20005) Aerospace Vehicle Design and Systems Integration at the University of Bristol."
 site_author = "AVDASI 2 teaching team, University of Bristol"
 site_url = "https://avdasi2.github.io/"
@@ -13,6 +13,7 @@ nav = [
     "avionics/index.md",
     { "Introduction" = "avionics/intro.md" },
     { "Getting ready" = "avionics/getting-ready.md" },
+    { "Kit list" = "avionics/kit-list.md" },
     { "Step-by-step guide" = [
       "avionics/stepbystep/index.md",
       { "00. Kit" = "avionics/stepbystep/00-kit.md" },

@@ -10,11 +10,31 @@ You need Python 3.10 or later.
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+npm install                         # only needed to build slides
 ./scripts/fetch-example-code.sh     # example scripts into docs/code/
-.venv/bin/zensical serve            # live preview at http://localhost:8000
+npm run serve                       # the in-progress site, at http://localhost:8001
 ```
 
-Pushing to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/ci.yml`). This repository is the org Pages site, so it is served at the root of <https://avdasi2.github.io> with no path prefix.
+## Two sites from one source
+
+**In progress** (`npm run serve`) is everything in `docs/`, and it is local
+only. Its site name carries " · in progress" so you can't mistake one for the
+other.
+
+**Live** is <https://avdasi2.github.io>, and shows only the pages listed in
+[`publish.yaml`](publish.yaml). `scripts/build_live.py` builds it: pages that
+aren't listed are left out, links to them become plain text, anything between
+`<!-- in-progress:start -->` and `<!-- in-progress:end -->` is dropped, and the
+result's links are checked. Preview it exactly as it will be published with
+`npm run preview:live`, on <http://localhost:8011>.
+
+To publish a page: add it to `publish.yaml`, run `npm run preview:live`, look
+at it, then commit and push. Pushing to `main` builds the live site and deploys
+it (`.github/workflows/ci.yml`); the deploy fails rather than publishing a
+broken link.
+
+One-time set-up: this repository is `AVDASI2/avdasi2.github.io`, and its
+**Settings › Pages › Source** is set to **GitHub Actions**.
 
 ## Layout
 
@@ -26,6 +46,11 @@ Pushing to `main` builds the site and publishes it to GitHub Pages (`.github/wor
 | `docs/stylesheets/course.css` | AVDASI 2 additions to the theme |
 | `docs/assets/brand/` | University and Flight Lab artwork used by the theme. Don't edit it here |
 | `docs/code/` | Example code, fetched from [avdasi2-avionics-demo](https://github.com/AVDASI2/avdasi2-avionics-demo) at build time. Not committed |
+| `slides/` | Marp deck sources, built into `docs/slides/` with `npm run slides` |
+| `publish.yaml` | What the live site shows |
+| `teaching/annual-update.md` | What to update each year, and when |
+| `reviews/` | Content reviews, one file per pass |
+| `migration/` | The redirect for the old `avdasi2.github.io/docs` site |
 
 ## History
 
