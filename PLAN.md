@@ -62,6 +62,11 @@ step-by-step guide as the primary learning mode and slides plus written
 instructions in parallel, as in CADE30008. Legacy slides reviewed in
 `private/reviews/2026-09-20-legacy-slides.md`.
 
+**Aims are agreed: see `private/aims-and-outcomes.md`.** The headline is that
+technical outcomes are secondary — the unit is a vehicle for professional
+practice, design, project management, teamwork and reflective practice. The
+avionics target is a foolproof step-by-step to a full bench prototype.
+
 **The unit is being streamlined, not extended: it is already crowded.** Nothing
 below is settled, and no need is assumed until the requirements specification
 is in and Steve's unstated aims have been talked through. Workshops as
@@ -72,9 +77,10 @@ currently sketched:
    servo selection, kinematics and implementation; Avionics supply the input
    PWM** (settled 20 Sep). So avionics teaches the signal, the power path,
    stall current, and the servo tester as hand-over point — not servo sizing
-3. **Sensors**: choosing and implementing interfaces. Built-in ADC used for its
-   intended purpose (pitot airspeed); external ADC over I2C; other I2C sensors
-   such as the hall-effect angle sensor one group used
+3. **Sensors**: needs re-scoping. Mechanism-mounted sensors are **removed from
+   the requirements** this year, so the flap position sensor is gone. What
+   remains: the built-in ADC for its intended purpose (pitot airspeed), and
+   whatever else the re-scoped workshop needs
 4. **Displaying and logging sensor data**, then MATLAB's Flight Log Analyzer.
    A ready-made ground station is an extension activity for the keen
 
