@@ -77,10 +77,11 @@ currently sketched:
    servo selection, kinematics and implementation; Avionics supply the input
    PWM** (settled 20 Sep). So avionics teaches the signal, the power path,
    stall current, and the servo tester as hand-over point — not servo sizing
-3. **Sensors**: needs re-scoping. Mechanism-mounted sensors are **removed from
-   the requirements** this year, so the flap position sensor is gone. What
-   remains: the built-in ADC for its intended purpose (pitot airspeed), and
-   whatever else the re-scoped workshop needs
+3. **Sensors**: mechanism sensors stay this year (spec now says "sensor/sensors").
+   Pitot **to be bought urgently**, plus the ADC. Note ArduPilot's own guidance:
+   analog airspeed sensors are "largely discontinued" and digital I2C ones are
+   "much more accurate and consistent over temperature", so using the built-in
+   ADC for the pitot is a deliberate trade, not the obvious choice
 4. **Displaying and logging sensor data**, then MATLAB's Flight Log Analyzer.
    A ready-made ground station is an extension activity for the keen
 
@@ -94,6 +95,8 @@ to scope, and the video needs a home if it is to live on the site.
 - [ ] **Verify the kit assumptions with Tim** (review addendum K1–K9). Asked, no reply yet; we are proceeding on the assumption that the kits are ready and include BECs. Still to confirm: the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
 - [ ] **Review the data logging and display options together, after the spec.** Goal: simple and streamlined to start with, extensible for the keen. The options table is in the legacy-slides review; `logger:write()` and `gcs:send_named_float()` are the two ArduPilot routes the current CSV-on-SD and pymavlink approaches predate. Confirm on the bench that Mission Planner's tuning graph lists named floats
 - [ ] **Scope change to agree in the requirements spec**: the old electronics deck required students to build a Python GCS, with wireframes and flow diagrams in the report. The plan is now a ready-made ground station as an extension
+- [ ] **Buy a pitot/airspeed sensor.** Urgent, with lead time. Decision needed between an analog sensor on the Cube's ADC port (`ARSPD_TYPE=2`, uses the ADC "as intended", but ArduPilot deprecates these) and a digital I2C one (MS4525DO, ASP5033 or DLVR; DLVR additionally allows `ARSPD_SKIP_CAL=1`, so no covering the pitot at startup — a real advantage in a teaching lab)
+- [ ] **Replace or justify `Mode_switch_example.lua`.** Review what stock ArduPilot does instead (flight modes, `RCn_OPTION` aux functions, `ARMING_CHECK`, RC override), then ship a pre-baked `.param` file plus a documented table of changes from defaults. Known faults in the current script: runtime parameter writes, a dead STABILIZE branch testing the wrong variable, SAS toggling only in manual, and a debug message every 100 ms
 - [ ] **Review the provenance of `aircraft_pure_pitch_model.m`** before relying on it or teaching from it. Steve believes it came from another member of staff; it also models a 0.3 kg plate on a rod, not this year's fuselage test article. FDAC has been told to treat its numbers as an example of the right shape only
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
 - [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, then 25 on Mechanisms. **Hard stop 12:50**: FDAC control lecture 1 follows at 13:00 in the same room, and the rig is set up during the hour. Fill the requirements placeholders after the spec review
