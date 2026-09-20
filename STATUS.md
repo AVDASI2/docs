@@ -31,7 +31,8 @@ The site is rebuilt and ready; the guide isn't, and Friday's workshop is what ma
 |---|---|---|
 | Steve → George | Draft curriculum and resources for workshop 2 to review | Well before Fri 2 Oct; George is confirmed and booked, and is blocked until this arrives |
 | Steve | Requirements spec review, then curriculum review | Blocks the deck's two requirements placeholders for Tuesday, and the workshop plan after that |
-| Tim | Kit verification K1–K9: BEC model and servo rail power, PSU voltage and XT60s, large servo model, ADC headers, prep jobs done | Asked, no reply. We are proceeding on assumption; correct the pages if it turns out wrong |
+| Tim | **Bench wiring (B8) first**: supply voltage, which XT60 goes where, and how the servo rail is powered | Chased ahead of the rest. If bench run (b) slips, Tim is the only source for B8, and B8 is the item that breaks kit rather than merely confusing people |
+| Tim | The rest of K1–K9: large servo model, ADC headers, prep jobs done, RC issued | Can wait for Tim's convenience; none of it breaks anything on Friday |
 | Tim | Pre-rename telemetry SSIDs to kit numbers | Happens during kit prep, can't be done on the day |
 | BK | What Steve's actual share of AENGM0073 is | Decides whether every Friday workshop slot stands |
 
