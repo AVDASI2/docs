@@ -214,13 +214,6 @@ confirm with Tim.
 
 No session on Fri 9 Oct: Company Day. The schedule on SharePoint is the one to trust.
 
-<!--
-Every Friday 09:00-11:00 workshop sits on top of AENGM0073 in QB 1.18 LT, where
-Steve is named as a lecturer alongside BK. Steve is asking BK what his share
-actually is; until that comes back, treat these times as provisional and don't
-promise more than the schedule does.
--->
-
 ---
 
 # Friday: kit day
