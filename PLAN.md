@@ -55,10 +55,31 @@ public on the old site, so the gate only holds back new or reworked pages.
 hard dates and who we're waiting on, with the detail left here. Rewrite it when
 this plan changes. Its format is being agreed with the steve-todo session.
 
+## Curriculum rebuild
+
+From-scratch curriculum defined by aims and learning outcomes, with the
+step-by-step guide as the primary learning mode and slides plus written
+instructions in parallel, as in CADE30008. Legacy slides reviewed in
+[reviews/2026-09-20-legacy-slides.md](reviews/2026-09-20-legacy-slides.md).
+
+Planned skills workshops, none of which has an ancestor in three years of slides:
+
+1. **Crimping and harnessing**, plus wider integration. George has a draft
+2. **Servos**, including the shared boundary with Mechanisms: Mechanisms move
+   their mechanism with a servo tester, avionics drive a proxy servo from the
+   Cube. Avionics need power draw and stall current
+3. **Sensors**: choosing and implementing interfaces. Built-in ADC used for its
+   intended purpose (pitot airspeed); external ADC over I2C; other I2C sensors
+   such as the hall-effect angle sensor one group used
+4. **Displaying and logging sensor data**, then MATLAB's Flight Log Analyzer.
+   A ready-made ground station is an extension activity for the keen
+
 ## To do
 
 - [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add
 - [ ] **Verify the kit assumptions with Tim** (review addendum K1–K9). Asked, no reply yet; we are proceeding on the assumption that the kits are ready and include BECs. Still to confirm: the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
+- [ ] **Switch the sensor scripts to ArduPilot's own logging.** `logger:write()` puts custom messages in the ordinary `.bin` log, and `gcs:send_named_float()` displays live, so the CSV-on-SD approach in `07-adc` and `08-i2c` can go. Confirm on the bench that Mission Planner's tuning graph lists named floats
+- [ ] **Scope change to agree in the requirements spec**: the old electronics deck required students to build a Python GCS, with wireframes and flow diagrams in the report. The plan is now a ready-made ground station as an extension
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
 - [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, then 25 on Mechanisms. **Hard stop 12:50**: FDAC control lecture 1 follows at 13:00 in the same room, and the rig is set up during the hour. Fill the requirements placeholders after the spec review
 - [ ] **Servos, shared with Mechanisms.** Servo content serves both strands, so write it once. Mechanisms is otherwise taught separately: Steve on theory and design tools (Linkage app, cardboard prototyping) with the intro and Mech 2; Mark Graham and Vince Maes on implementation (2D to 3D, bearings) with Mech 4; Mech 3 proposed as joint
