@@ -276,7 +276,7 @@ Tuesday. Wind-tunnel test plan review is week 7.
 
 <div class="callout">
 
-avdasi2.github.io/docs → Avionics → Step-by-step guide
+avdasi2.github.io → Avionics → Step-by-step guide
 
 </div>
 
@@ -365,7 +365,7 @@ from the mechanisms strand review.
 
 # Where to find things
 
-- **The guide**: avdasi2.github.io/docs
+- **The guide**: avdasi2.github.io
 - **Unit information, spec and assessment**: SharePoint
 - **Questions**: Teams, or ask in the workshops
 - **Found an error in the guide?** Raise an issue or a pull request on GitHub; it's open for exactly that

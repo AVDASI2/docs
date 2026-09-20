@@ -20,6 +20,25 @@ The unit requirements spec review comes **before** the curriculum review, becaus
 6. Curriculum review
 7. Toolchain options: Mission Planner and macOS, Lua or pymavlink, MATLAB or Python for logs. After the spec and curriculum reviews
 
+## Moving to avdasi2.github.io
+
+The site moves from `AVDASI2/docs` (served at `avdasi2.github.io/docs`) to the
+org Pages repository `AVDASI2/avdasi2.github.io`, so it is served at the root.
+Its Jekyll landing page is replaced: that page's content is now on the Zensical
+home page. Old `/docs` links are allowed to 404.
+
+Steps, all of which need Steve's GitHub access:
+
+1. Push this branch to `AVDASI2/docs` first, so the work and the snapshot tags
+   (`v2025-26-mkdocs`, `v2025-26-site`) are backed up
+2. Clone `AVDASI2/avdasi2.github.io`, and replace its contents with this
+   repository's, on a branch
+3. Check the build, merge, and set Settings > Pages > Source to **GitHub Actions**
+4. Confirm <https://avdasi2.github.io> serves the new site
+5. In `AVDASI2/docs`: disable Pages, delete the `gh-pages` branch, add a note to
+   the README pointing at the new home, and archive the repository
+6. Move any open issues to the new repository first, if there are any
+
 ## To do
 
 - [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add

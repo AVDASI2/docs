@@ -1,9 +1,9 @@
 [project]
-site_name = "AVDASI 2 docs"
+site_name = "AVDASI 2"
 site_description = "Avionics resources for AVDASI 2 (CADE20005) Aerospace Vehicle Design and Systems Integration at the University of Bristol."
 site_author = "AVDASI 2 teaching team, University of Bristol"
-site_url = "https://avdasi2.github.io/docs/"
-repo_url = "https://github.com/AVDASI2/docs"
+site_url = "https://avdasi2.github.io/"
+repo_url = "https://github.com/AVDASI2/avdasi2.github.io"
 edit_uri = "edit/main/docs/"
 copyright = "AVDASI 2 &middot; Bristol Flight Lab &middot; University of Bristol"
 

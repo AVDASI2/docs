@@ -1,6 +1,6 @@
 # AVDASI 2 docs
 
-Avionics resources for AVDASI 2 (CADE20005, Aerospace Vehicle Design and Systems Integration) at the University of Bristol, published at <https://avdasi2.github.io/docs/>.
+Avionics resources for AVDASI 2 (CADE20005, Aerospace Vehicle Design and Systems Integration) at the University of Bristol, published at <https://avdasi2.github.io>.
 
 The site is built with [Zensical](https://zensical.org) in the Bristol Flight Lab theme shared with the CADE30008 Flight Dynamics & Control course.
 
@@ -11,10 +11,10 @@ You need Python 3.10 or later.
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 ./scripts/fetch-example-code.sh     # example scripts into docs/code/
-.venv/bin/zensical serve            # live preview at http://localhost:8000/docs/
+.venv/bin/zensical serve            # live preview at http://localhost:8000
 ```
 
-Pushing to `main` builds the site and publishes it to the `gh-pages` branch (`.github/workflows/ci.yml`).
+Pushing to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/ci.yml`). This repository is the org Pages site, so it is served at the root of <https://avdasi2.github.io> with no path prefix.
 
 ## Layout
 
@@ -27,17 +27,16 @@ Pushing to `main` builds the site and publishes it to the `gh-pages` branch (`.g
 | `docs/assets/brand/` | University and Flight Lab artwork used by the theme. Don't edit it here |
 | `docs/code/` | Example code, fetched from [avdasi2-avionics-demo](https://github.com/AVDASI2/avdasi2-avionics-demo) at build time. Not committed |
 
-## Snapshots and rollback
+## History
 
-Earlier states are kept as Git tags:
+These materials were previously published from `AVDASI2/docs` at
+`avdasi2.github.io/docs`, built with MkDocs Material. That repository holds the
+history and two snapshot tags:
 
 | Tag | What it is |
 |---|---|
 | `v2025-26-mkdocs` | Source as taught in 2025-26, on MkDocs Material |
 | `v2025-26-site` | The `gh-pages` branch as last deployed by MkDocs |
 
-To look at an old version, run `git switch --detach v2025-26-mkdocs`. To put the old site back live, push the tag over `gh-pages`:
-
-```bash
-git push --force origin v2025-26-site^{commit}:refs/heads/gh-pages
-```
+To look at an old version, clone that repository and run
+`git switch --detach v2025-26-mkdocs`.
