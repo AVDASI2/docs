@@ -1,6 +1,6 @@
 # Week 1: Avionics & Mechanisms introduction
 
-Tuesday 22 September 2026, 12:00–13:00, 1.40 Pugsley. Full cohort.
+The full-cohort introduction to the Avionics and Mechanisms strands. Session times and rooms are on the unit SharePoint.
 
 <div class="lesson-links" markdown>
 [Slides](../../slides/w01-intro/index.html)
