@@ -25,6 +25,10 @@ TSRs set the Quanser rig up during this hour. So it's 25 minutes each, not 30:
 avionics 12:00-12:25, Mechanisms 12:25-12:50. There is no slack for
 overrunning, and questions have to come out of the 25.
 
+(That FDAC slot is two 50-minute lectures with a break, not one 110-minute
+block, so if the rig setup needs longer there is a second break inside it to
+borrow from. Steve's call, and not a reason to plan on overrunning here.)
+
 Timing guide (25 min): opening and who's who 3 · why avionics 4 ·
 requirements 6 · integration 6 · workshops and getting ready 4 · questions 2.
 
