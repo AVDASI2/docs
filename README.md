@@ -9,6 +9,7 @@ The site is built with [Zensical](https://zensical.org) in the Bristol Flight La
 You need Python 3.10 or later.
 
 ```bash
+git clone --recurse-submodules <this repo>   # the site theme is a submodule
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 npm install                         # only needed to build slides
 ./scripts/fetch-example-code.sh     # example scripts into docs/code/
@@ -52,9 +53,8 @@ One-time set-up: this repository is `AVDASI2/avdasi2.github.io`, and its
 |---|---|
 | `zensical.toml` | Site configuration and navigation |
 | `docs/` | Site pages |
-| `docs/stylesheets/flightlab.css` | Flight Lab theme, copied from the control course; keep the two in step |
+| `theme/` | The [Flight Lab Zensical theme](https://github.com/BristolFlightLab/flightlab-zensical-theme), a submodule pinned to a tag. Don't edit it here |
 | `docs/stylesheets/course.css` | AVDASI 2 additions to the theme |
-| `docs/assets/brand/` | University and Flight Lab artwork used by the theme. Don't edit it here |
 | `docs/code/` | Example code, fetched from [avdasi2-avionics-demo](https://github.com/AVDASI2/avdasi2-avionics-demo) at build time. Not committed |
 | `slides/` | Marp deck sources, built into `docs/slides/` with `npm run slides`. Built decks aren't committed; CI builds them |
 | `publish.yaml` | What the live site shows |
