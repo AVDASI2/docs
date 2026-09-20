@@ -4,7 +4,7 @@ What to do before your first avionics workshop, so that the session is spent on 
 
 ## Bring a Windows laptop
 
-Mission Planner, the ground station software we use to set up the Cube, **runs on Windows**. Each group needs at least one working Windows laptop, brought charged to every workshop.
+Mission Planner, the ground station software we use to set up the Cube, **runs on Windows**. There are no laptops to borrow, so each group needs at least one working Windows laptop of its own, brought charged to every workshop.
 
 Install it before the first workshop, and stop before the *Connecting* section: that part needs the kit.
 

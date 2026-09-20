@@ -58,9 +58,11 @@ this plan changes. Its format is being agreed with the steve-todo session.
 ## To do
 
 - [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add
-- [ ] **Questions for Tim** from the kit cross-check (review addendum K1–K9): how the servo rail is powered (there's no BEC), the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
+- [ ] **Verify the kit assumptions with Tim** (review addendum K1–K9). Asked, no reply yet; we are proceeding on the assumption that the kits are ready and include BECs. Still to confirm: the supply voltage and which XT60 goes where, the large servo model, ADC header soldering, and whether the 2025-26 prep jobs are done
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
-- [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, with Steve and Vince taking the other 25 on Mechanisms separately. Fill the requirements placeholders after the spec review, and resolve the TODOs in the speaker notes (names, laptop policy)
+- [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, then 25 on Mechanisms. **Hard stop 12:50**: FDAC control lecture 1 follows at 13:00 in the same room, and the rig is set up during the hour. Fill the requirements placeholders after the spec review
+- [ ] **Servos, shared with Mechanisms.** Servo content serves both strands, so write it once. Mechanisms is otherwise taught separately: Steve on theory and design tools (Linkage app, cardboard prototyping) with the intro and Mech 2; Mark Graham and Vince Maes on implementation (2D to 3D, bearings) with Mech 4; Mech 3 proposed as joint
+- [ ] **Confirm the Friday workshop slot.** Every Friday 09:00-11:00 workshop collides with AENGM0073 (QB 1.18 LT), where Steve is named as a lecturer. Steve is asking BK what his share is; until then the workshop times are provisional
 - [ ] **Bench test** of guide pages 00–05 on a freshly reset kit before Friday (review, section H)
 - [x] **Marp theme** (20 Sep). Published as `BristolFlightLab/marp-template`; `package.json` pins `#v1.0.0`, CI builds the decks, and `docs/slides/` is no longer committed. The CI slide build is untested until the first push; if it fails, commit `docs/slides/` again as a fallback
 - [ ] Before going live: decide the licence (CC BY 4.0, as in the control course?) and how to credit past contributors

@@ -18,8 +18,12 @@ author: "Dr. Steve Bullock"
 Dr. Steve Bullock
 
 <!--
-Full cohort, 1.40 Pugsley. 25 minutes, with the remaining 25 for Steve and
-Vince on Mechanisms.
+Full cohort, 1.40 Pugsley, 12:00-13:00, avionics then Mechanisms.
+
+HARD STOP 12:50. FDAC control lecture 1 is 13:00-15:00 in this room, and the
+TSRs set the Quanser rig up during this hour. So it's 25 minutes each, not 30:
+avionics 12:00-12:25, Mechanisms 12:25-12:50. There is no slack for
+overrunning, and questions have to come out of the 25.
 
 Timing guide (25 min): opening and who's who 3 · why avionics 4 ·
 requirements 6 · integration 6 · workshops and getting ready 4 · questions 2.
@@ -175,7 +179,7 @@ meaning. Stalled servos draw amps.
 **Power**
 
 - Bench supply → power module → Cube
-- Bench supply → servo rail → servos
+- Bench supply → BEC → servo rail → servos
 - *Not* laptop USB for anything that moves
 
 </div>
@@ -191,8 +195,10 @@ meaning. Stalled servos draw amps.
 </div>
 
 <!--
-TODO(Steve): replace with a single system diagram once the bench wiring is
-confirmed with Tim (no BEC in the kit; supply voltage to check).
+TODO(Steve): replace with a single system diagram. The photo taken during
+Thursday's bench test is meant to serve this and review item B8. Working
+assumption: kits are ready and include BECs; the supply voltage is still to
+confirm with Tim.
 -->
 
 ---
@@ -207,6 +213,13 @@ confirmed with Tim (no BEC in the kit; supply voltage to check).
 | Fri 23 Oct, 09:00–11:00 | Stacks Room | To be confirmed: extra support |
 
 No session on Fri 9 Oct: Company Day. The schedule on SharePoint is the one to trust.
+
+<!--
+Every Friday 09:00-11:00 workshop sits on top of AENGM0073 in QB 1.18 LT, where
+Steve is named as a lecturer alongside BK. Steve is asking BK what his share
+actually is; until that comes back, treat these times as provisional and don't
+promise more than the schedule does.
+-->
 
 ---
 
@@ -224,7 +237,7 @@ No session on Fri 9 Oct: Company Day. The schedule on SharePoint is the one to t
 
 # Getting ready
 
-- **Install Mission Planner on a Windows laptop.** It's Windows-only; one working laptop per group at minimum
+- **Install Mission Planner on a Windows laptop.** It's Windows-only, and there are no laptops to borrow: each group needs one of its own
 - **Bring** that laptop, charged
 - **Read** the guide's index, *Kit* and *Cube* pages
 
@@ -235,7 +248,9 @@ Everything you need is on the **Getting ready** page: avdasi2.github.io → Avio
 </div>
 
 <!--
-TODO(Steve): confirm the laptop policy (lab loan laptops? Mac users?).
+Laptop policy, settled 20 Sep: no lab loan laptops. One Windows laptop per
+group, a student's own, installed before Friday. Say this explicitly here -
+it's the most likely thing to stall a group on the day.
 -->
 
 ---
