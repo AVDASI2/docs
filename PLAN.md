@@ -63,7 +63,8 @@ this plan changes. Its format is being agreed with the steve-todo session.
 - [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, then 25 on Mechanisms. **Hard stop 12:50**: FDAC control lecture 1 follows at 13:00 in the same room, and the rig is set up during the hour. Fill the requirements placeholders after the spec review
 - [ ] **Servos, shared with Mechanisms.** Servo content serves both strands, so write it once. Mechanisms is otherwise taught separately: Steve on theory and design tools (Linkage app, cardboard prototyping) with the intro and Mech 2; Mark Graham and Vince Maes on implementation (2D to 3D, bearings) with Mech 4; Mech 3 proposed as joint
 - [ ] **Confirm the Friday workshop slot.** Every Friday 09:00-11:00 workshop collides with AENGM0073 (QB 1.18 LT), where Steve is named as a lecturer. Steve is asking BK what his share is; until then the workshop times are provisional
-- [ ] **Bench test** of guide pages 00–05 on a freshly reset kit before Friday (review, section H)
+- [ ] **Bench check (a)**: the B1 arming question, 10 minutes, Wed 23 or Thu 24 Sep. Happens regardless; George needs the answer before 2 Oct
+- [ ] **Bench run (b)**: timed run of guide pages 00–05, 2 hours, same window. Includes the wiring photo for B8 and the deck's system diagram. If it can't happen, Friday's workshop opens with one kit through 00–05 at the front (review, section H)
 - [x] **Marp theme** (20 Sep). Published as `BristolFlightLab/marp-template`; `package.json` pins `#v1.0.0`, CI builds the decks, and `docs/slides/` is no longer committed. The CI slide build is untested until the first push; if it fails, commit `docs/slides/` again as a fallback
 - [ ] Before going live: decide the licence (CC BY 4.0, as in the control course?) and how to credit past contributors
 - [ ] Consider an AGENTS.md, as CADE30008 has, once the conventions settle
