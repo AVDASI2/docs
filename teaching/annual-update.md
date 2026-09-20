@@ -77,4 +77,4 @@ Sites that block automated requests report 403 or 000 rather than 404; check tho
 
 ## Writing it down
 
-Each year's review goes in `reviews/<date>-<scope>.md`, and each year's plan in `PLAN.md`. The review is the memory: it's what tells next year's version of you why a page says what it says.
+Each year's review goes in `private/reviews/<date>-<scope>.md`, and each year's plan in `PLAN.md`. The review is the memory: it's what tells next year's version of you why a page says what it says.

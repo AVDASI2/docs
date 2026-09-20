@@ -3,7 +3,7 @@
 **Updated:** 20 Sep 2026 · **Repo:** `~/Documents/GitHub/avdasi2.github.io` (renamed from `docs`) · **Branch:** `zensical-migration`, nothing pushed
 
 A scheduling summary for `steve-todo`, in chunks rather than tasks. The detail
-lives in [PLAN.md](PLAN.md) and [reviews/](reviews/); this file says what state
+lives in [PLAN.md](PLAN.md) and `private/reviews/`; this file says what state
 each chunk is in, what it's waiting on, and what can't move. Rewritten, not
 appended to. Keep it under a screen.
 
@@ -42,7 +42,7 @@ The site is rebuilt and ready; the guide isn't, and Friday's workshop is what ma
 |---|---|---|
 | Site rebuild: Zensical, theme, move to the root domain | Done, unpushed | PLAN.md |
 | Publishing: draft and live split, ports, redirect for old links | Done, unpushed | README.md |
-| Step-by-step guide review | Reviewed; B5 closed, K1 assumed; the rest awaiting Steve's decisions | reviews/2026-09-19-stepbystep.md |
+| Step-by-step guide review | Reviewed; B5 closed, K1 assumed; the rest awaiting Steve's decisions | private/reviews/2026-09-19-stepbystep.md |
 | Guide must-fix items before Friday | Not started. A batch of independent decisions, splittable if you need finer scheduling | Review sections B and K |
 | Intro deck | Drafted and cut to 25 min; blocked on the requirements spec for two placeholder slides | slides/intro/ |
 | Kit pages | Done | docs/avionics/kit-list.md |

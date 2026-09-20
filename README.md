@@ -72,7 +72,6 @@ One-time set-up: this repository is `AVDASI2/avdasi2.github.io`, and its
 | `slides/` | Marp deck sources, built into `docs/slides/` with `npm run slides`. Built decks aren't committed; CI builds them |
 | `publish.yaml` | What the live site shows |
 | `teaching/annual-update.md` | What to update each year, and when |
-| `reviews/` | Content reviews, one file per pass |
 | `migration/` | The redirect for the old `avdasi2.github.io/docs` site |
 
 ## History

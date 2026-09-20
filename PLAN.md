@@ -13,7 +13,7 @@ Working notes for the refresh. Everything is on branch `zensical-migration`; **n
 The unit requirements spec review comes **before** the curriculum review, because the curriculum depends on it. Claude: nudge Steve about the spec review before starting the curriculum review.
 
 1. Unit requirements spec review (Steve, separate session)
-2. Review `reviews/2026-09-19-stepbystep.md` together: all B (must fix) and C (should fix) items, the Friday session fit, and the "How not to break it" page
+2. Review `private/reviews/2026-09-19-stepbystep.md` together: all B (must fix) and C (should fix) items, the Friday session fit, and the "How not to break it" page
 3. Provisional workshop topics for weeks 2–5 (the table on the intro deck and on Sessions 2026-27)
 4. Intro lecture: plan the avionics content in more depth (25 minutes)
 5. Curriculum review
@@ -60,7 +60,7 @@ this plan changes. Its format is being agreed with the steve-todo session.
 From-scratch curriculum defined by aims and learning outcomes, with the
 step-by-step guide as the primary learning mode and slides plus written
 instructions in parallel, as in CADE30008. Legacy slides reviewed in
-[reviews/2026-09-20-legacy-slides.md](reviews/2026-09-20-legacy-slides.md).
+`private/reviews/2026-09-20-legacy-slides.md`.
 
 **The unit is being streamlined, not extended: it is already crowded.** Nothing
 below is settled, and no need is assumed until the requirements specification
