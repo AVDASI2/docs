@@ -68,6 +68,7 @@ this plan changes. Its format is being agreed with the steve-todo session.
 - [x] **Marp theme** (20 Sep). Published as `BristolFlightLab/marp-template`; `package.json` pins `#v1.0.0`, CI builds the decks, and `docs/slides/` is no longer committed. The CI slide build is untested until the first push; if it fails, commit `docs/slides/` again as a fallback
 - [ ] Before going live: decide the licence (CC BY 4.0, as in the control course?) and how to credit past contributors
 - [ ] Consider an AGENTS.md, as CADE30008 has, once the conventions settle
+- [ ] Consider generating STATUS.md, as CADE30008 now does (`status_file()` in its `scripts/build_curriculum.py`, about 60 lines). Only worth it if the curriculum review produces structured session data; today there is none to derive from, because the schedule is canonical on SharePoint
 - [ ] Run the [annual update](teaching/annual-update.md) each year; it starts with notes written while teaching is fresh
 
 ## Future
