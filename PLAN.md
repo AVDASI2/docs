@@ -68,9 +68,10 @@ is in and Steve's unstated aims have been talked through. Workshops as
 currently sketched:
 
 1. **Crimping and harnessing**, plus wider integration. George has a draft
-2. **Servos**, including the shared boundary with Mechanisms: Mechanisms move
-   their mechanism with a servo tester, avionics drive a proxy servo from the
-   Cube. Avionics need power draw and stall current
+2. **Servos**, at the agreed boundary: **Mechanisms own torque requirements,
+   servo selection, kinematics and implementation; Avionics supply the input
+   PWM** (settled 20 Sep). So avionics teaches the signal, the power path,
+   stall current, and the servo tester as hand-over point — not servo sizing
 3. **Sensors**: choosing and implementing interfaces. Built-in ADC used for its
    intended purpose (pitot airspeed); external ADC over I2C; other I2C sensors
    such as the hall-effect angle sensor one group used
