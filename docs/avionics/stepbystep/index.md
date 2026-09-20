@@ -17,8 +17,4 @@ There are many routes to meeting the requirements, those presented here are thos
     * (no icon): assume it's just for reference unless it's obviously essential, then let us know so we can fix the docs.
 
 
-!!! note
-
-    Much of what we do references documentation for external open-source resources - these aren't duplicated here as they're updated frequently elsewhere. If you encounter any inconsistencies in our docs please [raise an issue](https://github.com/AVDASI2/avdasi2.github.io/issues) or even better [submit a pull request](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project) with a correction. Any external issues, try searching for error messages etc., then discuss with the unit team. If you find a bug or an error (and you're confident it's not you, it's them) feel free to give back to the community by contributing changes to open-source projects too!
-
 Use the forward and back links below to step through the guide, or jump around using the site menu. Onwards!

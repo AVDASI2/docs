@@ -11,7 +11,8 @@ nav = [
   { "Home" = "index.md" },
   { "Avionics" = [
     "avionics/index.md",
-    { "Week 1: Introduction" = "avionics/sessions/w01-intro.md" },
+    { "Introduction" = "avionics/intro.md" },
+    { "Getting ready" = "avionics/getting-ready.md" },
     { "Step-by-step guide" = [
       "avionics/stepbystep/index.md",
       { "00. Kit" = "avionics/stepbystep/00-kit.md" },
