@@ -13,7 +13,7 @@
 #     are broken.
 #
 # To publish a page, add it here, run `npm run preview:live` and look at it on
-# http://localhost:8010, then commit and push.
+# http://localhost:8002, then commit and push.
 #
 # Everything listed below was already public on the old site, so nothing is
 # being taken away from students by this gate. New or reworked pages stay off
