@@ -2,7 +2,7 @@
 
 Avionics resources for AVDASI 2 (CADE20005, Aerospace Vehicle Design and Systems Integration) at the University of Bristol, published at <https://avdasi2.github.io>.
 
-The site is built with [Zensical](https://zensical.org) in the Bristol Flight Lab theme shared with the CADE30008 Flight Dynamics & Control course.
+The site is built with [Zensical](https://zensical.org) in the Bristol Flight Lab theme shared with the CADE30008 Flight Dynamics & Control course. Slides use the [Flight Lab Marp theme](https://github.com/BristolFlightLab/marp-template), pinned to a release tag in `package.json`.
 
 ## Quick start
 
@@ -20,6 +20,16 @@ npm run serve                       # the in-progress site, at http://localhost:
 **In progress** (`npm run serve`) is everything in `docs/`, and it is local
 only. Its site name carries " · in progress" so you can't mistake one for the
 other.
+
+Ports are fixed per site, so they can be bookmarked, and don't collide with the
+control course's:
+
+| Site | Command | Port |
+|---|---|---|
+| AVDASI 2, in progress | `npm run serve` | <http://localhost:8001> |
+| AVDASI 2, live preview | `npm run preview:live` | <http://localhost:8011> |
+| CADE30008, in progress | `npm run serve` in `../aero-control-course` | <http://localhost:8000> |
+| CADE30008, live preview | `npm run preview:live` there | <http://localhost:8010> |
 
 **Live** is <https://avdasi2.github.io>, and shows only the pages listed in
 [`publish.yaml`](publish.yaml). `scripts/build_live.py` builds it: pages that
@@ -46,7 +56,7 @@ One-time set-up: this repository is `AVDASI2/avdasi2.github.io`, and its
 | `docs/stylesheets/course.css` | AVDASI 2 additions to the theme |
 | `docs/assets/brand/` | University and Flight Lab artwork used by the theme. Don't edit it here |
 | `docs/code/` | Example code, fetched from [avdasi2-avionics-demo](https://github.com/AVDASI2/avdasi2-avionics-demo) at build time. Not committed |
-| `slides/` | Marp deck sources, built into `docs/slides/` with `npm run slides` |
+| `slides/` | Marp deck sources, built into `docs/slides/` with `npm run slides`. Built decks aren't committed; CI builds them |
 | `publish.yaml` | What the live site shows |
 | `teaching/annual-update.md` | What to update each year, and when |
 | `reviews/` | Content reviews, one file per pass |

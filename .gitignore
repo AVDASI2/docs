@@ -76,3 +76,6 @@ site/
 # Example code, fetched from AVDASI2/avdasi2-avionics-demo at build time
 docs/code/
 .live/
+
+# Built decks (npm run slides)
+docs/slides/

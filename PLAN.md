@@ -49,6 +49,12 @@ in `docs/` and is local only; the live site is only what `publish.yaml` lists.
 See the README. `publish.yaml` currently lists everything that was already
 public on the old site, so the gate only holds back new or reworked pages.
 
+## Scheduling
+
+[STATUS.md](STATUS.md) is the scheduling summary that `steve-todo` reads: chunks,
+hard dates and who we're waiting on, with the detail left here. Rewrite it when
+this plan changes. Its format is being agreed with the steve-todo session.
+
 ## To do
 
 - [x] **Kit list on the site** (19 Sep). The *Kit List Print* sheet from `2025-26/.../lab/AVDASI2 Avionics kits.xlsx` is now on the Kit page (`00-kit.md`). Assumed correct until Tim confirms. Issue and return process still to add
@@ -56,7 +62,7 @@ public on the old site, so the gate only holds back new or reworked pages.
 - [ ] **Internal MWE requirements.** A short requirements spec for the avionics minimum working example: a deliverable for the avionics stream, separate from the unit-level spec. The intro deck's "What done looks like" slide refers to it
 - [ ] **Intro deck** (`slides/intro`): 25 minutes of avionics, with Steve and Vince taking the other 25 on Mechanisms separately. Fill the requirements placeholders after the spec review, and resolve the TODOs in the speaker notes (names, laptop policy)
 - [ ] **Bench test** of guide pages 00–05 on a freshly reset kit before Friday (review, section H)
-- [ ] **Marp theme.** `flightlab-marp-template` is committed and tagged `v1.0.0` (19 Sep) but has no remote. Once it's pushed: point `package.json` at `github:<org>/<repo>#v1.0.0`, add a slide build to CI, and stop committing `docs/slides/`
+- [x] **Marp theme** (20 Sep). Published as `BristolFlightLab/marp-template`; `package.json` pins `#v1.0.0`, CI builds the decks, and `docs/slides/` is no longer committed. The CI slide build is untested until the first push; if it fails, commit `docs/slides/` again as a fallback
 - [ ] Before going live: decide the licence (CC BY 4.0, as in the control course?) and how to credit past contributors
 - [ ] Consider an AGENTS.md, as CADE30008 has, once the conventions settle
 - [ ] Run the [annual update](teaching/annual-update.md) each year; it starts with notes written while teaching is fresh
