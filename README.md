@@ -32,6 +32,19 @@ control course's:
 | CADE30008, in progress | `npm run serve` in `../aero-control-course` | <http://localhost:8011> |
 | CADE30008, live preview | `npm run preview:live` there | <http://localhost:8012> |
 
+Both are meant to be **left running**, so a bookmark just works. Check them with:
+
+```bash
+lsof -nP -iTCP -sTCP:LISTEN | grep -E ':(8001|8002)'
+```
+
+Each port should appear **twice**, once on `127.0.0.1` and once on `[::1]`.
+Anything serving one family only will look down to some clients and fine to
+others: on macOS `localhost` resolves to `::1` first, so an IPv4-only listener
+fails for a client that doesn't fall back, and vice versa. That's why the live
+preview uses `scripts/preview.py` rather than `python -m http.server`, which
+binds one family and, without `--bind`, exposes the site to the whole network.
+
 **Live** is <https://avdasi2.github.io>, and shows only the pages listed in
 [`publish.yaml`](publish.yaml). `scripts/build_live.py` builds it: pages that
 aren't listed are left out, links to them become plain text, anything between
