@@ -18,7 +18,7 @@
         "run",
         "preview:live"
       ],
-      "port": 8011
+      "port": 8002
     }
   ]
 }

@@ -13,7 +13,7 @@ You can test these via Mission Planner's 'servos' tab.
 To connect the Cube to your ground station laptop. Once you're talking this way, your USB cable will just be for power - you could move to your separate power supply.
 
 * [Ardupilot Telemetry](https://ardupilot.org/copter/docs/common-telemetry-landingpage.html#common-telemetry-landingpage)
-* [Beyond Robotix Kahuna](https://beyond-robotix.gitbook.io/docs/kahuna/quick-start-guide). Start in Access Point Mode, we'll move to Station Mode later on in the lab when we have a wifi router set up.
+* [Beyond Robotix Kahuna](https://beyond-robotix.gitbook.io/docs/kahuna/quick-start-guide). Start in Access Point Mode; we move to Station Mode later, joining the lab's autonomous network (not eduroam, which blocks device-to-device traffic). SSID and password are displayed in the lab.
 
 ## RC
 
@@ -68,8 +68,9 @@ More on this later
 
 3. Configure WiFi telemetry
     - Connect GH TELEM Cable to purple wifi telemetry
-    - Connect to BeyondRobotix (password: beyondrobotix) then go to 192.168.4.1
-    - Change AP SSID to Kit[Num]
+    - Connect to the board's default network (password as supplied), then go to 192.168.4.1
+    - Change the AP SSID to your own, e.g. AVDASI2-Kit07-CoB, and leave the password alone
+    - One group at a time: until renamed, every board looks the same
     - Click save
 
 4. RC radio binding

@@ -27,16 +27,16 @@ control course's:
 | Site | Command | Port |
 |---|---|---|
 | AVDASI 2, in progress | `npm run serve` | <http://localhost:8001> |
-| AVDASI 2, live preview | `npm run preview:live` | <http://localhost:8011> |
-| CADE30008, in progress | `npm run serve` in `../aero-control-course` | <http://localhost:8000> |
-| CADE30008, live preview | `npm run preview:live` there | <http://localhost:8010> |
+| AVDASI 2, live preview | `npm run preview:live` | <http://localhost:8002> |
+| CADE30008, in progress | `npm run serve` in `../aero-control-course` | <http://localhost:8011> |
+| CADE30008, live preview | `npm run preview:live` there | <http://localhost:8012> |
 
 **Live** is <https://avdasi2.github.io>, and shows only the pages listed in
 [`publish.yaml`](publish.yaml). `scripts/build_live.py` builds it: pages that
 aren't listed are left out, links to them become plain text, anything between
 `<!-- in-progress:start -->` and `<!-- in-progress:end -->` is dropped, and the
 result's links are checked. Preview it exactly as it will be published with
-`npm run preview:live`, on <http://localhost:8011>.
+`npm run preview:live`, on <http://localhost:8002>.
 
 To publish a page: add it to `publish.yaml`, run `npm run preview:live`, look
 at it, then commit and push. Pushing to `main` builds the live site and deploys

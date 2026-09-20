@@ -4,9 +4,21 @@ Let's start to free you from the shackles of the USB cable.
 
 So far, you've been talking to your Cube over a USB-Serial connection, either with Mission Planner auto-connecting or you manually choosing the correct COM port. They can communicate over various other protocols, including WiFi.
 
-We'll use a common WiFi chip called an ESP8266, and initially set it up so that your Cube appears as a WiFi access point to which you can connect your laptop. Later on we may move to 'station' mode when we have routers set up in the lab.
+We'll use a common WiFi chip called an ESP8266, and initially set it up so that your Cube appears as a WiFi access point to which you can connect your laptop. Later on we move to 'station' mode, where your Cube joins the lab network instead of running its own.
 
-When you power on your telemetry board it will broadcast a WiFi SSID, but the default configuration means that everyone's will be called the same thing! Coordinate with other groups to ensure you're connecting to yours not theirs, and the first thing you should do is rename the SSID to match your kit number - we suggest AVDASI2-Kitx. Leave the password as default, so that we can troubleshoot easily and reset for next year.
+When you power on your telemetry board it will broadcast a WiFi SSID, but every board leaves the factory with the same one! In a room full of kits that means you can easily connect to, and reconfigure, another group's board.
+
+**So the first thing you do is give yours a name of its own.** Pick something that identifies your group and your kit, for example `AVDASI2-Kit07-CoB`, and write it on the kit's label so you can find it again. Leave the password as the default, so that we can troubleshoot easily and reset the board for next year.
+
+!!! warning "Do this one group at a time"
+
+    Until it's renamed, every board looks identical. Agree with the groups around you who is renaming theirs, and do it in turn — otherwise someone renames a board that isn't theirs, and nobody can tell whose is whose.
+
+!!! info "The lab has its own network: not eduroam"
+
+    Later steps, and anything involving device-to-device communication, use a lab-specific **autonomous network** rather than eduroam. Eduroam deliberately stops devices talking directly to one another, which is exactly what a ground station and an autopilot need to do.
+
+    The SSID and password are displayed in the lab. They aren't published here, and you don't need them for the access-point step above.
 
 * [:material-step-forward:Beyond Robotix Kahuna](https://beyond-robotix.gitbook.io/docs/kahuna/quick-start-guide) - the ESP8266 board we use. Connect to the TELEM1 port.
 * [:material-information:Ardupilot Telemetry](https://ardupilot.org/copter/docs/common-telemetry-landingpage.html#common-telemetry-landingpage) - lots more options, but not needed for AVDASI2.
@@ -16,4 +28,4 @@ Now you're talking to the Cube wirelessly, all the USB cable is doing is providi
 !!! tip
     Mission Planner should connect automatically - if not, set the comms protocol to UDP, baud 57600.
     
-    If not working, make sure you're still connected to the chip (and not Eduroam) and your GCS isn't connected to the Cube over USB-Serial.
+    If not working, make sure your laptop is still connected to your telemetry board's own network — not eduroam, and not the lab's autonomous network — and that your GCS isn't also connected to the Cube over USB-Serial.

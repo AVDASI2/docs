@@ -22,8 +22,8 @@ The site is rebuilt and ready; the guide isn't, and Friday's workshop is what ma
 | Tue 22 Sep, 12:00–12:50 | Avionics intro, 25 min, then Mechanisms 25 min | Requirements slides filled | Deck drafted and timed to 25 min; blocked on Steve's requirements spec review, expected today. **Hard stop 12:50**: FDAC control lecture 1 follows at 13:00 in the same room and the rig goes in during the hour |
 | Wed 23 or Thu 24 Sep | Bench check (a): the B1 arming question, 10 min | One kit, reset as a student would find it | Asked for either day, and requested even if (b) can't happen. Decides whether the servo workshop needs a calibration step, which is the answer George needs for 2 Oct |
 | Wed 23 or Thu 24 Sep | Bench run (b): timed run of guide pages 00–05, 2 h | A kit and someone's uninterrupted morning | Valuable but sacrificeable. Gives page timings, every point a student would have to guess, and the wiring photo for B8 and the deck's system diagram. If it doesn't happen, Friday's Workshop 1 becomes the bench test: one kit through 00–05 at the front before groups start. Written down as the fallback, not the plan |
-| Fri 25 Sep, 09:00–11:00 | Workshop 1, kit issue, Steve and George jointly | Guide's must-fix items done; SSIDs pre-renamed during kit prep | Proceeding on the assumption that kits are ready and include BECs; Tim asked, no reply. Workshop time provisional: it collides with AENGM0073, and Steve is asking BK what his share is |
-| Fri 2 Oct, 09:00–11:00 | Workshop 2, George alone | George has draft curriculum and resources, with reading time; B1 answer | Blocked on Steve for the materials. Same AENGM0073 clash |
+| Fri 25 Sep, 09:00–11:00 | Workshop 1, kit issue, Steve and George jointly | Guide's must-fix items done | Proceeding on the assumption that kits are ready and include BECs; Tim asked, no reply. |
+| Fri 2 Oct, 09:00–11:00 | Workshop 2, George alone | George has draft curriculum and resources, with reading time; B1 answer | Blocked on Steve for the materials |
 
 ## Waiting on other people
 
@@ -33,8 +33,6 @@ The site is rebuilt and ready; the guide isn't, and Friday's workshop is what ma
 | Steve | Requirements spec review, then curriculum review | Blocks the deck's two requirements placeholders for Tuesday, and the workshop plan after that |
 | Tim | **Bench wiring (B8) first**: supply voltage, which XT60 goes where, and how the servo rail is powered | Chased ahead of the rest. If bench run (b) slips, Tim is the only source for B8, and B8 is the item that breaks kit rather than merely confusing people |
 | Tim | The rest of K1–K9: large servo model, ADC headers, prep jobs done, RC issued | Can wait for Tim's convenience; none of it breaks anything on Friday |
-| Tim | Pre-rename telemetry SSIDs to kit numbers | Happens during kit prep, can't be done on the day |
-| BK | What Steve's actual share of AENGM0073 is | Decides whether every Friday workshop slot stands |
 
 ## Chunks
 
