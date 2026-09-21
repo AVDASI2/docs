@@ -24,6 +24,8 @@ author: "Dr. Steve Bullock"
 .shots { display: flex; gap: 0.9em; align-items: flex-start; }
 .shots p { flex: 1; margin: 0; text-align: center; font-size: 0.7em; line-height: 1.3; }
 .shots img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 0.25em; }
+.shots.small img { max-height: 170px; object-fit: contain; }
+.shots.small p { font-size: 0.64em; }
 
 /* Video: live embed on screen, a linked still in the PDF. */
 @media print { .only-html { display: none !important; } }
@@ -390,20 +392,27 @@ The same thing in the Linkage app
 
 # Where mechanisms meets avionics
 
-![bg right:30% contain](../../docs/assets/intro/servo-interface.svg)
+![bg right:26% contain](../../docs/assets/intro/servo-interface.svg)
 
-**The boundary is the servo cable.**
+<div class="shots small">
 
-* **Mechanisms own** torque, servo selection, kinematics, implementation — and **sensor integration**
-* **Avionics own** the PWM signal, servo rail power, commanding angles, logging
+![](../../docs/assets/intro/servo-micro.jpg)
+Blue micro servos — also HJ and Parallax standard servos
+
+![](../../docs/assets/intro/servo-tester.svg)
+Mechanisms prove the motion on a **servo tester** first
+
+</div>
+
+* **The boundary is the servo cable**
+* **Mechanisms own** torque, servo selection, kinematics — and **sensor integration**
+* **Avionics own** the PWM, servo rail power, commanding angles, logging
 * **Sensor selection is joint**: readable as well as mountable
 
-* Proved with a **servo tester** first — HJ, Parallax or the blue micro servos — then integrated
-
 <!--
-TODO(Steve): photographs of the three servos and a servo tester would carry
-this slide. Drop them in docs/assets/intro/ as servo-hj.jpg, servo-parallax.jpg,
-servo-micro.jpg and servo-tester.jpg and they can go straight on.
+Servo photo: Tower Pro SG90 by Suyash Dwivedi, Wikimedia Commons, CC BY-SA 4.0.
+No openly licensed photograph of an HJ or Parallax servo, or of a tester,
+exists - the tester is drawn. A lab photograph would be better than both.
 -->
 
 <!--
