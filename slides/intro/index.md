@@ -2,175 +2,264 @@
 marp: true
 theme: flightlab
 paginate: true
-header: "AVDASI 2 · Avionics"
+header: "AVDASI 2 · Avionics & Mechanisms"
 footer: "Dr. Steve Bullock · Introduction"
-title: "Avionics: introduction"
-description: "Introduction to the Avionics strand of AVDASI 2, 2026-27."
+title: "Avionics & Mechanisms: introduction"
+description: "Introduction to the Avionics and Mechanisms strands of AVDASI 2, 2026-27."
 author: "Dr. Steve Bullock"
 ---
 
+<style>
+/* Five-across team row: square portraits, name, then roles. */
+.people { display: flex; gap: 1.1em; align-items: flex-start; margin-top: 0.4em; }
+.people p { flex: 1; text-align: center; font-size: 0.74em; line-height: 1.3; margin: 0; }
+.people img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; margin-bottom: 0.3em; }
+.people strong { display: block; }
+
+/* Compact table, for room lists and schedules that would otherwise overflow. */
+.compact table { font-size: 0.72em; }
+.compact td, .compact th { padding: 0.25em 0.5em; }
+
+/* A row of photographs with captions underneath. */
+.shots { display: flex; gap: 0.9em; align-items: flex-start; }
+.shots p { flex: 1; margin: 0; text-align: center; font-size: 0.7em; line-height: 1.3; }
+.shots img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 0.25em; }
+
+/* Video: live embed on screen, a linked still in the PDF. */
+@media print { .only-html { display: none !important; } }
+@media screen { .only-print { display: none !important; } }
+.only-html iframe { width: 100%; height: 420px; border: 0; }
+.only-print img { width: 100%; }
+</style>
+
 <!-- _class: title -->
 
-# Avionics
+# Avionics & Mechanisms
 
 ## AVDASI 2 · Introduction
 
 Dr. Steve Bullock
 
 <!--
-Full cohort, 1.40 Pugsley, 12:00-13:00, avionics then Mechanisms.
+Full cohort, 1.40 Pugsley, 12:00-13:00.
 
 HARD STOP 12:50. FDAC control lecture 1 is 13:00-15:00 in this room, and the
-TSRs set the Quanser rig up during this hour. So it's 25 minutes each, not 30:
-avionics 12:00-12:25, Mechanisms 12:25-12:50. There is no slack for
-overrunning, and questions have to come out of the 25.
+TSRs set the Quanser rig up during this hour. 25 minutes each half.
 
 (That FDAC slot is two 50-minute lectures with a break, not one 110-minute
 block, so if the rig setup needs longer there is a second break inside it to
 borrow from. Steve's call, and not a reason to plan on overrunning here.)
 
-Timing guide (25 min): opening and who's who 3 · why avionics 4 ·
-requirements 6 · integration 6 · workshops and getting ready 4 · questions 2.
-
-If time is short, cut "The system on the bench and in the tunnel" (it's in the
-guide) and "Where to find things" (it's on the last slide anyway).
+Top-level bullets are fragmented - they appear one at a time on a click.
 -->
 
 ---
 
 # Today
 
-1. Who we are, and where things happen
-2. What avionics does in *your* aircraft
-3. What the requirements ask for
-4. Integration: where avionics meets every other division
-5. The workshops, and how to get ready
+**Who we are, and where things happen**
+
+**Part 1 — Avionics**
+What it does in your aircraft · what the requirements ask for · integration · the workshops, and how to get ready
+
+**Part 2 — Mechanisms**
+What has to move · the design task · where it meets avionics · the sessions
 
 ---
 
-# Who's who, and where
+# Who's who
 
-<div class="columns">
-<div>
+<div class="people">
 
-**Teaching**
+![](../../docs/assets/people/bullock.jpg)
+**Steve Bullock**
+Avionics
+Mechanisms
 
-- **Steve Bullock**: avionics lead
-- **George**: teaching and coordination, Thu & Fri
-- **Tim**: avionics kit issue and return
-- **Robin Carter**: PhD from 1 Oct, has flown these autopilots on the MSc Aerial Robotics project
+![](../../docs/assets/people/burns.jpg)
+**George Burns**
+Avionics
 
-</div>
-<div>
+![](../../docs/assets/people/ward.jpg)
+**Tim Ward**
+Avionics
 
-**Spaces**
+![](../../docs/assets/people/graham.jpg)
+**Mark Graham**
+Mechanisms
 
-- **Stacks Room**, QB F.05: workshops
-- **Avionics lab**, M.003: kit issue, supervised tool use
-- **The Hangar**, L.080: main lab, open access
+![](../../docs/assets/people/maes.jpg)
+**Vince Maes**
+Mechanisms
 
-</div>
 </div>
 
 <!--
-TODO(Steve): check names and roles as you want students to see them. Jasmin
-coordinates lab coverage; add if useful.
+CHECK BEFORE TUESDAY: the four supplied photographs were assigned in the order
+they were sent - Burns, Ward, Graham, Maes. Swap the files in
+docs/assets/people/ if any of them is wrong.
+
+Robin Carter starts his PhD on 1 Oct and has flown these autopilots on the MSc
+Aerial Robotics project; mention him if useful.
+-->
+
+---
+
+# Where things happen
+
+<div class="compact">
+
+| Space | Room | What for |
+|---|---|---|
+| **Stack Room** | QB F.05 ([map](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002986665)) | Avionics workshops, Friday mornings |
+| **Avionics lab** | QB M.003 | Kit issue and return, supervised tool use |
+| **Design Suite** | QB 1.59 | Mechanisms sessions, Thursdays |
+| **The Hangar** | L.080 | Main lab, open access |
+| **This room** | 1.40 Pugsley | Today |
+
+</div>
+
+All in the [Queen's Building](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002976566) except the Hangar.
+
+<!--
+Only the Stack Room resolved to its own MazeMap pin through the public search
+API; the others fall back to the Queen's Building pin. Individual share links
+can be grabbed from the MazeMap app in seconds if wanted.
 -->
 
 ---
 
 # The model is only as good as what moves it
 
-- Your wind-tunnel model has **control surfaces**, and something has to move them repeatably
-- Your test campaign needs **data**, and something has to measure, time-stamp and log it
-- Your aerodynamicists need **the angle you asked for**, not the one you got
+* Your wind-tunnel model has **control surfaces**, and something has to move them repeatably
+* Your test campaign needs **data**, and something has to measure, time-stamp and log it
+* Your aerodynamicists need **the angle you asked for**, not the one you got
 
-Avionics turns a shaped piece of foam and carbon into an **instrumented test article**.
-
-<!--
-Pitch this at the whole cohort: aero, structures and design students all
-depend on this strand working.
--->
+Avionics and mechanisms turn a shaped piece of foam and carbon into an **instrumented test article**.
 
 ---
 
 # Flight-grade kit, off-design
 
-- **Cube Orange+** autopilot running **ArduPilot**, the Flight Lab's standard research autopilot
-- Flown for volcano monitoring, conservation, humanitarian work and search and rescue
-- In AVDASI 2 it's **bolted into a wind tunnel**, with no GPS and restricted movement, and you command surfaces directly
+<div class="only-html">
+<iframe src="https://www.youtube-nocookie.com/embed/N57M-9iFxZ8?start=23&mute=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+</div>
 
-That's deliberately off-design. Much of the avionics work is getting a flight controller to behave usefully on the ground.
+<div class="only-print">
 
----
-
-# Avionics requirements
-
-<div class="callout">
-
-**Placeholder.** Fill in from the requirements specification: the avionics requirements, with their IDs.
+[![](../../docs/assets/intro/wind-tunnel-video.jpg)](https://www.youtube.com/watch?v=N57M-9iFxZ8&t=23s)
 
 </div>
 
-- requirement: what it means in practice
-- requirement: what it means in practice
-- requirement: what it means in practice
-
 <!--
-TODO(Steve): populate from the requirements spec once uploaded. Quote the IDs
-so students can trace them.
+Video starts at 23s, muted. In the PDF this is a still image linked to the
+video, because Marp's PDF export cannot carry an iframe.
+
+The Cube Orange+ runs ArduPilot and is the Flight Lab's standard research
+autopilot - flown for volcano monitoring, conservation and search and rescue.
+In AVDASI 2 it is bolted into a wind tunnel with no GPS, and you command
+surfaces directly. That is deliberately off-design: much of the avionics work
+is getting a flight controller to behave usefully on the ground.
 -->
 
 ---
 
-# What "done" looks like
+# What the spec asks of avionics
 
-<div class="callout">
+> "Aircraft control systems **shall** comprise a flight control system (FCS), radio control system (RCS), telemetry system (TMS), and ground control station (GCS), with associated power, wiring harnesses, antennae etc."
 
-**Placeholder.** The avionics minimum working example (MWE), stated as the stream's own internal requirements, plus how it's assessed.
+<div class="columns">
+<div>
+
+**Provided to you**
+
+- The flight controller
+- The radio control system
+- The telemetry system
+- Servos, from a set list
 
 </div>
+<div>
 
-- The step-by-step guide gets every avionics team to a **minimum working example**
-- The MWE has its own short requirements: a deliverable for the avionics stream, separate from the unit specification
-- Your design builds on it; there are many routes to the requirements
+**Yours to design**
+
+- Power distribution and harnesses
+- Mounting and installation
+- Logging, calibration, evidence
+- Everything that connects them
+
+</div>
+</div>
 
 <!--
-TODO(Steve): the MWE's internal requirements (see PLAN.md) and how avionics
-feeds the assessment.
+Requirements Spec section 2.2, Electronics. Point at the word "shall": this is
+a customer document, not advice. Almost none of the hardware is a choice, and
+almost all of the engineering is in what joins it together.
+-->
+
+---
+
+# What it has to do
+
+* Every surface — elevator, rudder, aileron, flap — **commandable from both the radio and the telemetry link**, to specific angles
+* **PID stability augmentation** in pitch, tuned on the provided flight controller, switchable on and off
+* **Log flight data: 5 Hz minimum, 20 Hz preferred** — pitch angle and rate, servo demand, and whatever else your Company needs
+* Everything **removable**, fixed with mechanical fasteners, for maintenance and recycling
+* **Nothing above 15 V**, anywhere on or connected to the aircraft
+
+<!--
+Sections 2.2, 2.3, 2.4, 3.3 and 4.4. The logging rate is the one students
+underestimate: it rules out the slow-and-simple approaches.
+-->
+
+---
+
+# What "done" looks like — for now
+
+> "A bench-top prototype of full FCS, RCS, TMS, GCS, and associated systems **shall be demonstrated working** at Gate 2a."
+
+* The **step-by-step guide** takes you there: kit, autopilot, telemetry, power, servos, sensors, logging
+* Mechanism prototypes are demonstrated with **servo testers**, not the flight controller
+* **This is done for this teaching block only — integration comes next.** A bench that works is not an aircraft that works
+
+<!--
+Section 2.2 for the gate, 2.3 and 2.4 for the servo-tester route. Say plainly
+that TB1 ends with two halves that each work on a bench, and that putting them
+together is the harder job which starts in TB2 - that is the thing groups
+leave too late.
 -->
 
 ---
 
 # Avionics is an integration job
 
+<div class="compact">
+
 | With | You need to agree |
 |---|---|
 | **Aerodynamics** | Surface sizes and deflections, and so hinge moments, and so servo torque |
-| **Mechanisms** | Linkages, travel, backlash, end stops |
+| **Mechanisms** | Where the boundary sits: they own torque, servo choice and kinematics; **you supply the PWM** |
 | **Structures** | Mounting, access, cable routes, mass |
 | **Test** | Power, comms, what's logged, how it's handed over |
 
-Every row is an **interface**. Interfaces agreed late are the ones that fail.
+</div>
 
-<!--
-Encourage companies to write these down early, as an interface control table,
-and revisit them at each design review.
--->
+Every row is an **interface**. Interfaces agreed late are the ones that fail.
 
 ---
 
 # Interfaces to pin down early
 
-- **Torque and travel**: what the surface needs, and what the servo can give with margin at a stall
-- **Power**: what each component draws, at what voltage, from which supply
-- **Connectors and cables**: which plug, which route, and who crimps it
-- **Data**: what's logged, at what rate, in what units and file format, and who uses it
-- **Command**: who moves which surface in the tunnel, and how you stop it
+* **Torque and travel**: what the surface needs, and what the servo gives with margin when it is **stalled — servo stall, not aerodynamic stall**
+* **Power**: what each component draws, at what voltage, from which supply
+* **Connectors and cables**: which plug, which route, and who crimps it
+* **Data**: what's logged, at what rate, in what units, and who uses it
+* **Command**: who moves which surface in the tunnel, and how you stop it
 
 <!--
-"Stall" here means the servo stall, not aerodynamic stall - flag the double
-meaning. Stalled servos draw amps.
+Servo stall means the servo is driving against a stop or a jam and drawing its
+maximum current - amps, from a rail sized for milliamps. Nothing to do with the
+wing stalling, and the double meaning catches people every year.
 -->
 
 ---
@@ -191,6 +280,7 @@ meaning. Stalled servos draw amps.
 
 **Signals**
 
+- **Transmitter → receiver → Cube** (the RC link)
 - Cube → servo signal pins → surfaces
 - Sensors → ADC / I²C → Cube → log
 - Cube ↔ Wi-Fi telemetry ↔ laptop running Mission Planner
@@ -198,32 +288,36 @@ meaning. Stalled servos draw amps.
 </div>
 </div>
 
+**Two ways in: the radio, and the telemetry link. The spec wants both.**
+
 <!--
-TODO(Steve): replace with a single system diagram. The photo taken during
-Thursday's bench test is meant to serve this and review item B8. Working
-assumption: kits are ready and include BECs; the supply voltage is still to
-confirm with Tim.
+TODO(Steve): a single system diagram would be better than two lists. The
+wiring photograph from the bench test would serve, once it exists.
 -->
 
 ---
 
 # Avionics workshops
 
-| Date | Where | Provisional focus |
-|---|---|---|
-| **Fri 25 Sep**, 09:00–11:00 | Stacks Room + M.003 | Kit issue; Cube, Mission Planner, telemetry, power |
-| Fri 2 Oct, 09:00–11:00 | Stacks Room | Servos and Lua scripting (run by George) |
-| Fri 16 Oct, 09:00–11:00 | Stacks Room | Sensors: ADC and I²C |
-| Fri 23 Oct, 09:00–11:00 | Stacks Room | To be confirmed: extra support |
+<div class="compact">
 
-No session on Fri 9 Oct: Company Day. The schedule on SharePoint is the one to trust.
+| Week | When | Where | Focus |
+|---|---|---|---|
+| **1** | **Fri 25 Sep, 09:00–11:00** | Stack Room + M.003 | Kit issue; Cube, Mission Planner, telemetry, power |
+| 2 | Fri 2 Oct, 09:00–11:00 | Stack Room | Servos and Lua scripting |
+| 4 | Fri 16 Oct, 09:00–11:00 | Stack Room | Sensors: ADC and I²C |
+| 5 | Fri 23 Oct, 09:00–11:00 | Stack Room | To be confirmed |
+
+</div>
+
+No session in week 3 — Company Day. The schedule on SharePoint is the one to trust.
 
 ---
 
 # Friday: kit day
 
-1. **09:00** A short taught intro in the Stacks Room: the kit, and the requirements in more depth
-2. **From 09:30** Groups go up to **M.003** one at a time to collect a kit from Tim
+1. **09:00** A short taught intro in the Stack Room: the kit, and the requirements in more depth
+2. **From 09:30** Groups go up to **M.003**, one at a time, to collect a kit
 3. **While you wait** Read the guide's first pages (*Kit*, *Cube*), with no hardware yet
 4. **Kit in hand** Work through the guide to the Friday checkpoint
 5. **To finish** How not to break each component
@@ -234,20 +328,135 @@ No session on Fri 9 Oct: Company Day. The schedule on SharePoint is the one to t
 
 # Getting ready
 
-- **Install Mission Planner on a Windows laptop.** It's Windows-only, and there are no laptops to borrow: each group needs one of its own
-- **Bring** that laptop, charged
-- **Read** the guide's index, *Kit* and *Cube* pages
+* **Install Mission Planner on a Windows laptop** before Friday — one working laptop per group
+* **Bring** that laptop, charged
+* **Read** the guide's index, *Kit* and *Cube* pages
 
 <div class="callout">
 
-Everything you need is on the **Getting ready** page: avdasi2.github.io → Avionics
+Everything you need: **[avdasi2.github.io](https://avdasi2.github.io)** → Avionics → Getting ready
 
 </div>
 
+The Cube setup, scripts and guidance are **being revised this month** — a more robust version is coming, with a one-step settings file.
+
+---
+
+<!-- _class: section -->
+
+# Part 2: Mechanisms
+
+## From servo to surface
+
 <!--
-Laptop policy, settled 20 Sep: no lab loan laptops. One Windows laptop per
-group, a student's own, installed before Friday. Say this explicitly here -
-it's the most likely thing to stall a group on the day.
+Handover point. Steve on theory and design tools; Mark and Vince on
+implementation. Sessions start in week 3.
+-->
+
+---
+
+# What mechanisms have to deliver
+
+![bg right:40% contain](../../docs/assets/intro/uav-general-arrangement.png)
+
+Every moving surface needs a mechanism designed, built and proved:
+
+* **Flap** — plain, slotted or Fowler, 0° to 30°
+* **Aileron**, **elevator**, **rudder** — four-bar linkages, ±40° to ±45°
+* **Leading edge device** — droop or slat, starboard wing
+* **Landing gear** — deployable, behind a door
+
+Each holds its angle **under aerodynamic load**, to a stated tolerance, within a stated time.
+
+<!--
+Drawing is DRG A2 from the requirements spec. Tolerances: 2 degrees for
+elevator and rudder, 5 for flap and aileron.
+-->
+
+---
+
+# The design task
+
+<div class="columns">
+<div>
+
+**Kinematics**
+
+- Four-bar mechanisms, and why they dominate
+- Mobility: how many actuators does it need?
+- Function generation: the motion you want, from the geometry you have
+- Validated in the **Linkage app**
+
+</div>
+<div>
+
+**Then the real world**
+
+- Bearings, washers, shoulder bolts
+- Slop, backlash and friction
+- Link shapes, materials, failure modes
+- Assembly and disassembly
+
+</div>
+</div>
+
+---
+
+# Where mechanisms meets avionics
+
+![bg right:33% contain](../../docs/assets/intro/servo-interface.svg)
+
+**The boundary is the servo cable.**
+
+* **Mechanisms own** torque, servo selection, kinematics, implementation — and **sensor integration**
+* **Avionics own** the PWM signal, servo rail power, commanding angles, logging
+* **Sensor selection is joint**: readable as well as mountable
+
+Proved with a **servo tester** first, then integrated.
+
+<!--
+Worth saying out loud: a hobby servo is itself electromechanical, with its own
+closed loop inside - a potentiometer on the output shaft, compared against the
+commanded pulse width, driving the motor until the error is zero. So the real
+interface arguably sits *inside* the servo, and the cable is just where we
+agreed to draw the line. Every interface is a choice like that.
+-->
+
+---
+
+# Learn from what broke last year
+
+<div class="shots">
+
+![](../../docs/assets/intro/avoid-1.jpg)
+Actuator cable-tied **and glued** to the false rear spar
+
+![](../../docs/assets/intro/avoid-2.jpg)
+Threaded rod as a pivot, into an oversize hole, into the foam
+
+</div>
+
+Also seen: weak linkages with **no washers anywhere**, and assemblies **impossible to take apart**. Start simple, prototype early, design for disassembly.
+
+---
+
+# Mechanisms sessions
+
+<div class="compact">
+
+| Week | When | Where |
+|---|---|---|
+| 3 | Thu, 11:00–13:00 | 1.59 Design Suite ([map](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002976566)) |
+| 4 | Thu, 11:00–13:00 | 1.59 Design Suite |
+| 5 | Thu, 11:00–13:00 | 1.59 Design Suite |
+
+</div>
+
+Install the **[Linkage app](https://blog.rectorsquid.com/linkage-mechanism-designer-and-simulator/)** before week 3 — **Windows only**; the macOS version is in early beta.
+
+<!--
+TODO(Steve): session content and who leads each - to be confirmed with Mark
+and Vince.
 -->
 
 ---
@@ -256,4 +465,6 @@ it's the most likely thing to stall a group on the day.
 
 # Questions
 
-## See you on Friday, 09:00, Stacks Room
+## Avionics: Friday, 09:00, Stack Room
+
+Mechanisms: week 3

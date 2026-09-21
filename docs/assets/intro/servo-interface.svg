@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 540" role="img"
+     aria-label="A servo drawn as a closed loop: the pulse width command is compared with a potentiometer reading of the output shaft, driving a motor and gearbox until the error is zero.">
+  <title>What is inside a servo</title>
+  <style>
+    .box { fill: #ffffff; stroke: #1e1e24; stroke-width: 2; }
+    .servo { fill: #f4f5f5; stroke: #b01c2e; stroke-width: 2.5; stroke-dasharray: 7 5; }
+    .lbl { font: 600 15px "Trebuchet MS", sans-serif; fill: #1e1e24; }
+    .sm { font: 13px "Trebuchet MS", sans-serif; fill: #1e1e24; }
+    .red { font: 700 15px "Trebuchet MS", sans-serif; fill: #b01c2e; }
+    .wire { fill: none; stroke: #1e1e24; stroke-width: 2; marker-end: url(#a); }
+    .fb { fill: none; stroke: #00c0b5; stroke-width: 2; marker-end: url(#t); }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1e1e24"/>
+    </marker>
+    <marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#00c0b5"/>
+    </marker>
+  </defs>
+
+  <text x="180" y="26" class="red" text-anchor="middle">Avionics</text>
+  <text x="180" y="46" class="sm" text-anchor="middle">pulse width = angle you want</text>
+  <path class="wire" d="M180 54 L180 86"/>
+
+  <rect class="servo" x="16" y="92" width="328" height="330" rx="10"/>
+  <text x="32" y="114" class="red">inside the servo</text>
+
+  <circle class="box" cx="180" cy="152" r="21"/>
+  <text x="180" y="158" class="lbl" text-anchor="middle">−</text>
+  <text x="240" y="150" class="sm">compare</text>
+
+  <path class="wire" d="M180 173 L180 202"/>
+  <rect class="box" x="112" y="202" width="136" height="42" rx="6"/>
+  <text x="180" y="228" class="lbl" text-anchor="middle">motor driver</text>
+
+  <path class="wire" d="M180 244 L180 272"/>
+  <rect class="box" x="112" y="272" width="136" height="42" rx="6"/>
+  <text x="180" y="298" class="lbl" text-anchor="middle">motor + gears</text>
+
+  <path class="wire" d="M180 314 L180 342"/>
+  <rect class="box" x="112" y="342" width="136" height="42" rx="6"/>
+  <text x="180" y="362" class="lbl" text-anchor="middle">output shaft</text>
+  <text x="180" y="378" class="sm" text-anchor="middle">and horn</text>
+
+  <path class="fb" d="M112 363 L60 363 L60 152 L159 152"/>
+  <text x="70" y="262" class="sm" transform="rotate(-90 70 262)">potentiometer</text>
+
+  <path class="wire" d="M180 422 L180 452"/>
+  <text x="180" y="474" class="red" text-anchor="middle">Mechanisms</text>
+  <text x="180" y="494" class="sm" text-anchor="middle">linkage, surface, load</text>
+  <text x="180" y="524" class="sm" text-anchor="middle" font-style="italic">the cable is where we drew the line</text>
+</svg>
