@@ -12,8 +12,9 @@ author: "Dr. Steve Bullock"
 <style>
 /* Five-across team row: square portraits, name, then roles. */
 .people { display: flex; gap: 1.1em; align-items: flex-start; margin-top: 0.4em; }
-.people p { flex: 1; text-align: center; font-size: 0.74em; line-height: 1.3; margin: 0; }
-.people img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; margin-bottom: 0.3em; }
+.people > div { flex: 1; text-align: center; font-size: 0.74em; line-height: 1.3; }
+.people .pic { width: 100%; aspect-ratio: 1 / 1; background-size: cover; background-position: center;
+               border-radius: 6px; margin-bottom: 0.35em; }
 .people strong { display: block; }
 
 /* Compact table, for room lists and schedules that would otherwise overflow. */
@@ -22,10 +23,13 @@ author: "Dr. Steve Bullock"
 
 /* A row of photographs with captions underneath. */
 .shots { display: flex; gap: 0.9em; align-items: flex-start; }
-.shots p { flex: 1; margin: 0; text-align: center; font-size: 0.7em; line-height: 1.3; }
-.shots img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 0.25em; }
-.shots.small img { max-height: 170px; object-fit: contain; }
-.shots.small p { font-size: 0.64em; }
+.shots > div { flex: 1; text-align: center; font-size: 0.7em; line-height: 1.3; }
+.shots .pic { width: 100%; height: 270px; background-size: cover; background-position: center;
+              border-radius: 4px; margin-bottom: 0.3em; }
+.shots.small .pic { height: 165px; background-size: contain; background-repeat: no-repeat; }
+.shots.small > div { font-size: 0.64em; }
+.strip { display: flex; gap: 0.8em; margin-top: 0.6em; }
+.strip .pic { flex: 1; height: 190px; background-size: cover; background-position: center; border-radius: 4px; }
 
 /* Video: live embed on screen, a linked still in the PDF. */
 @media print { .only-html { display: none !important; } }
@@ -67,33 +71,42 @@ What it does in your aircraft · what the requirements ask for · integration ·
 **Part 2 — Mechanisms**
 What has to move · the design task · where it meets avionics · the sessions
 
+<div class="strip">
+<div class="pic" style="background-image:url('../../docs/assets/intro/tunnel-students.jpg')"></div>
+<div class="pic" style="background-image:url('../../docs/assets/intro/servos-installed.jpg')"></div>
+<div class="pic" style="background-image:url('../../docs/assets/intro/servo-micro.jpg')"></div>
+</div>
+
 ---
 
 # Who's who
 
 <div class="people">
-
-![](../../docs/assets/people/bullock.jpg)
-**Steve Bullock**
+<div>
+<div class="pic" style="background-image:url('../../docs/assets/people/bullock.jpg')"></div>
+<strong>Steve Bullock</strong>
+Avionics<br>Mechanisms
+</div>
+<div>
+<div class="pic" style="background-image:url('../../docs/assets/people/burns.jpg')"></div>
+<strong>George Burns</strong>
 Avionics
-Mechanisms
-
-![](../../docs/assets/people/burns.jpg)
-**George Burns**
+</div>
+<div>
+<div class="pic" style="background-image:url('../../docs/assets/people/ward.jpg')"></div>
+<strong>Tim Ward</strong>
 Avionics
-
-![](../../docs/assets/people/ward.jpg)
-**Tim Ward**
-Avionics
-
-![](../../docs/assets/people/graham.jpg)
-**Mark Graham**
+</div>
+<div>
+<div class="pic" style="background-image:url('../../docs/assets/people/graham.jpg')"></div>
+<strong>Mark Graham</strong>
 Mechanisms
-
-![](../../docs/assets/people/maes.jpg)
-**Vince Maes**
+</div>
+<div>
+<div class="pic" style="background-image:url('../../docs/assets/people/maes.jpg')"></div>
+<strong>Vince Maes</strong>
 Mechanisms
-
+</div>
 </div>
 
 <!--
@@ -113,20 +126,19 @@ Aerial Robotics project; mention him if useful.
 
 | Space | Room | What for |
 |---|---|---|
-| **Stack Room** | [QB F.05](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=F.05) | Avionics workshops, Friday mornings |
-| **Avionics lab** | [QB M.003](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=M.003) | Kit issue and return, supervised tool use |
-| **Design Suite** | [QB 1.59](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) | Mechanisms sessions, Thursdays |
-| **The Hangar** | [L.080](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=L.080) | Main lab, open access |
-| **This room** | [1.40 Pugsley](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.40%20Pugsley) | Today |
+| **Stack Room** | [QB F.05](https://link.mazemap.com/gLLBFne1) | Avionics workshops, Friday mornings |
+| **Avionics lab** | [QB M.003](https://link.mazemap.com/uXsLo5fv) | Kit issue and return, supervised tool use |
+| **Design Suite** | [QB 1.59](https://link.mazemap.com/o5Xo8oWt) | Mechanisms sessions, Thursdays |
+| **The Hangar** | [QB L.080](https://link.mazemap.com/2QMWAiXk) | Main lab, open access |
+| **Here** | [PLT](https://link.mazemap.com/KkMVJJVS) | Pugsley Lecture Theatre |
 
 </div>
 
-Room numbers link to the map. All in the Queen's Building except the Hangar.
+Room numbers link to the map. All of these are in the Queen's Building.
 
 <!--
-Room links open a MazeMap search for that room number, using the campus
-collection link with its access token - the same link Steve uses, which finds
-rooms the public API does not.
+MazeMap share links, also kept in teaching/rooms.md so other units can reuse
+them. The Hangar (L.080) is in the Queen's Building too.
 -->
 
 ---
@@ -134,13 +146,8 @@ rooms the public API does not.
 # The model is only as good as what moves it
 
 <div class="shots">
-
-![](../../docs/assets/intro/tunnel-model.jpg)
-Last year's fuselage in the 7×5 tunnel
-
-![](../../docs/assets/intro/tunnel-students.jpg)
-Photos: Ross Dewar
-
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/tunnel-model.jpg')"></div>Last year's fuselage in the 7×5 tunnel</div>
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/tunnel-students.jpg')"></div>Photos: Ross Dewar</div>
 </div>
 
 * Your model has **control surfaces**, and something has to move them repeatably
@@ -242,7 +249,7 @@ leave too late.
 
 ---
 
-# Avionics is an integration job
+# Avionics depends on integration
 
 <div class="compact">
 
@@ -255,7 +262,8 @@ leave too late.
 
 </div>
 
-* This table is a **starting point, not the answer** — read the spec for your own remit, then **agree each interface** with the division on the other side
+* Avionics is not only an integration job, but it **depends on integration more than most**
+* This table is a **starting point, not the answer** — read the spec for your own remit, then **agree each interface** with the division opposite
 * Interfaces agreed late are the ones that fail
 
 ---
@@ -268,6 +276,7 @@ leave too late.
 * **Data**: what's logged, at what rate, in what units, and who uses it
 * **Command**: who moves which surface in the tunnel, and how you stop it
 * Most of these depend on **other teams' work that hasn't happened yet**. Start with a rough number — theirs, or your own gut — and **track what has to be firmed up, and by when**
+* **This list is not exhaustive.** Yours will be longer
 
 <!--
 Servo stall means the servo is driving against a stop or a jam and drawing its
@@ -280,11 +289,6 @@ wing stalling, and the double meaning catches people every year.
 # The system on the bench
 
 ![center h:480](../../docs/assets/intro/bench-system.svg)
-
-<!--
-TODO(Steve): a single system diagram would be better than two lists. The
-wiring photograph from the bench test would serve, once it exists.
--->
 
 ---
 
@@ -301,7 +305,7 @@ wiring photograph from the bench test would serve, once it exists.
 
 </div>
 
-No session in week 3 — Company Day. Check SharePoint for any changes.
+No session in week 3 — Company Day. Full schedule on SharePoint.
 
 ---
 
@@ -364,13 +368,8 @@ elevator and rudder, 5 for flap and aileron.
 # The design task
 
 <div class="shots">
-
-![](../../docs/assets/intro/four-bar.png)
-Crank, coupler, follower, ground
-
-![](../../docs/assets/intro/linkage-app.png)
-The same thing in the Linkage app
-
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/four-bar.png')"></div>Crank, coupler, follower, ground</div>
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/linkage-app.png')"></div>The same thing in the Linkage app</div>
 </div>
 
 <div class="columns">
@@ -392,16 +391,11 @@ The same thing in the Linkage app
 
 # Where mechanisms meets avionics
 
-![bg right:26% contain](../../docs/assets/intro/servo-interface.svg)
+![bg right:34% contain](../../docs/assets/intro/servo-cutaway.svg)
 
 <div class="shots small">
-
-![](../../docs/assets/intro/servo-micro.jpg)
-Blue micro servos — also HJ and Parallax standard servos
-
-![](../../docs/assets/intro/servo-tester.svg)
-Mechanisms prove the motion on a **servo tester** first
-
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/servo-micro.jpg')"></div>Blue micro servos — also HJ and Parallax standard servos</div>
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/servo-tester.svg')"></div>Mechanisms prove the motion on a <strong>servo tester</strong> first</div>
 </div>
 
 * **The boundary is the servo cable**
@@ -410,6 +404,10 @@ Mechanisms prove the motion on a **servo tester** first
 * **Sensor selection is joint**: readable as well as mountable
 
 <!--
+The cutaway: demand in on the signal wire, the pot measures the output angle,
+the board drives the motor until the two agree. The loop is inside the servo -
+which is why the cable, not the shaft, is where we draw the interface.
+
 Servo photo: Tower Pro SG90 by Suyash Dwivedi, Wikimedia Commons, CC BY-SA 4.0.
 No openly licensed photograph of an HJ or Parallax servo, or of a tester,
 exists - the tester is drawn. A lab photograph would be better than both.
@@ -428,16 +426,9 @@ agreed to draw the line. Every interface is a choice like that.
 # Learn from what broke last year
 
 <div class="shots">
-
-![](../../docs/assets/intro/avoid-glued.jpg)
-Actuator cable-tied **and glued** to the false rear spar
-
-![](../../docs/assets/intro/avoid-nowashers.jpg)
-Weak linkages, **no washers**, nothing to reduce friction
-
-![](../../docs/assets/intro/avoid-threadedrod.jpg)
-**Threaded rod** as a pivot, into an oversize hole and into the foam — and impossible to take apart
-
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/avoid-glued.jpg')"></div>Actuator cable-tied <strong>and glued</strong> to the false rear spar</div>
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/avoid-nowashers.jpg')"></div>Weak linkages, <strong>no washers</strong>, nothing to reduce friction</div>
+<div><div class="pic" style="background-image:url('../../docs/assets/intro/avoid-threadedrod.jpg')"></div><strong>Threaded rod</strong> as a pivot, into an oversize hole and into the foam</div>
 </div>
 
 * Start simple, prototype early, design for disassembly

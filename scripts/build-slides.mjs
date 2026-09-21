@@ -29,7 +29,12 @@ for (const deck of decks) {
     const r = spawnSync(marp, [src, "--no-stdin", "-o", out], { cwd: root, stdio: ["ignore", "inherit", "inherit"] });
     if (r.status !== 0) { failed++; continue; }
     if (kind === "html") {
-      const html = readFileSync(out, "utf8").replace(/((?:src|href)=")\.\.\/\.\.\/docs\//g, "$1../../");
+      const html = readFileSync(out, "utf8")
+        .replace(/((?:src|href)=")\.\.\/\.\.\/docs\//g, "$1../../")
+        // CSS background-image paths need the same rewrite. Marp writes its own
+        // background images with HTML-escaped quotes - url(&quot;...&quot;) - so
+        // match those as well as plain or absent quotes, or they 404 on the site.
+        .replace(/(url\((?:&quot;|&#39;|['"])?)\.\.\/\.\.\/docs\//g, "$1../../");
       writeFileSync(out, html);
     }
     console.log(`built docs/slides/${deck}/${kind === "html" ? "index.html" : "slides.pdf"}`);

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 272" role="img"
+     aria-label="Cutaway of a hobby servo: three wires enter a control board, which drives a motor through a gear train to the output shaft and horn; a potentiometer on that shaft feeds the measured angle back to the board.">
+  <title>Inside a servo</title>
+  <style>
+    .case { fill:#eef0ef; stroke:#1e1e24; stroke-width:2.5; }
+    .part { fill:#ffffff; stroke:#1e1e24; stroke-width:2; }
+    .gear { fill:#ffffff; stroke:#1e1e24; stroke-width:1.8; }
+    .t { font:600 14px "Trebuchet MS",sans-serif; fill:#1e1e24; }
+    .s { font:12.5px "Trebuchet MS",sans-serif; fill:#55555e; }
+    .fb { fill:none; stroke:#00c0b5; stroke-width:2.5; marker-end:url(#fbm); }
+    .dr { fill:none; stroke:#1e1e24; stroke-width:2; marker-end:url(#drm); }
+  </style>
+  <defs>
+    <marker id="fbm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#00c0b5"/></marker>
+    <marker id="drm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1e1e24"/></marker>
+  </defs>
+
+  <!-- horn and output shaft, above the case -->
+  <rect class="part" x="252" y="24" width="120" height="14" rx="7"/>
+  <line x1="312" y1="38" x2="312" y2="120" stroke="#1e1e24" stroke-width="5"/>
+  <text x="382" y="36" class="t">horn</text>
+
+  <!-- case -->
+  <rect class="case" x="60" y="70" width="320" height="180" rx="7"/>
+  <rect class="case" x="34" y="92" width="26" height="26" rx="3"/>
+  <rect class="case" x="380" y="92" width="26" height="26" rx="3"/>
+
+  <!-- three-wire lead -->
+  <path d="M2 140 C 26 140, 34 128, 60 128" fill="none" stroke="#ee7219" stroke-width="3"/>
+  <path d="M2 152 C 26 152, 34 140, 60 140" fill="none" stroke="#1e1e24" stroke-width="3"/>
+  <path d="M2 164 C 26 164, 34 152, 60 152" fill="none" stroke="#b01c2e" stroke-width="3"/>
+  <text x="0" y="186" class="s">signal · + · −</text>
+
+  <!-- control board -->
+  <rect class="part" x="78" y="106" width="94" height="58" rx="4"/>
+  <text x="125" y="130" class="t" text-anchor="middle">control</text>
+  <text x="125" y="148" class="t" text-anchor="middle">board</text>
+
+  <!-- motor -->
+  <rect class="part" x="78" y="186" width="102" height="52" rx="6"/>
+  <text x="129" y="218" class="t" text-anchor="middle">motor</text>
+  <path class="dr" d="M125 164 L125 184"/>
+
+  <!-- gear train -->
+  <circle class="gear" cx="222" cy="140" r="28"/>
+  <circle class="gear" cx="266" cy="178" r="20"/>
+  <circle class="gear" cx="292" cy="126" r="16"/>
+  <text x="222" y="145" class="s" text-anchor="middle">gears</text>
+  <path class="dr" d="M182 200 L208 166"/>
+
+  <!-- output shaft -->
+  <circle class="part" cx="312" cy="150" r="26"/>
+  <circle cx="312" cy="150" r="6" fill="#1e1e24"/>
+  <text x="386" y="150" class="t">output</text>
+  <text x="386" y="167" class="t">shaft</text>
+
+  <!-- potentiometer on the shaft -->
+  <rect class="part" x="272" y="192" width="78" height="40" rx="4"/>
+  <text x="311" y="217" class="t" text-anchor="middle">pot</text>
+  <line x1="312" y1="176" x2="312" y2="192" stroke="#1e1e24" stroke-width="3"/>
+
+  <!-- feedback to the board -->
+  <path class="fb" d="M272 212 L200 212 L200 135 L174 135"/>
+</svg>

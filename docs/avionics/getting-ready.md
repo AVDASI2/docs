@@ -4,7 +4,7 @@ What to do before your first avionics workshop, so that the session is spent on 
 
 ## Bring a Windows laptop
 
-Mission Planner, the ground station software we use to set up the Cube, **runs on Windows**. There are no laptops to borrow, so each group needs at least one working Windows laptop of its own, brought charged to every workshop.
+Mission Planner, the ground station software we use to set up the Cube, **runs on Windows**. Each group needs at least one working Windows laptop of its own, brought charged to every workshop.
 
 Install it before the first workshop, and stop before the *Connecting* section: that part needs the kit.
 
@@ -24,3 +24,12 @@ Two pages of the step-by-step guide need no hardware, and you'll get through the
 ## At kit issue
 
 Kits are signed out to a named member of your group and returned at the end of the unit in reusable order. Check every item on the [kit list](kit-list.md) before you sign, and tell us straight away if anything is missing or damaged.
+
+## Where things happen
+
+| Space | Room | What for |
+|---|---|---|
+| Stack Room | [QB F.05](https://link.mazemap.com/gLLBFne1) | Avionics workshops |
+| Avionics lab | [QB M.003](https://link.mazemap.com/uXsLo5fv) | Kit issue and return, supervised tool use |
+| The Hangar | [QB L.080](https://link.mazemap.com/2QMWAiXk) | Main lab, open access |
+| Design Suite | [QB 1.59](https://link.mazemap.com/o5Xo8oWt) | Mechanisms sessions |
