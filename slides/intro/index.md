@@ -111,31 +111,39 @@ Aerial Robotics project; mention him if useful.
 
 | Space | Room | What for |
 |---|---|---|
-| **Stack Room** | QB F.05 ([map](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002986665)) | Avionics workshops, Friday mornings |
-| **Avionics lab** | QB M.003 | Kit issue and return, supervised tool use |
-| **Design Suite** | QB 1.59 | Mechanisms sessions, Thursdays |
-| **The Hangar** | L.080 | Main lab, open access |
-| **This room** | 1.40 Pugsley | Today |
+| **Stack Room** | [QB F.05](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002986665) | Avionics workshops, Friday mornings |
+| **Avionics lab** | [QB M.003](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=M.003) | Kit issue and return, supervised tool use |
+| **Design Suite** | [QB 1.59](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) | Mechanisms sessions, Thursdays |
+| **The Hangar** | [L.080](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=L.080) | Main lab, open access |
+| **This room** | [1.40 Pugsley](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.40%20Pugsley) | Today |
 
 </div>
 
-All in the [Queen's Building](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002976566) except the Hangar.
+Room numbers link to the map. All in the Queen's Building except the Hangar.
 
 <!--
-Only the Stack Room resolved to its own MazeMap pin through the public search
-API; the others fall back to the Queen's Building pin. Individual share links
-can be grabbed from the MazeMap app in seconds if wanted.
+The Stack Room has an exact MazeMap pin; the rest open a MazeMap search for
+that room number, which lands in the right place without needing a pin ID.
 -->
 
 ---
 
 # The model is only as good as what moves it
 
-* Your wind-tunnel model has **control surfaces**, and something has to move them repeatably
-* Your test campaign needs **data**, and something has to measure, time-stamp and log it
-* Your aerodynamicists need **the angle you asked for**, not the one you got
+<div class="shots">
 
-Avionics and mechanisms turn a shaped piece of foam and carbon into an **instrumented test article**.
+![](../../docs/assets/intro/tunnel-model.jpg)
+Last year's fuselage in the 7×5 tunnel
+
+![](../../docs/assets/intro/tunnel-students.jpg)
+Photos: Ross Dewar
+
+</div>
+
+* Your model has **control surfaces**, and something has to move them repeatably
+* Your test campaign needs **data** — measured, time-stamped, logged
+* Your aerodynamicists need **the angle you asked for**, not the one you got
+* Avionics and mechanisms turn foam and carbon into an **instrumented test article**
 
 ---
 
@@ -173,20 +181,20 @@ is getting a flight controller to behave usefully on the ground.
 
 **Provided to you**
 
-- The flight controller
-- The radio control system
-- The telemetry system
-- Servos, from a set list
+* The flight controller
+* The radio control system
+* The telemetry system
+* Servos, from a set list
 
 </div>
 <div>
 
 **Yours to design**
 
-- Power distribution and harnesses
-- Mounting and installation
-- Logging, calibration, evidence
-- Everything that connects them
+* Power distribution and harnesses
+* Mounting and installation
+* Logging, calibration, evidence
+* Everything that connects them
 
 </div>
 </div>
@@ -244,7 +252,8 @@ leave too late.
 
 </div>
 
-Every row is an **interface**. Interfaces agreed late are the ones that fail.
+* This table is a **starting point, not the answer** — read the spec for your own remit, then **agree each interface** with the division on the other side
+* Interfaces agreed late are the ones that fail
 
 ---
 
@@ -255,6 +264,7 @@ Every row is an **interface**. Interfaces agreed late are the ones that fail.
 * **Connectors and cables**: which plug, which route, and who crimps it
 * **Data**: what's logged, at what rate, in what units, and who uses it
 * **Command**: who moves which surface in the tunnel, and how you stop it
+* Most of these depend on **other teams' work that hasn't happened yet**. Start with a rough number — theirs, or your own gut — and **track what has to be firmed up, and by when**
 
 <!--
 Servo stall means the servo is driving against a stop or a jam and drawing its
@@ -264,31 +274,9 @@ wing stalling, and the double meaning catches people every year.
 
 ---
 
-# The system on the bench and in the tunnel
+# The system on the bench
 
-<div class="columns">
-<div>
-
-**Power**
-
-- Bench supply → power module → Cube
-- Bench supply → BEC → servo rail → servos
-- *Not* laptop USB for anything that moves
-
-</div>
-<div>
-
-**Signals**
-
-- **Transmitter → receiver → Cube** (the RC link)
-- Cube → servo signal pins → surfaces
-- Sensors → ADC / I²C → Cube → log
-- Cube ↔ Wi-Fi telemetry ↔ laptop running Mission Planner
-
-</div>
-</div>
-
-**Two ways in: the radio, and the telemetry link. The spec wants both.**
+![center h:480](../../docs/assets/intro/bench-system.svg)
 
 <!--
 TODO(Steve): a single system diagram would be better than two lists. The
@@ -303,10 +291,10 @@ wiring photograph from the bench test would serve, once it exists.
 
 | Week | When | Where | Focus |
 |---|---|---|---|
-| **1** | **Fri 25 Sep, 09:00–11:00** | Stack Room + M.003 | Kit issue; Cube, Mission Planner, telemetry, power |
-| 2 | Fri 2 Oct, 09:00–11:00 | Stack Room | Servos and Lua scripting |
-| 4 | Fri 16 Oct, 09:00–11:00 | Stack Room | Sensors: ADC and I²C |
-| 5 | Fri 23 Oct, 09:00–11:00 | Stack Room | To be confirmed |
+| **1** | **Friday, 09:00–11:00** | Stack Room + M.003 | Kit issue; Cube, Mission Planner, telemetry, power |
+| 2 | Friday, 09:00–11:00 | Stack Room | Servos and Lua scripting |
+| 4 | Friday, 09:00–11:00 | Stack Room | Sensors: ADC and I²C |
+| 5 | Friday, 09:00–11:00 | Stack Room | To be confirmed |
 
 </div>
 
@@ -332,13 +320,8 @@ No session in week 3 — Company Day. The schedule on SharePoint is the one to t
 * **Bring** that laptop, charged
 * **Read** the guide's index, *Kit* and *Cube* pages
 
-<div class="callout">
-
-Everything you need: **[avdasi2.github.io](https://avdasi2.github.io)** → Avionics → Getting ready
-
-</div>
-
-The Cube setup, scripts and guidance are **being revised this month** — a more robust version is coming, with a one-step settings file.
+* Everything you need: **[avdasi2.github.io](https://avdasi2.github.io)** → Avionics → Getting ready
+* The Cube setup, scripts and guidance are **being revised this month** — a more robust version is coming, with a one-step settings file
 
 ---
 
@@ -366,7 +349,7 @@ Every moving surface needs a mechanism designed, built and proved:
 * **Leading edge device** — droop or slat, starboard wing
 * **Landing gear** — deployable, behind a door
 
-Each holds its angle **under aerodynamic load**, to a stated tolerance, within a stated time.
+* Each holds its angle **under aerodynamic load**, to a stated tolerance, within a stated time
 
 <!--
 Drawing is DRG A2 from the requirements spec. Tolerances: 2 degrees for
@@ -382,20 +365,20 @@ elevator and rudder, 5 for flap and aileron.
 
 **Kinematics**
 
-- Four-bar mechanisms, and why they dominate
-- Mobility: how many actuators does it need?
-- Function generation: the motion you want, from the geometry you have
-- Validated in the **Linkage app**
+* Four-bar mechanisms, and why they dominate
+* Mobility: how many actuators does it need?
+* Function generation: the motion you want, from the geometry you have
+* Validated in the **Linkage app**
 
 </div>
 <div>
 
 **Then the real world**
 
-- Bearings, washers, shoulder bolts
-- Slop, backlash and friction
-- Link shapes, materials, failure modes
-- Assembly and disassembly
+* Bearings, washers, shoulder bolts
+* Slop, backlash and friction
+* Link shapes, materials, failure modes
+* Assembly and disassembly
 
 </div>
 </div>
@@ -412,7 +395,7 @@ elevator and rudder, 5 for flap and aileron.
 * **Avionics own** the PWM signal, servo rail power, commanding angles, logging
 * **Sensor selection is joint**: readable as well as mountable
 
-Proved with a **servo tester** first, then integrated.
+* Proved with a **servo tester** first, then integrated
 
 <!--
 Worth saying out loud: a hobby servo is itself electromechanical, with its own
@@ -436,7 +419,8 @@ Threaded rod as a pivot, into an oversize hole, into the foam
 
 </div>
 
-Also seen: weak linkages with **no washers anywhere**, and assemblies **impossible to take apart**. Start simple, prototype early, design for disassembly.
+* Also seen: weak linkages with **no washers anywhere**, and assemblies **impossible to take apart**
+* Start simple, prototype early, design for disassembly
 
 ---
 
@@ -446,9 +430,9 @@ Also seen: weak linkages with **no washers anywhere**, and assemblies **impossib
 
 | Week | When | Where |
 |---|---|---|
-| 3 | Thu, 11:00–13:00 | 1.59 Design Suite ([map](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002976566)) |
-| 4 | Thu, 11:00–13:00 | 1.59 Design Suite |
-| 5 | Thu, 11:00–13:00 | 1.59 Design Suite |
+| 3 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) |
+| 4 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) |
+| 5 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) |
 
 </div>
 
