@@ -466,9 +466,9 @@ Weak linkages, **no washers**, nothing to reduce friction
 
 | Week | When | Where |
 |---|---|---|
-| 3 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) |
-| 4 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) |
-| 5 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) |
+| 3 | Thu, 11:00–13:00 | [QB 1.59 Design Suite](https://link.mazemap.com/o5Xo8oWt) |
+| 4 | Thu, 11:00–13:00 | [QB 1.59 Design Suite](https://link.mazemap.com/o5Xo8oWt) |
+| 5 | Thu, 11:00–13:00 | [QB 1.59 Design Suite](https://link.mazemap.com/o5Xo8oWt) |
 
 </div>
 
