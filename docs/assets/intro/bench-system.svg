@@ -1,85 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img"
-     aria-label="The bench system: mains supply feeds the power module and a BEC; the Cube drives servos and reads sensors; the transmitter reaches the Cube through a receiver, and the laptop through a Wi-Fi telemetry link.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 430" role="img"
+     aria-label="The bench system in three rows: power along the top, the Cube and what it drives in the middle, and the two command routes - radio and telemetry - below.">
   <title>The system on the bench</title>
   <style>
     .b  { fill:#ffffff; stroke:#1e1e24; stroke-width:2; }
     .cube { fill:#fdf1f2; stroke:#b01c2e; stroke-width:3; }
     .t  { font:600 15px "Trebuchet MS",sans-serif; fill:#1e1e24; }
-    .s  { font:12.5px "Trebuchet MS",sans-serif; fill:#4a4a52; }
-    .k  { font:700 13px "Trebuchet MS",sans-serif; }
+    .s  { font:12px "Trebuchet MS",sans-serif; fill:#55555e; }
+    .k  { font:700 12.5px "Trebuchet MS",sans-serif; }
     .pw { fill:none; stroke:#ee7219; stroke-width:3; marker-end:url(#o); }
     .sg { fill:none; stroke:#1e1e24; stroke-width:2; marker-end:url(#d); }
     .rf { fill:none; stroke:#00c0b5; stroke-width:2.5; stroke-dasharray:6 4; marker-end:url(#t); }
+    .rf2{ fill:none; stroke:#00c0b5; stroke-width:2.5; stroke-dasharray:6 4; marker-end:url(#t); marker-start:url(#t2); }
   </style>
   <defs>
     <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#ee7219"/></marker>
     <marker id="d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1e1e24"/></marker>
     <marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#00c0b5"/></marker>
+    <marker id="t2" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#00c0b5"/></marker>
   </defs>
 
   <!-- key -->
-  <line x1="640" y1="24" x2="672" y2="24" stroke="#ee7219" stroke-width="3"/>
-  <text x="678" y="28" class="k" fill="#ee7219">power</text>
-  <line x1="740" y1="24" x2="772" y2="24" stroke="#1e1e24" stroke-width="2"/>
-  <text x="778" y="28" class="k" fill="#1e1e24">signal</text>
-  <line x1="836" y1="24" x2="866" y2="24" stroke="#00c0b5" stroke-width="2.5" stroke-dasharray="6 4"/>
-  <text x="820" y="44" class="k" fill="#00c0b5">wireless</text>
+  <line x1="640" y1="18" x2="668" y2="18" stroke="#ee7219" stroke-width="3"/>
+  <text x="674" y="22" class="k" fill="#ee7219">power</text>
+  <line x1="740" y1="18" x2="768" y2="18" stroke="#1e1e24" stroke-width="2"/>
+  <text x="774" y="22" class="k" fill="#1e1e24">signal wire</text>
+  <line x1="870" y1="18" x2="898" y2="18" stroke="#00c0b5" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="904" y="22" class="k" fill="#00c0b5">radio</text>
 
-  <!-- power chain -->
-  <rect class="b" x="20" y="60" width="150" height="52" rx="6"/>
-  <text x="95" y="84" class="t" text-anchor="middle">Bench supply</text>
-  <text x="95" y="102" class="s" text-anchor="middle">mains, ≤ 15 V</text>
+  <!-- ROW 1: power -->
+  <rect class="b" x="20" y="44" width="150" height="54" rx="6"/>
+  <text x="95" y="68" class="t" text-anchor="middle">Bench supply</text>
+  <text x="95" y="86" class="s" text-anchor="middle">mains, ≤ 15 V</text>
 
-  <path class="pw" d="M170 78 L235 78"/>
-  <rect class="b" x="235" y="52" width="140" height="52" rx="6"/>
-  <text x="305" y="76" class="t" text-anchor="middle">Power module</text>
-  <text x="305" y="94" class="s" text-anchor="middle">regulates + measures</text>
+  <path class="pw" d="M170 61 L228 61"/>
+  <rect class="b" x="230" y="34" width="150" height="54" rx="6"/>
+  <text x="305" y="58" class="t" text-anchor="middle">Power module</text>
+  <text x="305" y="76" class="s" text-anchor="middle">regulates, measures</text>
 
-  <path class="pw" d="M170 96 L200 96 L200 180 L235 180"/>
-  <rect class="b" x="235" y="154" width="140" height="52" rx="6"/>
-  <text x="305" y="178" class="t" text-anchor="middle">BEC</text>
-  <text x="305" y="196" class="s" text-anchor="middle">5 V for the servos</text>
+  <path class="pw" d="M170 82 L200 82 L200 132 L228 132"/>
+  <rect class="b" x="230" y="106" width="150" height="54" rx="6"/>
+  <text x="305" y="130" class="t" text-anchor="middle">BEC</text>
+  <text x="305" y="148" class="s" text-anchor="middle">5 V for the servos</text>
 
-  <!-- cube -->
-  <rect class="cube" x="430" y="96" width="170" height="86" rx="8"/>
-  <text x="515" y="130" class="t" text-anchor="middle" fill="#b01c2e">Cube Orange+</text>
-  <text x="515" y="150" class="s" text-anchor="middle">flight controller</text>
-  <text x="515" y="168" class="s" text-anchor="middle">logs to SD card</text>
+  <!-- ROW 2: cube and what it drives -->
+  <rect class="cube" x="440" y="52" width="170" height="90" rx="8"/>
+  <text x="525" y="84" class="t" text-anchor="middle" fill="#b01c2e">Cube Orange+</text>
+  <text x="525" y="104" class="s" text-anchor="middle">flight controller</text>
+  <text x="525" y="122" class="s" text-anchor="middle">logs to its SD card</text>
 
-  <path class="pw" d="M375 78 L515 78 L515 96"/>
-  <path class="pw" d="M375 180 L410 180 L410 228 L640 228"/>
+  <path class="pw" d="M380 61 L525 61 L525 50"/>
+  <path class="pw" d="M380 133 L410 133 L410 214 L700 214"/>
 
-  <!-- servos -->
-  <rect class="b" x="640" y="202" width="160" height="52" rx="6"/>
-  <text x="720" y="226" class="t" text-anchor="middle">Servos</text>
-  <text x="720" y="244" class="s" text-anchor="middle">control surfaces</text>
-  <path class="sg" d="M600 150 L620 150 L620 216 L638 216"/>
-  <text x="612" y="140" class="s">PWM</text>
+  <rect class="b" x="700" y="188" width="170" height="54" rx="6"/>
+  <text x="785" y="212" class="t" text-anchor="middle">Servos</text>
+  <text x="785" y="230" class="s" text-anchor="middle">control surfaces</text>
+  <path class="sg" d="M610 118 L650 118 L650 202 L698 202"/>
+  <text x="656" y="160" class="s">PWM</text>
 
-  <!-- sensors -->
-  <rect class="b" x="640" y="96" width="160" height="52" rx="6"/>
-  <text x="720" y="120" class="t" text-anchor="middle">Sensors</text>
-  <text x="720" y="138" class="s" text-anchor="middle">ADC · I²C</text>
-  <path class="sg" d="M638 122 L602 122"/>
+  <rect class="b" x="700" y="52" width="170" height="54" rx="6"/>
+  <text x="785" y="76" class="t" text-anchor="middle">Sensors</text>
+  <text x="785" y="94" class="s" text-anchor="middle">ADC · I²C</text>
+  <path class="sg" d="M698 79 L612 79"/>
 
-  <!-- RC link -->
-  <rect class="b" x="20" y="286" width="150" height="52" rx="6"/>
-  <text x="95" y="310" class="t" text-anchor="middle">Transmitter</text>
-  <text x="95" y="328" class="s" text-anchor="middle">the safety pilot</text>
-  <path class="rf" d="M170 312 L232 312"/>
-  <rect class="b" x="235" y="286" width="140" height="52" rx="6"/>
-  <text x="305" y="310" class="t" text-anchor="middle">Receiver</text>
-  <text x="305" y="328" class="s" text-anchor="middle">on the aircraft</text>
-  <path class="sg" d="M375 312 L515 312 L515 184"/>
+  <!-- ROW 3: the two command routes -->
+  <rect class="b" x="20" y="300" width="150" height="54" rx="6"/>
+  <text x="95" y="324" class="t" text-anchor="middle">Transmitter</text>
+  <text x="95" y="342" class="s" text-anchor="middle">the safety pilot</text>
+  <path class="rf" d="M170 327 L226 327"/>
+  <rect class="b" x="230" y="300" width="150" height="54" rx="6"/>
+  <text x="305" y="324" class="t" text-anchor="middle">Receiver</text>
+  <text x="305" y="342" class="s" text-anchor="middle">on the aircraft</text>
+  <path class="sg" d="M380 327 L525 327 L525 144"/>
+  <text x="392" y="318" class="s">wire to the Cube</text>
 
-  <!-- telemetry -->
-  <rect class="b" x="640" y="286" width="160" height="52" rx="6"/>
-  <text x="720" y="310" class="t" text-anchor="middle">Laptop</text>
-  <text x="720" y="328" class="s" text-anchor="middle">Mission Planner</text>
-  <path class="rf" d="M600 140 L616 140 L616 300 L638 300"/>
-  <path class="rf" d="M638 292 L618 292 L618 132 L602 132"/>
-  <text x="626" y="272" class="s" transform="rotate(-90 626 272)">Wi-Fi telemetry</text>
+  <rect class="b" x="700" y="300" width="170" height="54" rx="6"/>
+  <text x="785" y="324" class="t" text-anchor="middle">Laptop</text>
+  <text x="785" y="342" class="s" text-anchor="middle">Mission Planner</text>
+  <path class="rf2" d="M612 132 L660 132 L660 327 L698 327"/>
+  <text x="668" y="300" class="s">Wi-Fi telemetry</text>
 
-  <text x="450" y="404" class="t" text-anchor="middle">Two ways in: the radio, and the telemetry link. The spec wants both.</text>
-  <text x="450" y="430" class="s" text-anchor="middle">Nothing that moves is powered from laptop USB.</text>
+  <text x="490" y="400" class="t" text-anchor="middle">Both routes reach the same aircraft. You need them both working.</text>
 </svg>

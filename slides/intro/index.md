@@ -111,19 +111,20 @@ Aerial Robotics project; mention him if useful.
 
 | Space | Room | What for |
 |---|---|---|
-| **Stack Room** | [QB F.05](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&sharepoitype=poi&sharepoi=1002986665) | Avionics workshops, Friday mornings |
-| **Avionics lab** | [QB M.003](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=M.003) | Kit issue and return, supervised tool use |
-| **Design Suite** | [QB 1.59](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) | Mechanisms sessions, Thursdays |
-| **The Hangar** | [L.080](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=L.080) | Main lab, open access |
-| **This room** | [1.40 Pugsley](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.40%20Pugsley) | Today |
+| **Stack Room** | [QB F.05](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=F.05) | Avionics workshops, Friday mornings |
+| **Avionics lab** | [QB M.003](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=M.003) | Kit issue and return, supervised tool use |
+| **Design Suite** | [QB 1.59](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) | Mechanisms sessions, Thursdays |
+| **The Hangar** | [L.080](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=L.080) | Main lab, open access |
+| **This room** | [1.40 Pugsley](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.40%20Pugsley) | Today |
 
 </div>
 
 Room numbers link to the map. All in the Queen's Building except the Hangar.
 
 <!--
-The Stack Room has an exact MazeMap pin; the rest open a MazeMap search for
-that room number, which lands in the right place without needing a pin ID.
+Room links open a MazeMap search for that room number, using the campus
+collection link with its access token - the same link Steve uses, which finds
+rooms the public API does not.
 -->
 
 ---
@@ -150,7 +151,7 @@ Photos: Ross Dewar
 # Flight-grade kit, off-design
 
 <div class="only-html">
-<iframe src="https://www.youtube-nocookie.com/embed/N57M-9iFxZ8?start=23&mute=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/N57M-9iFxZ8?start=23&mute=1&rel=0&modestbranding=1&cc_load_policy=0&iv_load_policy=3" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
 </div>
 
 <div class="only-print">
@@ -298,7 +299,7 @@ wiring photograph from the bench test would serve, once it exists.
 
 </div>
 
-No session in week 3 — Company Day. The schedule on SharePoint is the one to trust.
+No session in week 3 — Company Day. Check SharePoint for any changes.
 
 ---
 
@@ -360,25 +361,27 @@ elevator and rudder, 5 for flap and aileron.
 
 # The design task
 
+<div class="shots">
+
+![](../../docs/assets/intro/four-bar.png)
+Crank, coupler, follower, ground
+
+![](../../docs/assets/intro/linkage-app.png)
+The same thing in the Linkage app
+
+</div>
+
 <div class="columns">
 <div>
 
-**Kinematics**
-
-* Four-bar mechanisms, and why they dominate
-* Mobility: how many actuators does it need?
-* Function generation: the motion you want, from the geometry you have
-* Validated in the **Linkage app**
+* **Kinematics**: four-bar linkages, mobility, function generation
+* Drawn and checked in the **Linkage app**
 
 </div>
 <div>
 
-**Then the real world**
-
-* Bearings, washers, shoulder bolts
-* Slop, backlash and friction
-* Link shapes, materials, failure modes
-* Assembly and disassembly
+* **Then the real world**: bearings, slop, backlash, friction
+* Materials, failure modes, and taking it apart again
 
 </div>
 </div>
@@ -387,7 +390,7 @@ elevator and rudder, 5 for flap and aileron.
 
 # Where mechanisms meets avionics
 
-![bg right:33% contain](../../docs/assets/intro/servo-interface.svg)
+![bg right:30% contain](../../docs/assets/intro/servo-interface.svg)
 
 **The boundary is the servo cable.**
 
@@ -395,7 +398,13 @@ elevator and rudder, 5 for flap and aileron.
 * **Avionics own** the PWM signal, servo rail power, commanding angles, logging
 * **Sensor selection is joint**: readable as well as mountable
 
-* Proved with a **servo tester** first, then integrated
+* Proved with a **servo tester** first — HJ, Parallax or the blue micro servos — then integrated
+
+<!--
+TODO(Steve): photographs of the three servos and a servo tester would carry
+this slide. Drop them in docs/assets/intro/ as servo-hj.jpg, servo-parallax.jpg,
+servo-micro.jpg and servo-tester.jpg and they can go straight on.
+-->
 
 <!--
 Worth saying out loud: a hobby servo is itself electromechanical, with its own
@@ -411,15 +420,17 @@ agreed to draw the line. Every interface is a choice like that.
 
 <div class="shots">
 
-![](../../docs/assets/intro/avoid-1.jpg)
+![](../../docs/assets/intro/avoid-glued.jpg)
 Actuator cable-tied **and glued** to the false rear spar
 
-![](../../docs/assets/intro/avoid-2.jpg)
-Threaded rod as a pivot, into an oversize hole, into the foam
+![](../../docs/assets/intro/avoid-nowashers.jpg)
+Weak linkages, **no washers**, nothing to reduce friction
+
+![](../../docs/assets/intro/avoid-threadedrod.jpg)
+**Threaded rod** as a pivot, into an oversize hole and into the foam — and impossible to take apart
 
 </div>
 
-* Also seen: weak linkages with **no washers anywhere**, and assemblies **impossible to take apart**
 * Start simple, prototype early, design for disassembly
 
 ---
@@ -430,9 +441,9 @@ Threaded rod as a pivot, into an oversize hole, into the foam
 
 | Week | When | Where |
 |---|---|---|
-| 3 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) |
-| 4 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) |
-| 5 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&campusid=843&search=1.59) |
+| 3 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) |
+| 4 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) |
+| 5 | Thu, 11:00–13:00 | [1.59 Design Suite](https://use.mazemap.com/#v=1&config=UoBCampuses&view_access_token=fcab572c2d2a4e479089433ce060d24b&search=1.59) |
 
 </div>
 
