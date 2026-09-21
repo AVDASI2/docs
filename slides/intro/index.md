@@ -11,10 +11,9 @@ author: "Dr. Steve Bullock"
 
 <style>
 /* Five-across team row: square portraits, name, then roles. */
-.people { display: flex; gap: 1.1em; align-items: flex-start; margin-top: 0.4em; }
-.people > div { flex: 1; text-align: center; font-size: 0.74em; line-height: 1.3; }
-.people .pic { width: 100%; aspect-ratio: 1 / 1; background-size: cover; background-position: center;
-               border-radius: 6px; margin-bottom: 0.35em; }
+.people { display: flex; gap: 1.1em; }
+.people p { flex: 1; text-align: center; font-size: 0.74em; line-height: 1.3; margin: 0; }
+.people img { width: 100%; border-radius: 6px; margin-bottom: 0.3em; }
 .people strong { display: block; }
 
 /* Compact table, for room lists and schedules that would otherwise overflow. */
@@ -23,13 +22,13 @@ author: "Dr. Steve Bullock"
 
 /* A row of photographs with captions underneath. */
 .shots { display: flex; gap: 0.9em; align-items: flex-start; }
-.shots > div { flex: 1; text-align: center; font-size: 0.7em; line-height: 1.3; }
-.shots .pic { width: 100%; height: 270px; background-size: cover; background-position: center;
-              border-radius: 4px; margin-bottom: 0.3em; }
-.shots.small .pic { height: 165px; background-size: contain; background-repeat: no-repeat; }
-.shots.small > div { font-size: 0.64em; }
-.strip { display: flex; gap: 0.8em; margin-top: 0.6em; }
-.strip .pic { flex: 1; height: 190px; background-size: cover; background-position: center; border-radius: 4px; }
+.shots p { flex: 1; text-align: center; font-size: 0.7em; line-height: 1.3; margin: 0; }
+.shots img { width: 100%; max-height: 230px; object-fit: cover; border-radius: 4px; margin-bottom: 0.3em; }
+.shots.small p { font-size: 0.64em; }
+.shots.small img { max-height: 150px; object-fit: contain; }
+/* Markdown puts the strip's three images in one paragraph, so lay that out. */
+.strip p { display: flex; gap: 0.8em; margin: 0.5em 0 0; }
+.strip img { width: 33%; max-height: 190px; object-fit: cover; border-radius: 4px; }
 
 /* Video: live embed on screen, a linked still in the PDF. */
 @media print { .only-html { display: none !important; } }
@@ -72,9 +71,11 @@ What it does in your aircraft · what the requirements ask for · integration ·
 What has to move · the design task · where it meets avionics · the sessions
 
 <div class="strip">
-<div class="pic" style="background-image:url('../../docs/assets/intro/tunnel-students.jpg')"></div>
-<div class="pic" style="background-image:url('../../docs/assets/intro/servos-installed.jpg')"></div>
-<div class="pic" style="background-image:url('../../docs/assets/intro/servo-micro.jpg')"></div>
+
+![](../../docs/assets/intro/tunnel-students.jpg)
+![](../../docs/assets/intro/servos-installed.jpg)
+![](../../docs/assets/intro/servo-micro.jpg)
+
 </div>
 
 ---
@@ -82,31 +83,28 @@ What has to move · the design task · where it meets avionics · the sessions
 # Who's who
 
 <div class="people">
-<div>
-<div class="pic" style="background-image:url('../../docs/assets/people/bullock.jpg')"></div>
-<strong>Steve Bullock</strong>
-Avionics<br>Mechanisms
-</div>
-<div>
-<div class="pic" style="background-image:url('../../docs/assets/people/burns.jpg')"></div>
-<strong>George Burns</strong>
+
+![](../../docs/assets/people/bullock.jpg)
+**Steve Bullock**
 Avionics
-</div>
-<div>
-<div class="pic" style="background-image:url('../../docs/assets/people/ward.jpg')"></div>
-<strong>Tim Ward</strong>
+Mechanisms
+
+![](../../docs/assets/people/burns.jpg)
+**George Burns**
 Avionics
-</div>
-<div>
-<div class="pic" style="background-image:url('../../docs/assets/people/graham.jpg')"></div>
-<strong>Mark Graham</strong>
+
+![](../../docs/assets/people/ward.jpg)
+**Tim Ward**
+Avionics
+
+![](../../docs/assets/people/graham.jpg)
+**Mark Graham**
 Mechanisms
-</div>
-<div>
-<div class="pic" style="background-image:url('../../docs/assets/people/maes.jpg')"></div>
-<strong>Vince Maes</strong>
+
+![](../../docs/assets/people/maes.jpg)
+**Vince Maes**
 Mechanisms
-</div>
+
 </div>
 
 <!--
@@ -130,15 +128,15 @@ Aerial Robotics project; mention him if useful.
 | **Avionics lab** | [QB M.003](https://link.mazemap.com/uXsLo5fv) | Kit issue and return, supervised tool use |
 | **Design Suite** | [QB 1.59](https://link.mazemap.com/o5Xo8oWt) | Mechanisms sessions, Thursdays |
 | **The Hangar** | [QB L.080](https://link.mazemap.com/2QMWAiXk) | Main lab, open access |
-| **Here** | [PLT](https://link.mazemap.com/KkMVJJVS) | Pugsley Lecture Theatre |
+| **Here** | [QB PLT](https://link.mazemap.com/KkMVJJVS) | Pugsley Lecture Theatre |
 
 </div>
 
-Room numbers link to the map. All of these are in the Queen's Building.
+Room numbers link to the map. All of these are in Queens Building.
 
 <!--
 MazeMap share links, also kept in teaching/rooms.md so other units can reuse
-them. The Hangar (L.080) is in the Queen's Building too.
+them. The Hangar (L.080) is in Queens Building too.
 -->
 
 ---
@@ -146,14 +144,20 @@ them. The Hangar (L.080) is in the Queen's Building too.
 # The model is only as good as what moves it
 
 <div class="shots">
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/tunnel-model.jpg')"></div>Last year's fuselage in the 7×5 tunnel</div>
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/tunnel-students.jpg')"></div>Photos: Ross Dewar</div>
+
+![](../../docs/assets/intro/tunnel-model.jpg)
+Last year's fuselage in the 7×5 tunnel
+
+![](../../docs/assets/intro/tunnel-students.jpg)
+Photos: Ross Dewar
+
 </div>
 
 * Your model has **control surfaces**, and something has to move them repeatably
 * Your test campaign needs **data** — measured, time-stamped, logged
 * Your aerodynamicists need **the angle you asked for**, not the one you got
 * Avionics and mechanisms turn foam and carbon into an **instrumented test article**
+
 
 ---
 
@@ -368,8 +372,13 @@ elevator and rudder, 5 for flap and aileron.
 # The design task
 
 <div class="shots">
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/four-bar.png')"></div>Crank, coupler, follower, ground</div>
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/linkage-app.png')"></div>The same thing in the Linkage app</div>
+
+![](../../docs/assets/intro/four-bar.svg)
+The parts of a **4-bar linkage**
+
+![](../../docs/assets/intro/linkage-app.png)
+A flap mechanism drawn and simulated in the Linkage app
+
 </div>
 
 <div class="columns">
@@ -387,15 +396,22 @@ elevator and rudder, 5 for flap and aileron.
 </div>
 </div>
 
+
 ---
 
 # Where mechanisms meets avionics
 
-![bg right:34% contain](../../docs/assets/intro/servo-cutaway.svg)
-
 <div class="shots small">
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/servo-micro.jpg')"></div>Blue micro servos — also HJ and Parallax standard servos</div>
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/servo-tester.svg')"></div>Mechanisms prove the motion on a <strong>servo tester</strong> first</div>
+
+![](../../docs/assets/intro/servo-standard.jpg)
+Standard servos — HJ and Parallax. The kit also has blue micro servos
+
+![](../../docs/assets/intro/servo-inside.jpg)
+Inside one: motor, gear train, board — and a pot reading the output shaft
+
+![](../../docs/assets/intro/servo-tester.svg)
+Proved on a **servo tester** before the flight controller
+
 </div>
 
 * **The boundary is the servo cable**
@@ -408,7 +424,9 @@ The cutaway: demand in on the signal wire, the pot measures the output angle,
 the board drives the motor until the two agree. The loop is inside the servo -
 which is why the cable, not the shaft, is where we draw the interface.
 
-Servo photo: Tower Pro SG90 by Suyash Dwivedi, Wikimedia Commons, CC BY-SA 4.0.
+Photo credits: standard servos by Kborer (public domain); servo internals by
+Jstapko, CC BY-SA 3.0; micro servo by Suyash Dwivedi, CC BY-SA 4.0 - all from
+Wikimedia Commons. The tester is drawn.
 No openly licensed photograph of an HJ or Parallax servo, or of a tester,
 exists - the tester is drawn. A lab photograph would be better than both.
 -->
@@ -426,9 +444,16 @@ agreed to draw the line. Every interface is a choice like that.
 # Learn from what broke last year
 
 <div class="shots">
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/avoid-glued.jpg')"></div>Actuator cable-tied <strong>and glued</strong> to the false rear spar</div>
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/avoid-nowashers.jpg')"></div>Weak linkages, <strong>no washers</strong>, nothing to reduce friction</div>
-<div><div class="pic" style="background-image:url('../../docs/assets/intro/avoid-threadedrod.jpg')"></div><strong>Threaded rod</strong> as a pivot, into an oversize hole and into the foam</div>
+
+![](../../docs/assets/intro/avoid-glued.jpg)
+Actuator cable-tied **and glued** to the false rear spar
+
+![](../../docs/assets/intro/avoid-nowashers.jpg)
+Weak linkages, **no washers**, nothing to reduce friction
+
+![](../../docs/assets/intro/avoid-threadedrod.jpg)
+**Threaded rod** as a pivot, into an oversize hole and into the foam
+
 </div>
 
 * Start simple, prototype early, design for disassembly
